@@ -2,7 +2,7 @@ import Samsung from "./Samsung";
 
 export default function Hero() {
   return (
-    <section className="py-16 sm:py-20 lg:py-32">
+    <section className="py-16 sm:py-20 lg:py-32 bg-[var(--color-teal)]">
       <div className="container px-4 sm:px-6">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
