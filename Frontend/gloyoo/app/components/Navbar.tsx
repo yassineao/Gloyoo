@@ -4,13 +4,13 @@ import React from "react";
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
-    <header className="sticky top-0 z-20  dark:border-slate-700/50  sm:border-transparent backdrop-blur-sm bg-white/80 dark:bg-slate-950/80 ">
-      <div className="container px-4 sm:px-6 ">
-        <nav
+    <header className="fixed top-0 z-20 min-w-full border-b border-brand-charcoal bg-transparent text-slate-50 shadow-brand-soft backdrop-blur-sm dark:bg-transparent sm:border-transparent">
+      <div className="container px-4 sm:px-6 justify-between items-center flex h-16">
+        <nav  
           aria-label="Main"
-          className="relative flex w-full items-center justify-between py-4"
+          className="grid w-full grid-cols-2 items-center justify-between py-2 shadow-brand-soft lg:grid-cols-4 lg:gap-4"
         >
-          <a href="#" className="shrink-0">
+          <a href="#" className="shrink-0 col-span-1">
             <img
               src="/Logo.png"
               alt="Gloyoo"
@@ -18,38 +18,37 @@ export default function Navbar() {
             />
           </a>
 
-          <div className="hidden lg:block">
+          <div className="hidden lg:block lg:justify-self-center lg:col-span-2 ">
             <ul className="flex items-center gap-1 xl:gap-2">
               <li>
-                <button className="inline-flex h-10 items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none">
+                <button className="inline-flex h-10 items-center justify-center rounded-md  px-4 py-2 text-sm font-medium  transition-colors hover:bg-brand-teal hover:text-white focus:outline-none">  
                   Projects
                 </button>
               </li>
 
               <li>
-                <button className="inline-flex h-10 items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none">
+                <button className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium  transition-colors hover:bg-brand-teal hover:text-white focus:outline-none">
                   About us
                 </button>
               </li>
 
               <li>
-                <button className="inline-flex h-10 items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:outline-none">
+                <button className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium  transition-colors hover:bg-brand-teal hover:text-white focus:outline-none">
                   Offers
                 </button>
               </li>
             </ul>
           </div>
 
-          <div className="hidden items-center gap-2 lg:flex xl:gap-4">
-            <button className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+          <div className="hidden items-center gap-2 lg:flex xl:gap-4 lg:col-span-1 lg:justify-end text-right">
+            <button className="inline-flex h-10 items-center justify-center rounded-md  px-4 py-2 text-sm font-medium text-brand-gold transition-colors  hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-charcoal focus-visible:ring-offset-2">
               En
             </button>
 
-            <button className="rounded-xl bg-gradient-to-tr from-violet-600 via-fuchsia-600 to-sky-500 text-white px-6 py-3 text-sm sm:text-base font-semibold shadow-[0_20px_35px_-15px_rgba(99,102,241,0.6)] hover:opacity-90 transition">
-              Contact us
-             
-              
-            </button>
+           <button className="relative overflow-hidden rounded-xl border border-brand-teal px-6 py-3 text-sm font-semibold text-brand-teal transition-all duration-300 hover:text-white sm:text-base">
+  <span className="relative z-10">Contact us</span>
+  <span className="absolute inset-0 origin-left scale-x-0 bg-brand-teal transition-transform duration-300 hover:scale-x-100"></span>
+</button>
           </div>
 
           <div className="flex items-center lg:hidden">

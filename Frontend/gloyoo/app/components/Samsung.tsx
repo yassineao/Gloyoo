@@ -1,5 +1,5 @@
 import { SamsungS26MockupProps } from "../types/Samsung";
-import { Camera, Image as ImageIcon } from "lucide-react";
+import { Image as ImageIcon } from "lucide-react";
 
 
 export default function Samsung({
@@ -109,7 +109,7 @@ export default function Samsung({
 
         {/* Front camera punch hole */}
         <div
-          className="absolute left-1/2 top-3 z-20 -translate-x-1/2 rounded-full border border-white/10 bg-black shadow-[0_0_0_1px_rgba(255,255,255,0.04)]"
+          className="absolute left-1/2 top-3 z-20 -translate-x-1/2 rounded-full border border-white/10 bg-black shadow-brand-camera"
           style={{ width: cameraSize, height: cameraSize }}
           aria-label="Front camera"
         >
@@ -118,7 +118,7 @@ export default function Samsung({
         </div>
 
         {/* Top glass reflection */}
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(160deg,rgba(255,255,255,0.16)_0%,rgba(255,255,255,0.04)_12%,transparent_28%,transparent_100%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-brand-glass" />
 
         {/* Subtle inner edge */}
         <div className="pointer-events-none absolute inset-0 rounded-[inherit] ring-1 ring-white/5" />
