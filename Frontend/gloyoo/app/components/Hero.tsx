@@ -11,11 +11,11 @@ export default function Hero() {
               <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
                 Mehr Kunden
               </h1>
-              <h1 className="mt-2 text-4xl font-bold leading-tight text-brand-cloud sm:text-5xl lg:text-6xl xl:text-7xl">
+              <h1 className=" text-4xl font-bold leading-tight text-brand-cloud sm:text-5xl lg:text-6xl xl:text-7xl">
                 durch Social Media und moderne Webseiten
               </h1>
 
-              <div className="mb-6 mt-5 h-1 w-20 rounded bg-brand-purple sm:w-24" />
+              <div className="mb-6  h-1 w-20 rounded bg-brand-purple sm:w-24" />
 
               <p className="max-w-xl text-base leading-7 text-brand-cloud sm:text-lg sm:leading-8 lg:text-xl">
                 Gloyoo ist Ihre Social Media und Webagentur in Deutschland - wir helfen Unternehmen,
