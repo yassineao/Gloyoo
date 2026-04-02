@@ -23,7 +23,7 @@ const serviceItems = [
 export default function Services() {
     return (
         <div className="flex flex-1 flex-col items-center justify-center overflow-hidden">
-            <section className="mx-auto w-full max-w-7xl py-16">
+            <section  className="mx-auto w-full max-w-7xl scroll-mt-24 py-8">
                 <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
                     <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center sm:gap-6 ">
                         <div className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-white/80">

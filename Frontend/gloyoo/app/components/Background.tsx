@@ -1,7 +1,7 @@
 import Grainient from "./Grainient";
 export default function Background({ children }: { children?: React.ReactNode }) {
     return (
-        <div className="relative w-full overflow-hidden">
+        <div className="relative w-full overflow-hidden" >
             <div className="absolute inset-0 -z-0">
                 <Grainient
                     className="h-full min-h-[600px] w-full"

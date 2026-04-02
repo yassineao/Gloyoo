@@ -14,18 +14,19 @@ export default function Home() {
       </div>
 
       <Advantages />
-
-      <Background>
-          <div className="  mt-10">
-            <ScrollVelocity
-              texts={["React Bits", "Scroll Down"]}
-              velocity={100}
-              className="custom-scroll-text text-3xl font-bold text-brand-teal sm:text-4xl lg:text-6xl xl:text-7xl"
-            />
-          </div>
-          <Services />
-      </Background>
-
+      <div className="  " id="services">
+            <Background>
+              <div className="mt-13">
+                  <ScrollVelocity
+                    texts={["React Bits", "Scroll Down"]}
+                    velocity={100}
+                    className="custom-scroll-text text-3xl font-bold text-brand-teal sm:text-4xl lg:text-6xl xl:text-7xl "
+                  />
+              
+                <Services />
+              </div>
+            </Background>
+      </div>
       <AboutUs />
     </div>
   );

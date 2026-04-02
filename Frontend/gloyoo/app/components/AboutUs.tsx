@@ -2,7 +2,7 @@ import Grainient from "./Grainient";
 
 export default function AboutUs() {
     return (
-        <section id="about-us" className="overflow-hidden py-16 sm:py-20 lg:py-24">
+        <section id="about-us" className="scroll-mt-24 overflow-hidden py-16 sm:py-20 lg:py-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
                     <div className="order-2 overflow-hidden rounded-3xl bg-zinc-100 shadow-brand-soft lg:order-1">

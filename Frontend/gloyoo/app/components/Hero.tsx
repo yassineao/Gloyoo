@@ -4,7 +4,10 @@ import Samsung from "./Samsung";
 export default function Hero() {
   return (
     <Background>
-      <section className="min-h-screen px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pt-36">
+      <section
+        id="home"
+        className="min-h-screen scroll-mt-24 px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pt-36"
+      >
         <div className="container mx-auto">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
             <div className="mx-auto flex max-w-2xl flex-col items-start text-left lg:mx-0">

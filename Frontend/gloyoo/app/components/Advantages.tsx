@@ -18,7 +18,7 @@ const advantageItems = [
 
 export default function Advantages() {
     return (
-        <section className="overflow-hidden bg-black py-16 sm:py-20 lg:py-24">
+        <section id="advantages" className="scroll-mt-24 overflow-hidden bg-black py-16 sm:py-20 lg:py-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-4xl text-center">
                     <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-cloud">
