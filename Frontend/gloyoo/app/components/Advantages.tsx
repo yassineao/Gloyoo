@@ -1,36 +1,55 @@
-
+const advantageItems = [
+    {
+        title: "Mehr Sichtbarkeit",
+        value: "Mehr",
+        subtitle: "Ihre Marke wird dort sichtbar, wo Ihre Zielgruppe jeden Tag unterwegs ist.",
+    },
+    {
+        title: "Mehr Anfragen",
+        value: "Echte",
+        subtitle: "Wir fokussieren uns nicht nur auf Reichweite, sondern auf qualifizierte Kundenanfragen.",
+    },
+    {
+        title: "Weniger Aufwand",
+        value: "Alles",
+        subtitle: "Strategie, Content und Betreuung kommen aus einer Hand, damit Sie Zeit sparen.",
+    },
+];
 
 export default function Advantages() {
     return (
-        <div className="flex flex-col flex-1 items-center justify-center  bg-black overflow-hidden ">
-           
+        <section className="overflow-hidden bg-black py-16 sm:py-20 lg:py-24">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-4xl text-center">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-cloud">
+                        Ihre Vorteile
+                    </p>
+                    <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
+                        Darum entscheiden sich Unternehmen fuer Gloyoo
+                    </h2>
+                    <p className="mt-4 text-base leading-7 text-zinc-400 sm:text-lg">
+                        Wir verbinden kreative Inhalte mit klarer Strategie, damit Social Media nicht nur gut aussieht,
+                        sondern Ihr Unternehmen auch wirklich voranbringt.
+                    </p>
+                </div>
 
-                <section className="py-32">
-                    <div className="container">
-                        <h1 className="text-center text-4xl font-semibold lg:text-6xl ">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        </h1>
-                        <div className="grid gap-10 pt-9 md:grid-cols-3 lg:gap-0 lg:pt-20">
-                            <div className="text-center">
-                                <p className="text-sm font-medium   text-brand-cloud">Reduce your time to hire by</p>
-                                <p className="pt-4 text-7xl font-semibold lg:pt-10 text-brand-petalPink">4x</p>
-                                <p className="text-2xl font-semibold text-zinc-600">quicker</p>
-                            </div>
-                            <div className="text-center">
-                                <p className="text-sm font-medium  text-brand-cloud">Clients have seen a decrease in</p>
-                                <p className="pt-4 text-7xl font-semibold lg:pt-10 text-brand-petalPink">50%</p>
-                                <p className="text-2xl font-semibold text-zinc-600">in time to hire</p>
-                            </div>
-                            <div className="text-center">
-                                <p className="text-sm font-medium  text-brand-cloud">The average number of hires per</p>
-                                <p className="pt-4 text-7xl font-semibold lg:pt-10 text-brand-petalPink">3</p>
-                                <p className="text-2xl font-semibold text-zinc-600">months</p>
-                            </div>
+                <div className="mt-10 grid gap-6 sm:mt-14 md:grid-cols-3 lg:mt-16 lg:gap-8">
+                    {advantageItems.map((item) => (
+                        <div
+                            key={item.title}
+                            className="rounded-3xl border border-white/10 bg-white/5 p-6 text-center sm:p-8"
+                        >
+                            <p className="text-sm font-medium text-brand-cloud">{item.title}</p>
+                            <p className="pt-4 text-4xl font-semibold text-brand-petalPink sm:text-5xl lg:pt-6 lg:text-6xl">
+                                {item.value}
+                            </p>
+                            <p className="pt-3 text-base leading-7 text-zinc-300 sm:text-lg">
+                                {item.subtitle}
+                            </p>
                         </div>
-                    </div>
-                </section>
-          
-        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
     );
 }
-

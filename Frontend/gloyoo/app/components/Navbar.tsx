@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 z-20 min-w-full border-b border-brand-charcoal bg-transparent text-slate-50 shadow-brand-soft backdrop-blur-sm dark:bg-transparent sm:border-transparent px-27">
       <div className="container px-4 sm:px-6 justify-between items-center flex h-16">
-        <nav  
+        <nav
           aria-label="Main"
           className="grid w-full grid-cols-2 items-center justify-between py-2 shadow-brand-soft lg:grid-cols-4 lg:gap-4"
         >
@@ -21,7 +21,7 @@ export default function Navbar() {
           <div className="hidden lg:block lg:justify-self-center lg:col-span-2 ">
             <ul className="flex items-center gap-1 xl:gap-2">
               <li>
-                <button className="inline-flex h-10 items-center justify-center rounded-md  px-4 py-2 text-sm font-medium  transition-colors hover:bg-brand-teal hover:text-white focus:outline-none">  
+                <button className="inline-flex h-10 items-center justify-center rounded-md  px-4 py-2 text-sm font-medium  transition-colors hover:bg-brand-teal hover:text-white focus:outline-none">
                   Projects
                 </button>
               </li>
@@ -45,10 +45,10 @@ export default function Navbar() {
               En
             </button>
 
-           <button className="relative overflow-hidden rounded-xl border border-brand-teal px-6 py-3 text-sm font-semibold text-brand-teal transition-all duration-300 hover:text-white sm:text-base">
-  <span className="relative z-10">Contact us</span>
-  <span className="absolute inset-0 origin-left scale-x-0 bg-brand-teal transition-transform duration-300 hover:scale-x-100"></span>
-</button>
+            <button className="relative overflow-hidden rounded-xl border border-brand-teal px-6 py-3 text-sm font-semibold text-brand-teal transition-all duration-300 hover:text-white sm:text-base">
+              <span className="relative z-10">Contact us</span>
+              <span className="absolute inset-0 origin-left scale-x-0 bg-brand-teal transition-transform duration-300 hover:scale-x-100"></span>
+            </button>
           </div>
 
           <div className="flex items-center lg:hidden">
@@ -75,35 +75,35 @@ export default function Navbar() {
                 <line x1="4" x2="20" y1="18" y2="18" />
               </svg>
             </button>
-        
+
           </div>
 
         </nav>
       </div>
-          <div
-              className={`lg:hidden transition-all duration-300 overflow-hidden 
+      <div
+        className={`lg:hidden transition-all duration-300 overflow-hidden 
                     ${isOpen ? "max-h-96 opacity-100 " : "max-h-0 opacity-0"}`}
-            >
-              <div className="bg-transparent absolute top-full left-0 w-full rounded-b-lg shadow-lg">
-               <ul className="flex flex-col px-4 pb-4 space-y-3 text-white bg-transparent bg-blur-sm  bg-white/80 dark:bg-slate-950/80 rounded-lg">
-                <li><a href="#" className="block py-2 hover:text-amber-600">Projects</a></li>
-                <li> <a className="block py-2 hover:text-amber-600" href="#about-us">
-                  About us
-                </a></li>
-                <li><a className="block py-2 hover:text-amber-600"  href="#packs">Preis</a></li>
-                <li>
-                  <a
-                    href="#contact"
-                    className="block py-2 hover:text-amber-600"
-                  >
+      >
+        <div className="bg-transparent absolute top-full left-0 w-full rounded-b-lg shadow-lg">
+          <ul className="flex flex-col px-4 pb-4 space-y-3 text-white bg-transparent bg-blur-sm  bg-white/80 dark:bg-slate-950/80 rounded-lg">
+            <li><a href="#" className="block py-2 hover:text-amber-600">Projects</a></li>
+            <li> <a className="block py-2 hover:text-amber-600" href="#about-us">
+              About us
+            </a></li>
+            <li><a className="block py-2 hover:text-amber-600" href="#packs">Preis</a></li>
+            <li>
+              <a
+                href="#contact"
+                className="block py-2 hover:text-amber-600"
+              >
 
-                    Contact us
-                  </a>
-                </li>
-              </ul>
-              </div>
-              
-            </div>
+                Contact us
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
     </header>
   );
 }
