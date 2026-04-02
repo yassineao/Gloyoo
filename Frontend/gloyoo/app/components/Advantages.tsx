@@ -1,17 +1,17 @@
 const advantageItems = [
     {
-        title: "Mehr Sichtbarkeit",
-        value: "Mehr",
+        title: "Sichtbarkeit",
+        value: "Mehr ",
         subtitle: "Ihre Marke wird dort sichtbar, wo Ihre Zielgruppe jeden Tag unterwegs ist.",
     },
     {
-        title: "Mehr Anfragen",
-        value: "Echte",
+        title: " Anfragen",
+        value: "Mehr",
         subtitle: "Wir fokussieren uns nicht nur auf Reichweite, sondern auf qualifizierte Kundenanfragen.",
     },
     {
-        title: "Weniger Aufwand",
-        value: "Alles",
+        title: " Aufwand",
+        value: "Weniger",
         subtitle: "Strategie, Content und Betreuung kommen aus einer Hand, damit Sie Zeit sparen.",
     },
 ];
@@ -25,7 +25,7 @@ export default function Advantages() {
                         Ihre Vorteile
                     </p>
                     <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
-                        Darum entscheiden sich Unternehmen fuer Gloyoo
+                        Darum entscheiden sich Unternehmen für Gloyoo
                     </h2>
                     <p className="mt-4 text-base leading-7 text-zinc-400 sm:text-lg">
                         Wir verbinden kreative Inhalte mit klarer Strategie, damit Social Media nicht nur gut aussieht,
@@ -39,11 +39,12 @@ export default function Advantages() {
                             key={item.title}
                             className="rounded-3xl border border-white/10 bg-white/5 p-6 text-center sm:p-8"
                         >
-                            <p className="text-sm font-medium text-brand-cloud">{item.title}</p>
-                            <p className="pt-4 text-4xl font-semibold text-brand-petalPink sm:text-5xl lg:pt-6 lg:text-6xl">
+                           <p className=" text-4xl font-semibold text-brand-petalPink sm:text-5xl  lg:text-6xl">
                                 {item.value}
                             </p>
-                            <p className="pt-3 text-base leading-7 text-zinc-300 sm:text-lg">
+                            <p className="ttext-4xl font-semibold text-brand-cloud sm:text-5xl  lg:text-6xl">{item.title}</p>
+
+                            <p className="pt-3 text-base leading-7 text-zinc-300 sm:text-sm mt-8">
                                 {item.subtitle}
                             </p>
                         </div>
