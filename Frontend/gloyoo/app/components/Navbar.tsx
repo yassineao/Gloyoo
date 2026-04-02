@@ -4,7 +4,7 @@ import React from "react";
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
-    <header className="fixed top-0 z-20 min-w-full border-b border-brand-charcoal bg-transparent text-slate-50 shadow-brand-soft backdrop-blur-sm dark:bg-transparent sm:border-transparent">
+    <header className="fixed top-0 z-20 min-w-full border-b border-brand-charcoal bg-transparent text-slate-50 shadow-brand-soft backdrop-blur-sm dark:bg-transparent sm:border-transparent px-27">
       <div className="container px-4 sm:px-6 justify-between items-center flex h-16">
         <nav  
           aria-label="Main"
@@ -41,7 +41,7 @@ export default function Navbar() {
           </div>
 
           <div className="hidden items-center gap-2 lg:flex xl:gap-4 lg:col-span-1 lg:justify-end text-right">
-            <button className="inline-flex h-10 items-center justify-center rounded-md  px-4 py-2 text-sm font-medium text-brand-gold transition-colors  hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-charcoal focus-visible:ring-offset-2">
+            <button className="inline-flex h-10 items-center justify-center rounded-md  px-4 py-2 text-sm font-medium text-brand-slate transition-colors  hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-charcoal focus-visible:ring-offset-2">
               En
             </button>
 

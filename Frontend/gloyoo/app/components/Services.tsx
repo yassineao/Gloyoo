@@ -1,66 +1,82 @@
 "use client";
-import ScrollVelocity from "./ScrollVelocity";
+
+import Grainient from "./Grainient";
 
 export default function Services() {
     return (
-        <div>
-            
-               <section className="py-32">
-            
-            <div className="container">
-                <p className="mb-4 text-sm text-zinc-600 lg:text-base">OUR VALUES</p>
-                <h2 className="text-3xl font-medium lg:text-4xl">Why Choose Us?</h2>
-                <div className="mt-14 grid gap-6 lg:mt-20 lg:grid-cols-3">
-                    <div className="rounded-lg bg-zinc-100 p-5">
-                        <span className="mb-8 flex size-12 items-center justify-center rounded-full bg-white"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            className="lucide lucide-timer size-6">
-                            <line x1="10" x2="14" y1="2" y2="2"></line>
-                            <line x1="12" x2="15" y1="14" y2="11"></line>
-                            <circle cx="12" cy="14" r="8"></circle>
-                        </svg></span>
-                        <h3 className="mb-2 text-xl font-medium">Performance</h3>
-                        <p className="leading-7 text-zinc-600">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt beatae tenetur totam aut
-                            blanditis ipsa quaerat neque eaque, atque doloremque! Eligendi.
+        <div className="flex flex-col flex-1 items-center justify-center  overflow-hidden">
+
+            <section className="py-32">
+                <div className="container">
+                    <div className="mx-auto flex flex-col items-center gap-6 text-center">
+                        <div
+                            className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground">
+                            Features
+                        </div>
+                        <h2 className="text-4xl font-medium">Various integrations to help you grow your business</h2>
+                        <p className="text-lg text-zinc-600">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente sunt deleniti aliquid
+                            voluptates, nihil culpa enim.
                         </p>
                     </div>
-                    <div className="rounded-lg bg-zinc-100 p-5">
-                        <span className="mb-8 flex size-12 items-center justify-center rounded-full bg-white"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            className="lucide lucide-zoom-in size-6">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
-                            <line x1="11" x2="11" y1="8" y2="14"></line>
-                            <line x1="8" x2="14" y1="11" y2="11"></line>
-                        </svg></span>
-                        <h3 className="mb-2 text-xl font-medium">Quality</h3>
-                        <p className="leading-7 text-zinc-600">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt beatae tenetur totam aut
-                            blanditis ipsa quaerat neque eaque, atque doloremque! Eligendi.
-                        </p>
-                    </div>
-                    <div className="rounded-lg bg-zinc-100 p-5">
-                        <span className="mb-8 flex size-12 items-center justify-center rounded-full bg-white"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            className="lucide lucide-zap size-6">
-                            <path
-                                d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
-                            </path>
-                        </svg></span>
-                        <h3 className="mb-2 text-xl font-medium">Innovation</h3>
-                        <p className="leading-7 text-zinc-600">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt beatae tenetur totam aut
-                            blanditis ipsa quaerat neque eaque, atque doloremque! Eligendi.
-                        </p>
+                    <div className="mt-20 grid gap-10 lg:grid-cols-3 xl:gap-20 h-full">
+                        <div className="flex flex-col lg:block h-full">
+                            <div className="">
+                                <Grainient />
+                            </div>
+                            <div className="p-6">
+                                <div className="mb-1 font-semibold">Copy paste components</div>
+                                <p className="text-zinc-600">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi laboriosam voluptatibus
+                                    temporibus doloremque laudantium.
+                                </p>
+                                <a href="#" className="mt-4 flex items-center gap-2 font-medium">Learn more<svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevron-right w-4">
+                                    <path d="m9 18 6-6-6-6"></path>
+                                </svg></a>
+                            </div>
+                        </div>
+                        <div className="flex flex-col lg:block">
+                            <div className="">
+                                <Grainient />
+                            </div>
+                            <div className="p-6">
+                                <p className="mb-1 flex items-center gap-2 font-semibold">100% customizable</p>
+                                <p className="text-zinc-600">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi laboriosam voluptatibus
+                                    temporibus doloremque laudantium.
+                                </p>
+                                <a href="#" className="mt-4 flex items-center gap-2 font-medium">Learn more<svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevron-right w-4">
+                                    <path d="m9 18 6-6-6-6"></path>
+                                </svg></a>
+                            </div>
+                        </div>
+                        <div className="flex flex-col lg:block">
+                            <div className="">
+                                <Grainient />
+                            </div>
+                            <div className="p-6">
+                                <p className="mb-1 flex items-center gap-2 font-semibold">24/7 support</p>
+                                <p className="text-zinc-600">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi laboriosam voluptatibus
+                                    temporibus doloremque laudantium.
+                                </p>
+                                <a href="#" className="mt-4 flex items-center gap-2 font-medium">Learn more<svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevron-right w-4">
+                                    <path d="m9 18 6-6-6-6"></path>
+                                </svg></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
         </div>
-     
+
     );
 }
+

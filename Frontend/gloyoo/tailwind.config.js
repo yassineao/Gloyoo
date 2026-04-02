@@ -3,16 +3,15 @@ const config = {
     extend: {
       colors: {
         brand: {
-          teal: "#3e868e",
-          tealDark: "#2c5f63",
-          tealDeep: "#044343",
-          tealNight: "#093030",
-          tealInk: "#0d2626",
+          purple: "#8b5cf6",
+          teal: "#7c3aed",
+          tealDark: "#6d28d9",
+          tealDeep: "#4c1d95",
+          tealNight: "#312e81",
+          tealInk: "#502274",
           navy: "#36476f",
           navyDark: "#1f2a44",
           steel: "#1a2c3d",
-          sand: "#d1b896",
-          brownDark: "#8c7355",
           gray: "#6f6f6f",
           grayLight: "#cccccc",
           graySoft: "#bbbbbb",
@@ -22,7 +21,7 @@ const config = {
           slate: "#4a5568",
           slateDark: "#393e46",
           cloud: "#e6eaed",
-          gold: "#e9a444",
+          petalPink: "#C179B9",
         },
       },
       boxShadow: {
