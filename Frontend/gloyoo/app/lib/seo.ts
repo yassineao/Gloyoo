@@ -1,4 +1,4 @@
-const fallbackSiteUrl = "http://localhost:3000";
+const fallbackSiteUrl = "https://gloyoo.vercel.app";
 
 export const siteConfig = {
   name: "Gloyoo",
