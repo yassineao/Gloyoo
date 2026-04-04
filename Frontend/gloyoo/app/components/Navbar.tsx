@@ -69,6 +69,13 @@ export default function Navbar({
           </div>
 
           <div className="flex items-center justify-self-end lg:hidden">
+            <Link
+                href={`/${alternateLocale}`}
+                className="block py-2 hover:text-amber-600 mr-4 text-sm font-medium "
+                onClick={() => setIsOpen(false)}
+              >
+                {content.switchLabel}
+              </Link>
             <button
               className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               aria-label={content.mobileMenuLabel}
@@ -100,6 +107,7 @@ export default function Navbar({
         }`}
       >
         <div className="absolute left-0 top-full w-full rounded-b-lg bg-transparent px-4 shadow-lg sm:px-6">
+           
           <ul className="space-y-3 rounded-lg bg-white/80 px-4 pb-4 text-brand-steel backdrop-blur-sm dark:bg-slate-950/80 dark:text-white">
             {content.items.map((item) => (
               <li key={item.href}>
@@ -112,15 +120,6 @@ export default function Navbar({
                 </Link>
               </li>
             ))}
-            <li>
-              <Link
-                href={`/${alternateLocale}`}
-                className="block py-2 hover:text-amber-600"
-                onClick={() => setIsOpen(false)}
-              >
-                {content.switchLabel}
-              </Link>
-            </li>
             <li>
               <Link
                 href={`/${locale}#about-us`}

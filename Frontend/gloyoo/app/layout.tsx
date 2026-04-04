@@ -22,6 +22,11 @@ export const metadata: Metadata = {
   },
   description: siteConfig.defaultDescription,
   applicationName: siteConfig.name,
+  icons: {
+    icon: "/Logo.png",
+    shortcut: "/Logo.png",
+    apple: "/Logo.png",
+  },
   openGraph: {
     type: "website",
     siteName: siteConfig.name,
