@@ -1,56 +1,74 @@
-export default function Footer() {
+import Image from "next/image";
+import Link from "next/link";
+import type { Locale, LocaleDictionary } from "../lib/i18n";
+
+export default function Footer({
+    locale,
+    content,
+}: {
+    locale: Locale;
+    content: LocaleDictionary["footer"];
+}) {
+    const localizedHref = (href: string) => `/${locale}${href}`;
+
     return (
         <section className="mx-auto bg-black py-16">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <footer className="mx-auto max-w-7xl text-center">
                     <div className="grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2 lg:grid-cols-5">
                         <div className="flex max-w-sm flex-col items-center lg:col-span-2">
-                            <img
+                            <Image
                                 src="/Logo.png"
-                                alt="logo"
+                                alt="Gloyoo Logo"
+                                width={160}
+                                height={160}
                                 className="mb-4 h-20"
                             />
-                            <p className="font-bold text-white">Components made easy.</p>
+                            <p className="font-bold text-white">{content.tagline}</p>
                         </div>
 
                         <div>
-                            <h3 className="mb-4 font-bold text-white">Product</h3>
+                            <h3 className="mb-4 font-bold text-white">{content.navigationTitle}</h3>
                             <ul className="space-y-4 text-zinc-400">
-                                <li className="font-medium hover:text-white"><a href="#">Overview</a></li>
-                                <li className="font-medium hover:text-white"><a href="#">Pricing</a></li>
-                                <li className="font-medium hover:text-white"><a href="#">Marketplace</a></li>
-                                <li className="font-medium hover:text-white"><a href="#">Features</a></li>
-                                <li className="font-medium hover:text-white"><a href="#">Integrations</a></li>
+                                {content.navigationLinks.map((link) => (
+                                    <li key={link.label} className="font-medium hover:text-white">
+                                        <Link href={localizedHref(link.href)}>{link.label}</Link>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
 
                         <div>
-                            <h3 className="mb-4 font-bold text-white">Company</h3>
+                            <h3 className="mb-4 font-bold text-white">{content.servicesTitle}</h3>
                             <ul className="space-y-4 text-zinc-400">
-                                <li className="font-medium hover:text-white"><a href="#">About</a></li>
-                                <li className="font-medium hover:text-white"><a href="#">Team</a></li>
-                                <li className="font-medium hover:text-white"><a href="#">Blog</a></li>
-                                <li className="font-medium hover:text-white"><a href="#">Careers</a></li>
-                                <li className="font-medium hover:text-white"><a href="#">Contact</a></li>
-                                <li className="font-medium hover:text-white"><a href="#">Privacy</a></li>
+                                {content.serviceLinks.map((link) => (
+                                    <li key={link.label} className="font-medium hover:text-white">
+                                        <Link href={localizedHref(link.href)}>{link.label}</Link>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
 
                         <div>
-                            <h3 className="mb-4 font-bold text-white">Social</h3>
+                            <h3 className="mb-4 font-bold text-white">{content.contactTitle}</h3>
                             <ul className="space-y-4 text-zinc-400">
-                                <li className="font-medium hover:text-white"><a href="#">Twitter</a></li>
-                                <li className="font-medium hover:text-white"><a href="#">Instagram</a></li>
-                                <li className="font-medium hover:text-white"><a href="#">LinkedIn</a></li>
+                                {content.contactLinks.map((link) => (
+                                    <li key={link.label} className="font-medium hover:text-white">
+                                        <Link href={localizedHref(link.href)}>{link.label}</Link>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </div>
 
                     <div className="mt-16 flex flex-col items-center justify-center gap-4 border-t border-white/10 pt-8 text-center text-sm font-medium text-zinc-400 md:flex-row">
-                        <p>&copy; 2026 Gloyoo. All rights reserved.</p>
+                        <p>&copy; 2026 Gloyoo. {content.rights}</p>
                         <ul className="flex flex-wrap justify-center gap-4">
-                            <li className="underline hover:text-white"><a href="#">Terms and Conditions</a></li>
-                            <li className="underline hover:text-white"><a href="#">Privacy Policy</a></li>
+                            {content.legalLinks.map((link) => (
+                                <li key={link.label} className="underline hover:text-white">
+                                    <Link href={localizedHref(link.href)}>{link.label}</Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </footer>

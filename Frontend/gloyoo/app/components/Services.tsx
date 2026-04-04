@@ -1,45 +1,31 @@
 "use client";
 
 import Grainient from "./Grainient";
+import type { LocaleDictionary } from "../lib/i18n";
 
-const serviceItems = [
-    {
-        title: "Social Media Betreuung",
-        description:
-            "Wir planen, gestalten und betreuen Ihre Kanaele professionell, damit Ihre Marke einheitlich, aktiv und vertrauenswuerdig auftritt.",
-    },
-    {
-        title: "Content Creation",
-        description:
-            "Von Reels und Posts bis zu Storys und Werbemitteln erstellen wir Inhalte, die Aufmerksamkeit erzeugen und im Kopf bleiben.",
-    },
-    {
-        title: "Performance Marketing",
-        description:
-            "Mit gezielten Kampagnen auf Instagram, Facebook und Co. bringen wir mehr Reichweite, mehr Leads und mehr Umsatz in Ihr Unternehmen.",
-    },
-];
-
-export default function Services() {
+export default function Services({
+    content,
+}: {
+    content: LocaleDictionary["services"];
+}) {
     return (
         <div className="flex flex-1 flex-col items-center justify-center overflow-hidden">
-            <section  className="mx-auto w-full max-w-7xl scroll-mt-24 py-8">
+            <section id="services-list" className="mx-auto w-full max-w-7xl scroll-mt-24 py-8" aria-labelledby="services-heading">
                 <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
                     <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center sm:gap-6 ">
                         <div className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-white/80">
-                            Unsere Services
+                            {content.eyebrow}
                         </div>
-                        <h2 className="text-balance text-3xl font-medium text-white sm:text-4xl lg:text-5xl">
-                            Social Media Leistungen, die Ihr Unternehmen wachsen lassen
+                        <h2 id="services-heading" className="text-balance text-3xl font-medium text-white sm:text-4xl lg:text-5xl">
+                            {content.title}
                         </h2>
                         <p className="max-w-2xl text-sm leading-7 text-zinc-300 sm:text-base sm:leading-8 lg:text-lg">
-                            Wir unterstuetzen Unternehmen mit kreativen Inhalten, klarer Strategie und Performance-Marketing,
-                            damit aus Aufmerksamkeit echte Ergebnisse werden.
+                            {content.description}
                         </p>
                     </div>
 
                     <div className="mx-auto mt-10 grid max-w-6xl justify-items-center gap-6 sm:mt-14 lg:mt-16 lg:grid-cols-3 lg:gap-8">
-                        {serviceItems.map((item) => (
+                        {content.items.map((item) => (
                             <article
                                 key={item.title}
                                 className="w-full max-w-sm overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-brand-soft backdrop-blur-sm"
@@ -53,8 +39,8 @@ export default function Services() {
                                     <p className="text-sm leading-7 text-zinc-300 sm:text-base">
                                         {item.description}
                                     </p>
-                                    <a href="#" className="mt-4 inline-flex items-center justify-center gap-2 font-medium text-white">
-                                        Mehr erfahren
+                                    <a href="#about-us" className="mt-4 inline-flex items-center justify-center gap-2 font-medium text-white">
+                                        {content.cta}
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="24"

@@ -1,67 +1,79 @@
 "use client";
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  getAlternateLocale,
+  type Locale,
+  type LocaleDictionary,
+} from "../lib/i18n";
 
-export default function Navbar() {
+export default function Navbar({
+  locale,
+  content,
+}: {
+  locale: Locale;
+  content: LocaleDictionary["nav"];
+}) {
   const [isOpen, setIsOpen] = React.useState(false);
-  const navItems = [
-   
-    
-    { label: "Vorteile", href: "#advantages" },
-     { label: "Leistungen", href: "#services" },
-    { label: "Über uns", href: "#about-us" },
-  ];
+  const alternateLocale = getAlternateLocale(locale);
+  const localizedHref = (href: string) => `/${locale}${href}`;
 
   return (
     <header className="fixed top-0 z-20 min-w-full border-b border-brand-charcoal bg-transparent px-4 text-slate-50 shadow-brand-soft backdrop-blur-sm dark:bg-transparent sm:border-transparent sm:px-6 lg:px-27">
       <div className="container flex h-16 items-center justify-between px-0 sm:px-0">
         <nav
-          aria-label="Main"
+          aria-label={content.ariaLabel}
           className="grid w-full grid-cols-2 items-center justify-between py-2 shadow-brand-soft lg:grid-cols-4 lg:gap-4"
         >
-          <a href="#home" className="col-span-1 shrink-0">
-            <img
+          <Link href={`/${locale}#home`} className="col-span-1 shrink-0" aria-label={content.homeAriaLabel}>
+            <Image
               src="/Logo.png"
-              alt="Gloyoo"
+              alt="Gloyoo Logo"
+              width={120}
+              height={36}
               className="ml-0 h-8 w-auto sm:h-9 lg:ml-30"
             />
-          </a>
+          </Link>
 
-          <div className="hidden lg:block lg:justify-self-center lg:col-span-2 ">
+          <div className="hidden lg:col-span-2 lg:block lg:justify-self-center">
             <ul className="flex items-center gap-1 xl:gap-2">
-              {navItems.map((item) => (
+              {content.items.map((item) => (
                 <li key={item.href}>
-                  <a
-                    href={item.href}
+                  <Link
+                    href={localizedHref(item.href)}
                     className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-brand-teal hover:text-white focus:outline-none"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="hidden items-center gap-2 lg:flex xl:gap-4 lg:col-span-1 lg:justify-end text-right">
-            <button className="inline-flex h-10 items-center justify-center rounded-md  px-4 py-2 text-sm font-medium text-brand-slate transition-colors  hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-charcoal focus-visible:ring-offset-2">
-              En
-            </button>
+          <div className="hidden items-center gap-2 text-right lg:col-span-1 lg:flex lg:justify-end xl:gap-4">
+            <Link
+              href={`/${alternateLocale}`}
+              className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-brand-slate transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-charcoal focus-visible:ring-offset-2"
+            >
+              {content.switchLabel}
+            </Link>
 
-            <a
-              href="#about-us"
+            <Link
+              href={`/${locale}#about-us`}
               className="relative overflow-hidden rounded-xl border border-brand-teal px-6 py-3 text-sm font-semibold text-brand-teal transition-all duration-300 hover:text-white sm:text-base"
             >
-              <span className="relative z-10">Contact us</span>
+              <span className="relative z-10">{content.contactLabel}</span>
               <span className="absolute inset-0 origin-left scale-x-0 bg-brand-teal transition-transform duration-300 hover:scale-x-100"></span>
-            </a>
+            </Link>
           </div>
 
           <div className="flex items-center justify-self-end lg:hidden">
             <button
               className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-              aria-label="Main Menu"
+              aria-label={content.mobileMenuLabel}
               onClick={() => setIsOpen(!isOpen)}
             >
-
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={24}
@@ -79,40 +91,47 @@ export default function Navbar() {
                 <line x1="4" x2="20" y1="18" y2="18" />
               </svg>
             </button>
-
           </div>
-
         </nav>
       </div>
       <div
-        className={`lg:hidden transition-all duration-300 overflow-hidden 
-                    ${isOpen ? "max-h-96 opacity-100 " : "max-h-0 opacity-0"}`}
+        className={`overflow-hidden transition-all duration-300 lg:hidden ${
+          isOpen ? "max-h-96 opacity-100 " : "max-h-0 opacity-0"
+        }`}
       >
         <div className="absolute left-0 top-full w-full rounded-b-lg bg-transparent px-4 shadow-lg sm:px-6">
           <ul className="space-y-3 rounded-lg bg-white/80 px-4 pb-4 text-brand-steel backdrop-blur-sm dark:bg-slate-950/80 dark:text-white">
-            {navItems.map((item) => (
+            {content.items.map((item) => (
               <li key={item.href}>
-                <a
-                  href={item.href}
+                <Link
+                  href={localizedHref(item.href)}
                   className="block py-2 hover:text-amber-600"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li>
-              <a
-                href="#about-us"
+              <Link
+                href={`/${alternateLocale}`}
                 className="block py-2 hover:text-amber-600"
                 onClick={() => setIsOpen(false)}
               >
-                Contact us
-              </a>
+                {content.switchLabel}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={`/${locale}#about-us`}
+                className="block py-2 hover:text-amber-600"
+                onClick={() => setIsOpen(false)}
+              >
+                {content.contactLabel}
+              </Link>
             </li>
           </ul>
         </div>
-
       </div>
     </header>
   );

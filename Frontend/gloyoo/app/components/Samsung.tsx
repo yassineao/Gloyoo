@@ -1,5 +1,6 @@
 import { SamsungS26MockupProps } from "../types/Samsung";
 import { Image as ImageIcon } from "lucide-react";
+import Image from "next/image";
 
 
 export default function Samsung({
@@ -82,11 +83,13 @@ export default function Samsung({
             />
              </div>
           ) : (
-            <div className="h-full w-full   justify-center bg-black">
-              <img
+            <div className="relative h-full w-full justify-center bg-black">
+              <Image
                 src={media}
                 alt={alt}
-                className="max-h-full max-w-full object-contain"
+                fill
+                sizes={`${width}px`}
+                className="object-contain"
               />
             </div>
           )
