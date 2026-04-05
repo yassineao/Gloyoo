@@ -1,6 +1,9 @@
+ "use client";
+
 import { SamsungS26MockupProps } from "../types/Samsung";
 import { Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 
 export default function Samsung({
@@ -12,6 +15,32 @@ export default function Samsung({
   className = "",
   videoProps,
 }: SamsungS26MockupProps) {
+  const [isMediaReady, setIsMediaReady] = useState(mediaType !== "video");
+
+  useEffect(() => {
+    if (mediaType !== "video") {
+      return;
+    }
+
+    const scheduleMediaLoad = () => setIsMediaReady(true);
+
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    if ("requestIdleCallback" in window) {
+      const idleCallbackId = window.requestIdleCallback(scheduleMediaLoad, {
+        timeout: 1200,
+      });
+
+      return () => window.cancelIdleCallback(idleCallbackId);
+    }
+
+    const timeoutId = setTimeout(scheduleMediaLoad, 600);
+
+    return () => clearTimeout(timeoutId);
+  }, [mediaType]);
+
   const height = Math.round(width * 2.08);
   const bezel = Math.max(8, Math.round(width * 0.028));
   const screenRadius = Math.round(width * 0.09);
@@ -70,18 +99,19 @@ export default function Samsung({
         {/* Display image */}
         {media ? (
           mediaType === "video" ? (
-             <div className="h-full w-full   justify-center bg-black">
-            <video
-              src={media}
-              className="max-h-full max-w-full object-contain"
-              autoPlay
-              muted
-              loop
-              playsInline
-              controls={false}
-              {...videoProps}
-            />
-             </div>
+            <div className="h-full w-full justify-center bg-black">
+              <video
+                src={isMediaReady ? media : undefined}
+                className="max-h-full max-w-full object-contain"
+                autoPlay={isMediaReady}
+                muted
+                loop
+                playsInline
+                controls={false}
+                preload="none"
+                {...videoProps}
+              />
+            </div>
           ) : (
             <div className="relative h-full w-full justify-center bg-black">
               <Image
@@ -90,6 +120,8 @@ export default function Samsung({
                 fill
                 sizes={`${width}px`}
                 className="object-contain"
+                loading="lazy"
+                fetchPriority="low"
               />
             </div>
           )
