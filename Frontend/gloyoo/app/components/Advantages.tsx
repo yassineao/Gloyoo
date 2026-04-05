@@ -1,4 +1,5 @@
 import type { LocaleDictionary } from "../lib/i18n";
+import Image from "next/image";
 
 export default function Advantages({
     content,
@@ -6,7 +7,22 @@ export default function Advantages({
     content: LocaleDictionary["advantages"];
 }) {
     return (
-        <section id="advantages" className="scroll-mt-24 overflow-hidden bg-black py-16 sm:py-20 lg:py-24" aria-labelledby="advantages-heading">
+        <section id="advantages" className="scroll-mt-24 overflow-hidden bg-black py-2 sm:py-20 lg:py-4" aria-labelledby="advantages-heading">
+            <div className="flex w-full justify-center">
+                <div className="inline-flex h-12 max-w-full items-center justify-center gap-2.5 overflow-hidden whitespace-nowrap rounded-full bg-white/92 px-5 text-brand-steel shadow-[0_10px_30px_rgba(15,23,42,0.12)] ring-1 ring-white/70 backdrop-blur-md transition-all duration-300 sm:gap-3 sm:px-5 sm:py-2.5">
+                    <Image
+                        src="/Logo.png"
+                        alt="Gloyoo Logo"
+                        width={1203}
+                        height={1203}
+                        quality={100}
+                        priority
+                        sizes="(max-width: 640px) 44px, 52px"
+                        className="h-10 w-auto shrink-0 object-contain sm:h-11"
+                    />
+                </div>
+            </div>
+           
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-4xl text-center">
                     <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-cloud">
@@ -19,6 +35,7 @@ export default function Advantages({
                         {content.description}
                     </p>
                 </div>
+              
 
                 <div className="mt-10 grid gap-6 sm:mt-14 md:grid-cols-3 lg:mt-16 lg:gap-8">
                     {content.items.map((item) => (

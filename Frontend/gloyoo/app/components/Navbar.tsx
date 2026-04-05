@@ -26,14 +26,26 @@ export default function Navbar({
           aria-label={content.ariaLabel}
           className="grid w-full grid-cols-2 items-center justify-between py-2 shadow-brand-soft lg:grid-cols-4 lg:gap-4"
         >
-          <Link href={`/${locale}#home`} className="col-span-1 shrink-0" aria-label={content.homeAriaLabel}>
-            <Image
-              src="/Logo.png"
-              alt="Gloyoo Logo"
-              width={120}
-              height={36}
-              className="ml-0 h-8 w-auto sm:h-9 lg:ml-30"
-            />
+          <Link
+            href={`/${locale}#home`}
+            className="col-span-1 shrink-0"
+            aria-label={content.homeAriaLabel}
+          >
+            <div className="ml-0 inline-flex h-12 max-w-full items-center gap-2.5 overflow-hidden whitespace-nowrap rounded-full bg-white/92 px-5 text-brand-steel shadow-[0_10px_30px_rgba(15,23,42,0.12)] ring-1 ring-white/70 backdrop-blur-md transition-all duration-300 sm:gap-3 sm:px-5 sm:py-2.5 lg:ml-30">
+              <Image
+                src="/Logo.png"
+                alt="Gloyoo Logo"
+                width={1203}
+                height={1203}
+                quality={100}
+                priority
+                sizes="(max-width: 640px) 44px, 52px"
+                className="h-10 w-auto shrink-0 object-contain sm:h-11"
+              />
+              <span className="pr-2 text-sm font-semibold leading-none tracking-[0.12em] text-brand-slate antialiased sm:text-base">
+                GLOYOO
+              </span>
+            </div>
           </Link>
 
           <div className="hidden lg:col-span-2 lg:block lg:justify-self-center">

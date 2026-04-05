@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import BrandLogo from "./BrandLogo";
 import type { Locale, LocaleDictionary } from "../lib/i18n";
 
 export default function Footer({
@@ -17,13 +17,9 @@ export default function Footer({
                 <footer className="mx-auto max-w-7xl text-center">
                     <div className="grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2 lg:grid-cols-5">
                         <div className="flex max-w-sm flex-col items-center lg:col-span-2">
-                            <Image
-                                src="/Logo.png"
-                                alt="Gloyoo Logo"
-                                width={160}
-                                height={160}
-                                className="mb-4 h-20"
-                            />
+                            <div className="mb-4">
+                                <BrandLogo size="footer" />
+                            </div>
                             <p className="font-bold text-white">{content.tagline}</p>
                         </div>
 
