@@ -13,36 +13,36 @@ export default function Hero({
         id="home"
         className="min-h-screen scroll-mt-24 px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pt-36"
       >
-        <div className="container mx-auto">
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
-            <div className="mx-auto flex max-w-2xl flex-col items-start text-left lg:mx-0">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-brand-cloud">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 xl:gap-1">
+            <div className="flex max-w-3xl flex-col items-start text-left">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#A1A1AA]">
                 {content.eyebrow}
               </p>
               <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl xl:text-6xl">
                 {content.titleFirst}
-                <span className="block text-brand-cloud">
+                <span className="block ">
                   {content.titleSecond}
                 </span>
               </h1>
 
-              <div className="mb-6  h-1 w-20 rounded bg-brand-purple sm:w-24" />
+              <div className="mb-6 h-1 w-20 rounded bg-gradient-to-r from-[#7C3AED] to-[#2563EB] shadow-[0_0_24px_rgba(168,85,247,0.4)] sm:w-24" />
 
-              <p className="max-w-xl text-base leading-7 text-brand-cloud sm:text-lg sm:leading-8 lg:text-xl">
+              <p className="max-w-xl text-base leading-7 text-[#A1A1AA] sm:text-lg sm:leading-8 lg:text-xl font-bold">
                 {content.description}
               </p>
 
               <div className="mt-8 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a
                   href="#about-us"
-                  className="inline-flex h-11 w-full items-center justify-center rounded-md bg-brand-gray px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-cloud hover:text-brand-navyDark sm:w-auto"
+                  className="inline-flex h-11 w-full items-center justify-center rounded-md bg-gradient-to-r from-[#7C3AED] to-[#2563EB] px-5 py-2 text-sm font-medium text-white shadow-[0_14px_34px_rgba(37,99,235,0.28)] transition-all hover:brightness-110 sm:w-auto"
                 >
                   {content.primaryCta}
                 </a>
 
                 <a
                   href="#services"
-                  className="inline-flex h-11 w-full items-center justify-center rounded-md bg-brand-charcoal px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-teal sm:w-auto"
+                  className="inline-flex h-11 w-full items-center justify-center rounded-md border border-white/12 bg-white/6 px-5 py-2 text-sm font-medium text-white transition-all hover:border-[#A855F7]/40 hover:bg-[#A855F7]/12 sm:w-auto "
                 >
                   {content.secondaryCta}
                   <svg

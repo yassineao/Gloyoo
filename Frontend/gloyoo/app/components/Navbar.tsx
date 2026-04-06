@@ -20,18 +20,18 @@ export default function Navbar({
   const localizedHref = (href: string) => `/${locale}${href}`;
 
   return (
-    <header className="fixed top-0 z-20 min-w-full border-b border-brand-charcoal bg-transparent px-4 text-slate-50 shadow-brand-soft backdrop-blur-sm dark:bg-transparent sm:border-transparent sm:px-6 lg:px-27">
+    <header className="fixed top-0 z-20 min-w-full border-b border-white/8 bg-[#0B0B0F]/45 px-4 text-slate-50  backdrop-blur-md sm:border-transparent sm:px-6 lg:px-27">
       <div className="container flex h-16 items-center justify-between px-0 sm:px-0">
         <nav
           aria-label={content.ariaLabel}
-          className="grid w-full grid-cols-2 items-center justify-between py-2 shadow-brand-soft lg:grid-cols-4 lg:gap-4"
+          className="grid w-full grid-cols-2 items-center justify-between py-2  lg:grid-cols-4 lg:gap-4"
         >
           <Link
             href={`/${locale}#home`}
             className="col-span-1 shrink-0"
             aria-label={content.homeAriaLabel}
           >
-            <div className="ml-0 inline-flex h-12 max-w-full items-center gap-2.5 overflow-hidden whitespace-nowrap rounded-full bg-white/92 px-5 text-brand-steel shadow-[0_10px_30px_rgba(15,23,42,0.12)] ring-1 ring-white/70 backdrop-blur-md transition-all duration-300 sm:gap-3 sm:px-5 sm:py-2.5 lg:ml-30">
+            <div className="ml-0 inline-flex h-12 max-w-full items-center gap-2.5 overflow-hidden whitespace-nowrap rounded-full border border-white/10 bg-white/8 px-5 text-white shadow-[0_0_40px_rgba(168,85,247,0.25)] ring-1 ring-[#A855F7]/30 backdrop-blur-md transition-all duration-300 sm:gap-3 sm:px-5 sm:py-2.5 lg:ml-30">
               <Image
                 src="/Logo.png"
                 alt="Gloyoo Logo"
@@ -39,10 +39,10 @@ export default function Navbar({
                 height={1203}
                 quality={100}
                 priority
-                sizes="(max-width: 640px) 44px, 52px"
-                className="h-10 w-auto shrink-0 object-contain sm:h-11"
+                sizes="(max-width: 640px) 36px, (max-width: 1024px) 44px, 52px"
+                className="h-8 w-auto shrink-0 object-contain sm:h-9 lg:h-10"
               />
-              <span className="pr-2 text-sm font-semibold leading-none tracking-[0.12em] text-brand-slate antialiased sm:text-base">
+              <span className="pr-1 text-xs font-semibold leading-none tracking-[0.1em] text-white antialiased sm:pr-2 sm:text-sm lg:text-base">
                 GLOYOO
               </span>
             </div>
@@ -54,7 +54,7 @@ export default function Navbar({
                 <li key={item.href}>
                   <Link
                     href={localizedHref(item.href)}
-                    className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-brand-teal hover:text-white focus:outline-none"
+                    className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-[#A1A1AA] transition-colors hover:bg-white/8 hover:text-white focus:outline-none"
                   >
                     {item.label}
                   </Link>
@@ -66,30 +66,30 @@ export default function Navbar({
           <div className="hidden items-center gap-2 text-right lg:col-span-1 lg:flex lg:justify-end xl:gap-4">
             <Link
               href={`/${alternateLocale}`}
-              className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-brand-slate transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-charcoal focus-visible:ring-offset-2"
+              className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-[#A1A1AA] transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A855F7] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0B0F]"
             >
               {content.switchLabel}
             </Link>
 
             <Link
               href={`/${locale}#about-us`}
-              className="relative overflow-hidden rounded-xl border border-brand-teal px-6 py-3 text-sm font-semibold text-brand-teal transition-all duration-300 hover:text-white sm:text-base"
+              className="group text-center relative inline-flex h-11 items-center justify-center overflow-hidden rounded-xl border border-[#A855F7] px-4 text-sm font-semibold text-[#A855F7] transition-[color,border-color,transform,box-shadow] duration-300 ease-out hover:border-[#2563EB] hover:text-white hover:shadow-[0_16px_36px_rgba(37,99,235,0.24)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A855F7] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0B0F] sm:px-5 sm:text-sm xl:px-6 xl:text-base"
             >
               <span className="relative z-10">{content.contactLabel}</span>
-              <span className="absolute inset-0 origin-left scale-x-0 bg-brand-teal transition-transform duration-300 hover:scale-x-100"></span>
+              <span className="absolute inset-0 origin-left scale-x-0 bg-gradient-to-r from-[#7C3AED] to-[#2563EB] transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100"></span>
             </Link>
           </div>
 
           <div className="flex items-center justify-self-end lg:hidden">
             <Link
                 href={`/${alternateLocale}`}
-                className="block py-2 hover:text-amber-600 mr-4 text-sm font-medium "
+                className="mr-4 block py-2 text-sm font-medium text-[#A1A1AA] hover:text-white"
                 onClick={() => setIsOpen(false)}
               >
                 {content.switchLabel}
               </Link>
             <button
-              className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-input bg-background text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/12 bg-white/6 text-sm font-medium text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A855F7] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0B0F]"
               aria-label={content.mobileMenuLabel}
               onClick={() => setIsOpen(!isOpen)}
             >
@@ -120,12 +120,12 @@ export default function Navbar({
       >
         <div className="absolute left-0 top-full w-full rounded-b-lg bg-transparent px-4 shadow-lg sm:px-6">
            
-          <ul className="space-y-3 rounded-lg bg-white/80 px-4 pb-4 text-brand-steel backdrop-blur-sm dark:bg-slate-950/80 dark:text-white">
+          <ul className="space-y-3 rounded-lg border border-white/10 bg-[#0B0B0F]/92 px-4 pb-4 text-[#A1A1AA] backdrop-blur-md">
             {content.items.map((item) => (
               <li key={item.href}>
                 <Link
                   href={localizedHref(item.href)}
-                  className="block py-2 hover:text-amber-600"
+                  className="block py-2 hover:text-white"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -135,7 +135,7 @@ export default function Navbar({
             <li>
               <Link
                 href={`/${locale}#about-us`}
-                className="block py-2 hover:text-amber-600"
+                className="block py-2 hover:text-white"
                 onClick={() => setIsOpen(false)}
               >
                 {content.contactLabel}

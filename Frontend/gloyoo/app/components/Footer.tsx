@@ -12,7 +12,7 @@ export default function Footer({
     const localizedHref = (href: string) => `/${locale}${href}`;
 
     return (
-        <section className="mx-auto bg-black py-16">
+        <section className="mx-auto bg-[#0B0B0F] py-16">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <footer className="mx-auto max-w-7xl text-center">
                     <div className="grid grid-cols-1 justify-items-center gap-10 md:grid-cols-2 lg:grid-cols-5">
@@ -25,7 +25,7 @@ export default function Footer({
 
                         <div>
                             <h3 className="mb-4 font-bold text-white">{content.navigationTitle}</h3>
-                            <ul className="space-y-4 text-zinc-400">
+                            <ul className="space-y-4 text-[#A1A1AA]">
                                 {content.navigationLinks.map((link) => (
                                     <li key={link.label} className="font-medium hover:text-white">
                                         <Link href={localizedHref(link.href)}>{link.label}</Link>
@@ -36,7 +36,7 @@ export default function Footer({
 
                         <div>
                             <h3 className="mb-4 font-bold text-white">{content.servicesTitle}</h3>
-                            <ul className="space-y-4 text-zinc-400">
+                            <ul className="space-y-4 text-[#A1A1AA]">
                                 {content.serviceLinks.map((link) => (
                                     <li key={link.label} className="font-medium hover:text-white">
                                         <Link href={localizedHref(link.href)}>{link.label}</Link>
@@ -47,7 +47,7 @@ export default function Footer({
 
                         <div>
                             <h3 className="mb-4 font-bold text-white">{content.contactTitle}</h3>
-                            <ul className="space-y-4 text-zinc-400">
+                            <ul className="space-y-4 text-[#A1A1AA]">
                                 {content.contactLinks.map((link) => (
                                     <li key={link.label} className="font-medium hover:text-white">
                                         <Link href={localizedHref(link.href)}>{link.label}</Link>
@@ -57,7 +57,7 @@ export default function Footer({
                         </div>
                     </div>
 
-                    <div className="mt-16 flex flex-col items-center justify-center gap-4 border-t border-white/10 pt-8 text-center text-sm font-medium text-zinc-400 md:flex-row">
+                    <div className="mt-16 flex flex-col items-center justify-center gap-4 border-t border-white/10 pt-8 text-center text-sm font-medium text-[#A1A1AA] md:flex-row">
                         <p>&copy; 2026 Gloyoo. {content.rights}</p>
                         <ul className="flex flex-wrap justify-center gap-4">
                             {content.legalLinks.map((link) => (

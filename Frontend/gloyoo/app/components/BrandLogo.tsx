@@ -16,7 +16,7 @@ export default function BrandLogo({
   return (
     <div
       className={[
-        "overflow-hidden rounded-[1.4rem] bg-white/95 ring-1 ring-black/5 shadow-[0_12px_28px_rgba(15,23,42,0.14)]",
+        "overflow-hidden rounded-[1.4rem] border border-white/10 bg-white/8 ring-1 ring-[#A855F7]/25 shadow-[0_0_40px_rgba(168,85,247,0.22)] backdrop-blur-md",
         isFooter ? "p-2.5" : "p-1.5",
       ].join(" ")}
     >

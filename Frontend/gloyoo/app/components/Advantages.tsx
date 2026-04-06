@@ -7,31 +7,33 @@ export default function Advantages({
     content: LocaleDictionary["advantages"];
 }) {
     return (
-        <section id="advantages" className="scroll-mt-24 overflow-hidden bg-black py-2 sm:py-20 lg:py-4" aria-labelledby="advantages-heading">
-            <div className="flex w-full justify-center">
-                <div className="inline-flex h-12 max-w-full items-center justify-center gap-2.5 overflow-hidden whitespace-nowrap rounded-full bg-white/92 px-5 text-brand-steel shadow-[0_10px_30px_rgba(15,23,42,0.12)] ring-1 ring-white/70 backdrop-blur-md transition-all duration-300 sm:gap-3 sm:px-5 sm:py-2.5">
-                    <Image
+        <section
+            id="advantages"
+            className="scroll-mt-24 overflow-hidden bg-[#0B0B0F] py-2 sm:py-20 lg:py-4"
+            aria-labelledby="advantages-heading"
+        >
+                <div className="flex w-full justify-center">
+                   <Image
                         src="/Logo.png"
                         alt="Gloyoo Logo"
                         width={1203}
                         height={1203}
                         quality={100}
                         priority
-                        sizes="(max-width: 640px) 44px, 52px"
-                        className="h-10 w-auto shrink-0 object-contain sm:h-11"
+                        sizes="(max-width: 1000px) 120px, 208px"
+                        className="h-20 w-auto shrink-0 sm:h-32 lg:h-60"
                     />
                 </div>
-            </div>
            
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-4xl text-center">
-                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-cloud">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#A1A1AA]">
                         {content.eyebrow}
                     </p>
                     <h2 id="advantages-heading" className="mt-4 text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
                         {content.title}
                     </h2>
-                    <p className="mt-4 text-base leading-7 text-zinc-400 sm:text-lg">
+                    <p className="mt-4 text-base leading-7 text-[#A1A1AA] sm:text-lg">
                         {content.description}
                     </p>
                 </div>
@@ -41,16 +43,16 @@ export default function Advantages({
                     {content.items.map((item) => (
                         <div
                             key={item.title}
-                            className="rounded-3xl border border-white/10 bg-white/5 p-6 text-center sm:p-8"
+                            className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#7C3AED]/18 to-[#2563EB]/18 p-6 text-center shadow-[0_0_40px_rgba(168,85,247,0.14)] sm:p-8"
                         >
-                            <p className="text-4xl font-semibold text-brand-petalPink sm:text-5xl lg:text-6xl">
+                            <p className="text-4xl font-semibold text-[#A855F7] sm:text-5xl lg:text-6xl">
                                 {item.value}
                             </p>
-                            <p className="text-4xl font-semibold text-brand-cloud sm:text-5xl lg:text-6xl">
+                            <p className="bg-gradient-to-r from-[#7C3AED] to-[#2563EB] bg-clip-text text-4xl font-semibold text-transparent sm:text-5xl lg:text-6xl">
                                 {item.title}
                             </p>
 
-                            <p className="mt-8 pt-3 text-base leading-7 text-zinc-300 sm:text-sm">
+                            <p className="mt-8 pt-3 text-base leading-7 text-[#A1A1AA] sm:text-sm">
                                 {item.subtitle}
                             </p>
                         </div>

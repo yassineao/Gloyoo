@@ -268,8 +268,8 @@ export const dictionaries: Record<Locale, LocaleDictionary> = {
     },
     hero: {
       eyebrow: "Social media and web agency based in Germany",
-      titleFirst: "More Customers",
-      titleSecond: "through social media and modern websites",
+      titleFirst: "More Customers through",
+      titleSecond: " social media and modern websites",
       description:
         "Gloyoo is your social media and web agency in Germany. We help companies build visibility online, strengthen trust, and turn attention into qualified customer inquiries.",
       primaryCta: "Free consultation",

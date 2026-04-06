@@ -112,12 +112,12 @@ export default async function LocalizedHome({
   };
 
   return (
-    <main className="overflow-x-hidden">
+    <main className="overflow-x-hidden bg-[#0B0B0F]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="flex flex-1 flex-col items-center justify-center overflow-hidden bg-zinc-50 font-sans dark:bg-slate-950">
+      <div className="flex flex-1 flex-col items-center justify-center overflow-hidden bg-[#0B0B0F] font-sans">
         <Hero content={dictionary.hero} />
       </div>
 
@@ -128,7 +128,7 @@ export default async function LocalizedHome({
             <ScrollVelocity
               texts={dictionary.scrollTexts}
               velocity={100}
-              className="custom-scroll-text text-3xl font-bold text-brand-teal sm:text-4xl lg:text-6xl xl:text-7xl "
+              className="custom-scroll-text text-3xl font-bold text-[#A855F7] sm:text-4xl lg:text-6xl xl:text-7xl "
             />
 
             <Services content={dictionary.services} />
