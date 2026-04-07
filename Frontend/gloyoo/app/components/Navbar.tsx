@@ -72,7 +72,7 @@ export default function Navbar({
             </Link>
 
             <Link
-              href={`/${locale}#about-us`}
+              href={`/${locale}/form`}
               className="group text-center relative inline-flex h-11 items-center justify-center overflow-hidden rounded-xl border border-[#A855F7] px-4 text-sm font-semibold text-[#A855F7] transition-[color,border-color,transform,box-shadow] duration-300 ease-out hover:border-[#2563EB] hover:text-white hover:shadow-[0_16px_36px_rgba(37,99,235,0.24)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A855F7] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0B0F] sm:px-5 sm:text-sm xl:px-6 xl:text-base"
             >
               <span className="relative z-10">{content.contactLabel}</span>

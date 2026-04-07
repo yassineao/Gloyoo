@@ -1,12 +1,12 @@
 "use client";
 
-import Grainient from "./Grainient";
-import type { LocaleDictionary } from "../lib/i18n";
+import Grainient from "../Grainient";
+import type { LocaleDictionary } from "../../lib/i18n";
 
 export default function Services({
     content,
 }: {
-    content: LocaleDictionary["services"];
+    content: LocaleDictionary["home"]["services"];
 }) {
     const serviceArt = [
         { src: "/social-media.svg", alt: "Social media illustration" },

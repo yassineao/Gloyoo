@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Hero from "../components/Hero";
-import Services from "../components/Services";
+import Hero from "../components/mainPage/Hero";
+import Services from "../components/mainPage/Services";
 import ScrollVelocity from "../components/ScrollVelocity";
-import AboutUs from "../components/AboutUs";
-import Advantages from "../components/Advantages";
+import AboutUs from "../components/mainPage/AboutUs";
+import Advantages from "../components/mainPage/Advantages";
 import Background from "../components/Background";
 import {
   getAlternateLocale,
@@ -31,12 +31,13 @@ export async function generateMetadata({
   }
 
   const dictionary = getDictionary(locale as Locale);
+  const home = dictionary.home;
   const alternateLocale = getAlternateLocale(locale as Locale);
 
   return {
-    title: dictionary.metadata.title,
-    description: dictionary.metadata.description,
-    keywords: dictionary.metadata.keywords,
+    title: home.metadata.title,
+    description: home.metadata.description,
+    keywords: home.metadata.keywords,
     alternates: {
       canonical: `/${locale}`,
       languages: {
@@ -47,11 +48,11 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      locale: dictionary.metadata.locale,
+      locale: home.metadata.locale,
       url: `/${locale}`,
       siteName: siteConfig.name,
-      title: `${siteConfig.name} | ${dictionary.metadata.title}`,
-      description: dictionary.metadata.description,
+      title: `${siteConfig.name} | ${home.metadata.title}`,
+      description: home.metadata.description,
       images: [
         {
           url: "/Logo.png",
@@ -63,8 +64,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${siteConfig.name} | ${dictionary.metadata.title}`,
-      description: dictionary.metadata.description,
+      title: `${siteConfig.name} | ${home.metadata.title}`,
+      description: home.metadata.description,
       images: ["/Logo.png"],
     },
     other: {
@@ -86,6 +87,7 @@ export default async function LocalizedHome({
   }
 
   const dictionary = getDictionary(locale as Locale);
+  const home = dictionary.home;
   const siteUrl = getSiteUrl();
   const localizedUrl = `${siteUrl}/${locale}`;
   const jsonLd = {
@@ -93,15 +95,15 @@ export default async function LocalizedHome({
     "@type": "ProfessionalService",
     name: siteConfig.name,
     url: localizedUrl,
-    description: dictionary.metadata.description,
+    description: home.metadata.description,
     inLanguage: locale === "de" ? "de-DE" : "en-US",
-    areaServed: dictionary.seo.areaServed,
+    areaServed: home.seo.areaServed,
     image: `${siteUrl}/Logo.png`,
-    knowsAbout: dictionary.seo.knowsAbout,
+    knowsAbout: home.seo.knowsAbout,
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: dictionary.seo.offerCatalogName,
-      itemListElement: dictionary.seo.services.map((service) => ({
+      name: home.seo.offerCatalogName,
+      itemListElement: home.seo.services.map((service) => ({
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
@@ -117,25 +119,29 @@ export default async function LocalizedHome({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
       <div className="flex flex-1 flex-col items-center justify-center overflow-hidden bg-[#0B0B0F] font-sans">
-        <Hero content={dictionary.hero} />
+        <Hero content={home.hero} />
       </div>
 
-      <Advantages content={dictionary.advantages} />
+      <div className="  " id="advantages">
+        <Advantages content={home.advantages} />
+      </div>
+
       <div className="  " id="services">
         <Background>
-          <div className="mt-13">
+          <div className="lg:mt-20">
             <ScrollVelocity
-              texts={dictionary.scrollTexts}
+              texts={home.scrollTexts}
               velocity={100}
               className="custom-scroll-text text-3xl font-bold text-[#A855F7] sm:text-4xl lg:text-6xl xl:text-7xl "
             />
 
-            <Services content={dictionary.services} />
+            <Services content={home.services} />
           </div>
         </Background>
       </div>
-      <AboutUs content={dictionary.about} />
+      <AboutUs content={home.about} />
     </main>
   );
 }

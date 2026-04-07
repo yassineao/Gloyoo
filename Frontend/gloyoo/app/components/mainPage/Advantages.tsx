@@ -1,10 +1,10 @@
-import type { LocaleDictionary } from "../lib/i18n";
+import type { LocaleDictionary } from "../../lib/i18n";    
 import Image from "next/image";
 
 export default function Advantages({
     content,
 }: {
-    content: LocaleDictionary["advantages"];
+    content: LocaleDictionary["home"]["advantages"];
 }) {
     return (
         <section

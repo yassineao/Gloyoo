@@ -1,10 +1,10 @@
-import Grainient from "./Grainient";
-import type { LocaleDictionary } from "../lib/i18n";
+import Grainient from "../Grainient";
+import type { LocaleDictionary } from "../../lib/i18n";
 
 export default function AboutUs({
     content,
 }: {
-    content: LocaleDictionary["about"];
+    content: LocaleDictionary["home"]["about"];
 }) {
     return (
         <section id="about-us" className="scroll-mt-24 overflow-hidden  py-16 sm:py-20 lg:py-24" aria-labelledby="about-heading">

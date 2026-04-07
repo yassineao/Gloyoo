@@ -1,11 +1,11 @@
-import Background from "./Background";
+import Background from "../Background";
 import Samsung from "./Samsung";
-import type { LocaleDictionary } from "../lib/i18n";
+import type { LocaleDictionary } from "../../lib/i18n";
 
 export default function Hero({
   content,
 }: {
-  content: LocaleDictionary["hero"];
+  content: LocaleDictionary["home"]["hero"];
 }) {
   return (
     <Background>
