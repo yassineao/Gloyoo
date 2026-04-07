@@ -141,7 +141,7 @@ export default async function LocalizedHome({
           </div>
         </Background>
       </div>
-      <AboutUs content={home.about} />
+      <AboutUs content={home.about} locale={locale} />
     </main>
   );
 }

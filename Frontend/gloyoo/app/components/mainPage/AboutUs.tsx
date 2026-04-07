@@ -2,9 +2,10 @@ import Grainient from "../Grainient";
 import type { LocaleDictionary } from "../../lib/i18n";
 
 export default function AboutUs({
-    content,
+    content, locale
 }: {
     content: LocaleDictionary["home"]["about"];
+    locale: string;
 }) {
     return (
         <section id="about-us" className="scroll-mt-24 overflow-hidden  py-16 sm:py-20 lg:py-24" aria-labelledby="about-heading">
@@ -47,7 +48,7 @@ export default function AboutUs({
                             {content.paragraphs[1]}
                         </p>
                         <a
-                            href="#home"
+                            href={`/${locale}/form`}
                             className="mt-8 inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#7C3AED] to-[#2563EB] px-5 py-3 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(37,99,235,0.28)] transition-all hover:brightness-110"
                         >
                             {content.cta}
