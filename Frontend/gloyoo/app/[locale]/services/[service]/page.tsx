@@ -1,0 +1,141 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import Background from "@/app/components/Background";
+import type { ServiceSlug } from "@/app/types/Service";
+import Service from "../../../components/service/Service";
+import {
+  getAlternateLocale,
+  getDictionary,
+  isValidLocale,
+  locales,
+  type Locale,
+} from "../../../lib/i18n";
+import { getSiteUrl, siteConfig } from "../../../lib/seo";
+
+const serviceSlugs = [
+  "social-media",
+  "content-creation",
+  "performance-marketing",
+  "webdesign",
+] as const;
+
+function isValidServiceSlug(service: string): service is ServiceSlug {
+  return serviceSlugs.includes(service as ServiceSlug);
+}
+
+export async function generateStaticParams() {
+  return locales.flatMap((locale) =>
+    serviceSlugs.map((service) => ({ locale, service }))
+  );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; service: string }>;
+}): Promise<Metadata> {
+  const { locale, service } = await params;
+
+  if (!isValidLocale(locale) || !isValidServiceSlug(service)) {
+    return {};
+  }
+
+  const dictionary = getDictionary(locale as Locale);
+  const servicePage = dictionary.servicePage;
+  const serviceHero = servicePage.hero[service];
+  const alternateLocale = getAlternateLocale(locale as Locale);
+
+  return {
+    title: `${siteConfig.name} | ${serviceHero.title}`,
+    description: serviceHero.description,
+    keywords: servicePage.metadata.keywords,
+    alternates: {
+      canonical: `/${locale}/services/${service}`,
+      languages: {
+        de: `/de/services/${service}`,
+        en: `/en/services/${service}`,
+        "x-default": `/de/services/${service}`,
+      },
+    },
+    openGraph: {
+      type: "website",
+      locale: servicePage.metadata.locale,
+      url: `/${locale}/services/${service}`,
+      siteName: siteConfig.name,
+      title: `${siteConfig.name} | ${serviceHero.title}`,
+      description: serviceHero.description,
+      images: [
+        {
+          url: "/Logo.png",
+          width: 1200,
+          height: 630,
+          alt: "Gloyoo Logo",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${siteConfig.name} | ${serviceHero.title}`,
+      description: serviceHero.description,
+      images: ["/Logo.png"],
+    },
+    other: {
+      "content-language": locale,
+      "x-alternate-locale": alternateLocale,
+    },
+  };
+}
+
+export default async function LocalizedServicePage({
+  params,
+}: {
+  params: Promise<{ locale: string; service: string }>;
+}) {
+  const { locale, service } = await params;
+
+  if (!isValidLocale(locale) || !isValidServiceSlug(service)) {
+    notFound();
+  }
+
+  const dictionary = getDictionary(locale as Locale);
+  const servicePage = dictionary.servicePage;
+  const serviceHero = servicePage.hero[service];
+  const siteUrl = getSiteUrl();
+  const localizedUrl = `${siteUrl}/${locale}/services/${service}`;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: siteConfig.name,
+    url: localizedUrl,
+    description: serviceHero.description,
+    inLanguage: locale === "de" ? "de-DE" : "en-US",
+    areaServed: servicePage.seo.areaServed,
+    image: `${siteUrl}/Logo.png`,
+    knowsAbout: servicePage.seo.knowsAbout,
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: servicePage.seo.offerCatalogName,
+      itemListElement: servicePage.seo.services.map((serviceName) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: serviceName,
+        },
+      })),
+    },
+  };
+
+  return (
+    <main className="overflow-x-hidden bg-[#0B0B0F]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <Background>
+        <div className="mt-16 flex flex-1 flex-col items-center justify-center overflow-hidden bg-[#0B0B0F]/30 font-sans">
+          <Service content={servicePage} service={service} />
+        </div>
+      </Background>
+    </main>
+  );
+}

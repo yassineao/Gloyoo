@@ -11,7 +11,7 @@ export default function Hero({
     <Background>
       <section
         id="home"
-        className="min-h-screen scroll-mt-24 px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pt-36"
+        className="min-h-screen scroll-mt-24 px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pt-36 lg:mt-10"
       >
         <div className="mx-auto max-w-7xl">
           <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 xl:gap-1">

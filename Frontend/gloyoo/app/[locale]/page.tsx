@@ -120,7 +120,7 @@ export default async function LocalizedHome({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="flex flex-1 flex-col items-center justify-center overflow-hidden bg-[#0B0B0F] font-sans">
+      <div className="flex flex-1 flex-col items-center justify-center overflow-hidden bg-[#0B0B0F] font-sans lg:mt-10">
         <Hero content={home.hero} />
       </div>
 
@@ -128,7 +128,7 @@ export default async function LocalizedHome({
         <Advantages content={home.advantages} />
       </div>
 
-      <div className="  " id="services">
+      <div className=" lg:mt-10 lg:mb-10 " id="services">
         <Background>
           <div className="lg:mt-20">
             <ScrollVelocity

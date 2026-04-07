@@ -1,4 +1,5 @@
 import type { Infos } from "./Infos";
+import type { ServiceFeatures, ServiceHeroCollection } from "./Service";
 
 type NavItem = {
   label: string;
@@ -76,6 +77,13 @@ type FormContent = {
   seo: PageSeo;
 };
 
+type ServicePageContent = {
+  metadata: PageMetadata;
+  hero: ServiceHeroCollection;
+  features: ServiceFeatures;
+  seo: PageSeo;
+};
+
 type LocaleDictionary = {
   localeName: string;
   nav: {
@@ -98,6 +106,7 @@ type LocaleDictionary = {
     legalLinks: FooterLink[];
   };
   home: HomeContent;
+  servicePage: ServicePageContent;
   form: FormContent;
 };
 
@@ -111,4 +120,5 @@ export type {
   PageMetadata,
   PageSeo,
   ServiceItem,
+  ServicePageContent,
 };

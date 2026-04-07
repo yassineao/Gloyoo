@@ -153,6 +153,110 @@ export const dictionaries: Record<Locale, LocaleDictionary> = {
         ],
       },
     },
+    servicePage: {
+      metadata: {
+        title: "Leistungen von Gloyoo | Social Media, Content und Webdesign",
+        description:
+          "Entdecken Sie die Leistungen von Gloyoo: strategische Social-Media-Betreuung, Content Creation, Performance Marketing und Webdesign fuer mehr Sichtbarkeit und Anfragen.",
+        locale: "de_DE",
+        keywords: [
+          "Gloyoo Leistungen",
+          "Social Media Betreuung",
+          "Content Creation Agentur",
+          "Performance Marketing",
+          "Webdesign Deutschland",
+        ],
+      },
+      hero: {
+        "social-media": {
+                    imageUrl: "https://imgs.search.brave.com/k2Mb30Q2GikWc_eQ-lCn9Ra7fIm3d-Lm-8ePAocKomI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LW1hbmFnZW1l/bnQtZmlsZXMuY2Fu/dmEuY29tLzBlNmZi/OTMwLTI2NGItNGRl/Ny1iNzRjLTM5ZTMw/MzMzNzcwNy9oZWFk/ZXJwaW50ZXJlc3Qu/cG5n",
+
+          badge: "Social Media Betreuung",
+          title: "Social Media Betreuung, die Ihre Marke sichtbar macht",
+          description:
+            "Wir planen, gestalten und betreuen Ihre Kanaele so, dass Ihre Marke professionell auftritt und regelmaessig qualifizierte Anfragen gewinnt.",
+          primaryCta: "Beratung anfragen",
+          secondaryCta: "Mehr erfahren",
+          imageAlt: "Visual fuer Social Media Betreuung von Gloyoo",
+        },
+        "content-creation": {
+          badge: "Content Creation",
+                    imageUrl: "https://assets.prebuiltui.com/images/components/hero/hero-rightside-image.png",
+
+          title: "Content Creation, die Aufmerksamkeit in Vertrauen verwandelt",
+          description:
+            "Von Reels bis Brand Assets erstellen wir Inhalte, die Ihre Zielgruppe ansprechen, Wiedererkennung schaffen und Ihre Marke staerken.",
+          primaryCta: "Projekt anfragen",
+          secondaryCta: "Referenzen ansehen",
+          imageAlt: "Visual fuer Content Creation von Gloyoo",
+        },
+        "performance-marketing": {
+                    imageUrl: "https://imgs.search.brave.com/k2Mb30Q2GikWc_eQ-lCn9Ra7fIm3d-Lm-8ePAocKomI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LW1hbmFnZW1l/bnQtZmlsZXMuY2Fu/dmEuY29tLzBlNmZi/OTMwLTI2NGItNGRl/Ny1iNzRjLTM5ZTMw/MzMzNzcwNy9oZWFk/ZXJwaW50ZXJlc3Qu/cG5n",
+
+          badge: "Performance Marketing",
+          title: "Performance Marketing mit Fokus auf Leads und Umsatz",
+          description:
+            "Mit datenbasierten Kampagnen steigern wir Reichweite, Conversions und messbare Ergebnisse auf den Kanaelen, die fuer Ihr Unternehmen zaehlen.",
+          primaryCta: "Strategie anfragen",
+          secondaryCta: "Potenzial entdecken",
+          imageAlt: "Visual fuer Performance Marketing von Gloyoo",
+        },
+        webdesign: {
+                    imageUrl: "https://assets.prebuiltui.com/images/components/hero/hero-rightside-image.png",
+
+          badge: "Webdesign",
+          title: "Webdesign, das ueberzeugt und Anfragen erzeugt",
+          description:
+            "Wir entwickeln moderne Websites, die Ihre Marke professionell praesentieren, Vertrauen aufbauen und Besucher in Kundenanfragen verwandeln.",
+          primaryCta: "Website planen",
+          secondaryCta: "Mehr erfahren",
+          imageAlt: "Visual fuer Webdesign von Gloyoo",
+        },
+      },
+      features: {
+        badge: "Unsere Kernleistungen",
+        title: "Jede Marke braucht einen klaren, starken digitalen Auftritt.",
+        description:
+          "Wir kombinieren Strategie, Kreativitaet und Umsetzung, damit Ihre Online-Praesenz professionell wirkt und messbare Ergebnisse liefert.",
+        items: [
+          {
+            title: "Mehr Reichweite",
+            description:
+              "Steigern Sie Sichtbarkeit, Website-Besuche und qualifizierte Kontakte ueber starke Inhalte und Kampagnen.",
+            imageAlt: "Diagramm zur Reichweitensteigerung",
+            statLabel: "45%",
+          },
+          {
+            title: "Struktur fuer Ihr Marketing",
+            description:
+              "Klare Prozesse, abgestimmte Inhalte und ein konsistenter Markenauftritt fuer nachhaltiges Wachstum.",
+            imageAlt: "Dashboard zur Marketingstruktur",
+          },
+          {
+            title: "Nahtlose Umsetzung",
+            description:
+              "Webdesign, Content und Performance Marketing greifen ineinander und sorgen fuer ein stimmiges Gesamterlebnis.",
+            imageAlt: "Illustration zur digitalen Integration",
+          },
+        ],
+      },
+      seo: {
+        areaServed: "Deutschland",
+        knowsAbout: [
+          "Social Media Betreuung",
+          "Content Creation",
+          "Performance Marketing",
+          "Webdesign",
+        ],
+        offerCatalogName: "Leistungen von Gloyoo",
+        services: [
+          "Social Media Betreuung",
+          "Content Creation",
+          "Performance Marketing",
+          "Webdesign",
+        ],
+      },
+    },
     form: {
       metadata: {
         title: "Kontaktformular fuer Ihre Anfrage an Gloyoo",
@@ -362,6 +466,109 @@ export const dictionaries: Record<Locale, LocaleDictionary> = {
           "Social Media Management",
           "Content Creation",
           "Performance Marketing",
+        ],
+      },
+    },
+    servicePage: {
+      metadata: {
+        title: "Gloyoo Services | Social Media, Content and Web Design",
+        description:
+          "Explore Gloyoo services including strategic social media management, content creation, performance marketing, and web design for stronger visibility and more qualified inquiries.",
+        locale: "en_US",
+        keywords: [
+          "Gloyoo services",
+          "social media management",
+          "content creation agency",
+          "performance marketing",
+          "web design Germany",
+        ],
+      },
+      hero: {
+        "social-media": {
+          badge: "Social Media Management",
+          imageUrl: "https://assets.prebuiltui.com/images/components/hero/hero-rightside-image.png",
+          title: "Social media management that makes your brand visible",
+          description:
+            "We plan, design, and manage your channels so your brand shows up professionally and consistently generates qualified inquiries.",
+          primaryCta: "Book a consultation",
+          secondaryCta: "Learn more",
+          imageAlt: "Visual for Gloyoo social media management",
+        },
+        "content-creation": {
+          badge: "Content Creation",
+                    imageUrl: "https://assets.prebuiltui.com/images/components/hero/hero-rightside-image.png",
+
+          title: "Content creation that turns attention into trust",
+          description:
+            "From reels to brand assets, we create content that speaks to your audience, builds recognition, and strengthens your brand.",
+          primaryCta: "Start your project",
+          secondaryCta: "View examples",
+          imageAlt: "Visual for Gloyoo content creation",
+        },
+        "performance-marketing": {
+                    imageUrl: "https://assets.prebuiltui.com/images/components/hero/hero-rightside-image.png",
+
+          badge: "Performance Marketing",
+          title: "Performance marketing focused on leads and revenue",
+          description:
+            "With data-driven campaigns, we increase reach, conversions, and measurable results on the channels that matter most to your business.",
+          primaryCta: "Request a strategy",
+          secondaryCta: "See the potential",
+          imageAlt: "Visual for Gloyoo performance marketing",
+        },
+        webdesign: {
+          badge: "Web Design",
+                    imageUrl: "https://assets.prebuiltui.com/images/components/hero/hero-rightside-image.png",
+
+          title: "Web design that convinces and drives inquiries",
+          description:
+            "We build modern websites that present your brand professionally, build trust, and turn visitors into real customer inquiries.",
+          primaryCta: "Plan your website",
+          secondaryCta: "Learn more",
+          imageAlt: "Visual for Gloyoo web design",
+        },
+      },
+      features: {
+        badge: "Our core features",
+        title: "Every brand needs a clear and consistent digital presence.",
+        description:
+          "We combine strategy, creativity, and execution so your online presence feels professional and delivers measurable results.",
+        items: [
+          {
+            title: "More reach",
+            description:
+              "Increase visibility, website visits, and qualified leads through strong content and focused campaigns.",
+            imageAlt: "Graph showing audience growth",
+            statLabel: "45%",
+          },
+          {
+            title: "Marketing structure for teams",
+            description:
+              "Build clear processes, aligned content, and a consistent brand presence that supports sustainable growth.",
+            imageAlt: "Dashboard showing marketing structure",
+          },
+          {
+            title: "Seamless execution",
+            description:
+              "Web design, content, and performance marketing work together to create one strong digital experience.",
+            imageAlt: "Illustration of seamless digital integration",
+          },
+        ],
+      },
+      seo: {
+        areaServed: "Germany",
+        knowsAbout: [
+          "Social Media Management",
+          "Content Creation",
+          "Performance Marketing",
+          "Web Design",
+        ],
+        offerCatalogName: "Gloyoo services",
+        services: [
+          "Social Media Management",
+          "Content Creation",
+          "Performance Marketing",
+          "Web Design",
         ],
       },
     },
