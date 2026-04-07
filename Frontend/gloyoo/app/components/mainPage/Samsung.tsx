@@ -1,6 +1,6 @@
  "use client";
 
-import { SamsungS26MockupProps } from "../types/Samsung";
+import type { SamsungS26MockupProps } from "@/app/types/Samsung";
 import { Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
