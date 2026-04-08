@@ -1,36 +1,146 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gloyoo Frontend
 
-## Getting Started
+A modern bilingual marketing website for **Gloyoo**, built to showcase social media services, performance marketing, content creation, and web design.
 
-First, run the development server:
+The project uses `Next.js 16`, `React 19`, `TypeScript`, and `Tailwind CSS 4`, with localized routes, SEO metadata, animated UI sections, and dedicated service pages.
+
+---
+
+## ✨ Highlights
+
+- **German and English support** with locale-based routing: `/de` and `/en`
+- **Localized landing page** with hero, advantages, services, and about sections
+- **Dedicated service pages** for:
+  - `social-media`
+  - `content-creation`
+  - `performance-marketing`
+  - `webdesign`
+- **Consultation form page** at `/:locale/form`
+- **SEO-ready setup** with route metadata, Open Graph, Twitter cards, JSON-LD, `robots.ts`, and `sitemap.ts`
+- **Animated visual experience** powered by `motion`, `gsap`, and custom background effects
+
+## 🧱 Tech Stack
+
+| Layer | Tools |
+| --- | --- |
+| Framework | `Next.js 16` App Router |
+| UI | `React 19`, `TypeScript` |
+| Styling | `Tailwind CSS 4` |
+| Animation | `motion`, `gsap`, `ogl` |
+| Code Quality | `ESLint 9` |
+
+## 📁 Project Structure
+
+```text
+gloyoo/
+├─ app/
+│  ├─ [locale]/
+│  │  ├─ page.tsx                    # localized homepage
+│  │  ├─ form/page.tsx               # contact/consultation form page
+│  │  └─ services/[service]/page.tsx # service detail pages
+│  ├─ components/
+│  │  ├─ mainPage/                   # homepage sections
+│  │  ├─ service/                    # service-page UI
+│  │  └─ form/                       # form UI
+│  ├─ lib/
+│  │  ├─ i18n.ts                     # locale dictionaries and helpers
+│  │  └─ seo.ts                      # site metadata helpers
+│  ├─ robots.ts
+│  └─ sitemap.ts
+├─ public/
+├─ next.config.ts
+└─ package.json
+```
+
+## 🚀 Getting Started
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000).
+The root route redirects automatically to `http://localhost:3000/de`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📜 Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the local development server |
+| `npm run build` | Build the app for production |
+| `npm run start` | Run the production build locally |
+| `npm run lint` | Run ESLint |
 
-## Learn More
+## 🌍 Routing Overview
 
-To learn more about Next.js, take a look at the following resources:
+| Route | Purpose |
+| --- | --- |
+| `/` | Redirects to `/de` |
+| `/:locale` | Localized homepage |
+| `/:locale/form` | Localized consultation form |
+| `/:locale/services/:service` | Localized service detail page |
+| `/robots.txt` | Search engine crawl rules |
+| `/sitemap.xml` | Generated sitemap |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Supported locales:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `de`
+- `en`
 
-## Deploy on Vercel
+## 🗂️ Content & Localization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Most marketing copy, labels, metadata, and service content are managed in:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `app/lib/i18n.ts`
+
+If you want to update:
+
+- navigation labels
+- hero text
+- service descriptions
+- SEO titles and descriptions
+- form labels and testimonials
+
+start with that file.
+
+## 🔎 SEO Configuration
+
+SEO helpers and site-level metadata live in:
+
+- `app/lib/seo.ts`
+- `app/layout.tsx`
+- `app/robots.ts`
+- `app/sitemap.ts`
+
+You can optionally define the public site URL in `.env.local`:
+
+```env
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
+
+If not set, the project falls back to `https://gloyoo.vercel.app`.
+
+## 📝 Notes
+
+- `app/api/` is currently empty, so the form is presentational unless a backend endpoint is added.
+- The site is structured as a lead-generation/agency website and is a strong fit for deployment on **Vercel**.
+
+---
+
+## ✅ Summary
+
+This frontend is a clean, multilingual agency site for Gloyoo with:
+
+- strong landing-page structure
+- reusable components
+- localized SEO support
+- room for future form/API integration
+
+
