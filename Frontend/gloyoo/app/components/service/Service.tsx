@@ -16,7 +16,7 @@ export default function Service({ content, service }: ServiceProps) {
     <div>
       <Hero content={heroContent} />
       <Graphs content={content.features} />
-      <Features />
+      <Features content={content.features} />
     </div>
   );
 }

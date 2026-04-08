@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import MobileNav from "./MobileNav";
+import { usePathname } from "next/navigation";
 import {
   getAlternateLocale,
   type Locale,
@@ -16,6 +19,11 @@ export default function Navbar({
 }) {
   const alternateLocale = getAlternateLocale(locale);
   const localizedHref = (href: string) => `/${locale}${href}`;
+  const pathname = usePathname();
+  const alternatePathname =
+    pathname?.replace(/^\/(de|en)(?=\/|$)/, `/${alternateLocale}`) ??
+    `/${alternateLocale}`;
+  const alternateHref = alternatePathname;
 
   return (
     <header className="fixed top-0 z-20 min-w-full border-b border-white/8 bg-[#0B0B0F]/45 px-4 text-slate-50  backdrop-blur-md sm:border-transparent sm:px-6 lg:px-27">
@@ -92,7 +100,7 @@ export default function Navbar({
 
           <div className="hidden items-center gap-2 text-right lg:col-span-1 lg:flex lg:justify-end xl:gap-4">
             <Link
-              href={`/${alternateLocale}`}
+              href={alternateHref}
               className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-[#A1A1AA] transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A855F7] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0B0F]"
             >
               {content.switchLabel}
@@ -109,7 +117,7 @@ export default function Navbar({
 
           <MobileNav
             locale={locale}
-            alternateLocale={alternateLocale}
+            alternateHref={alternateHref}
             content={content}
           />
         </nav>

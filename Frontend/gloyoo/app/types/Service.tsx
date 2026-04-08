@@ -23,14 +23,21 @@ type ServiceFeaturesItem = {
   statLabel?: string;
 };
 
+type ServiceFeatureSection = {
+  title: string;
+  points: string[];
+};
+
 type ServiceFeatures = {
   badge: string;
   title: string;
   description: string;
   items: ServiceFeaturesItem[];
+  sections: ServiceFeatureSection[];
 };
 
 export type {
+  ServiceFeatureSection,
   ServiceFeatures,
   ServiceFeaturesItem,
   ServiceHero,

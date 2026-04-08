@@ -11,6 +11,7 @@ export default function Samsung({
   className = "",
   imagePriority = false,
   imageQuality,
+  imageSizes,
   videoProps,
 }: SamsungS26MockupProps) {
   const height = Math.round(width * 2.08);
@@ -85,7 +86,7 @@ export default function Samsung({
                 src={media}
                 alt={alt}
                 fill
-                sizes={`${width}px`}
+                sizes={imageSizes ?? `${width}px`}
                 quality={imageQuality ?? (imagePriority ? 70 : 80)}
                 priority={imagePriority}
                 className="object-contain"

@@ -6,13 +6,13 @@ import type { Locale, LocaleDictionary } from "../lib/i18n";
 
 type MobileNavProps = {
   locale: Locale;
-  alternateLocale: Locale;
+  alternateHref: string;
   content: LocaleDictionary["nav"];
 };
 
 export default function MobileNav({
   locale,
-  alternateLocale,
+  alternateHref,
   content,
 }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +22,7 @@ export default function MobileNav({
     <>
       <div className="flex items-center justify-self-end lg:hidden">
         <Link
-          href={`/${alternateLocale}`}
+          href={alternateHref}
           className="mr-4 block py-2 text-sm font-medium text-[#A1A1AA] hover:text-white"
           onClick={() => setIsOpen(false)}
         >

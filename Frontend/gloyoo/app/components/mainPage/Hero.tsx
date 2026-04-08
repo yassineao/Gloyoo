@@ -9,7 +9,7 @@ export default function Hero({
   return (
       <section
         id="home"
-        className="min-h-screen scroll-mt-24 px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pt-36 lg:mt-10"
+        className="min-h-screen scroll-mt-24 px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pt-26 "
       >
         <div className="mx-auto max-w-7xl">
           <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 xl:gap-1">
@@ -62,24 +62,33 @@ export default function Hero({
               </div>
             </div>
 
-            <div className="relative mx-auto flex w-full max-w-[320px] justify-center  lg:max-w-[520px]">
-              {/* <div className="relative z-10">
-                <Samsung
+            <div className="relative mx-auto flex w-full max-w-[320px] justify-center  lg:max-w-[520px] lg:ml-4">
+              <div className="relative z-10">
+                {/* <Samsung
                   media="/intro.mp4"
                   mediaType="video"
-                  width={220}
+                  width={280}
                   alt={content.videoAlt}
-                />
-              </div> */}
-
-              <div className="absolute -right-2 top-8 scale-75 opacity-90 sm:right-0 sm:top-10 sm:scale-90 md:right-4 lg:top-14">
+                /> */}
                 <Samsung
-                  media="/intro-hero.jpg"
+                  media="/compressed-intro.png"
                   mediaType="image"
-                  width={220}
+                  width={280}
                   alt={content.imageAlt}
                   imagePriority
                   imageQuality={65}
+                  imageSizes="(max-width: 639px) 280px, (max-width: 1023px) 280px, 326px"
+                />
+              </div>
+
+              <div className="absolute -right-2 top-4 scale-75 opacity-90 sm:right-0 sm:top-10 sm:scale-90 md:right-4 lg:top-14">
+                <Samsung
+                  media="/compressed-intro.png"
+                  mediaType="image"
+                  width={280}
+                  alt={content.imageAlt}
+                  imageQuality={55}
+                  imageSizes="(max-width: 639px) 210px, (max-width: 1023px) 252px, 293px"
                 />
               </div>
             </div>
