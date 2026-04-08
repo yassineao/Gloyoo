@@ -13,7 +13,25 @@ export const dictionaries: Record<Locale, LocaleDictionary> = {
       homeAriaLabel: "Zur Startseite von Gloyoo",
       items: [
         { label: "Vorteile", href: "#advantages" },
-        { label: "Leistungen", href: "#services" },
+        {
+          label: "Leistungen",
+          href: "#services",
+          children: [
+            {
+              label: "Social Media Betreuung",
+              href: "/services/social-media",
+            },
+            {
+              label: "Content Creation",
+              href: "/services/content-creation",
+            },
+            {
+              label: "Performance Marketing",
+              href: "/services/performance-marketing",
+            },
+            { label: "Webdesign", href: "/services/webdesign" },
+          ],
+        },
         { label: "Ueber uns", href: "#about-us" },
       ],
       contactLabel: "Beratung anfragen",
@@ -329,7 +347,25 @@ export const dictionaries: Record<Locale, LocaleDictionary> = {
       homeAriaLabel: "Go to the Gloyoo homepage",
       items: [
         { label: "Benefits", href: "#advantages" },
-        { label: "Services", href: "#services" },
+        {
+          label: "Services",
+          href: "#services",
+          children: [
+            {
+              label: "Social Media Management",
+              href: "/services/social-media",
+            },
+            {
+              label: "Content Creation",
+              href: "/services/content-creation",
+            },
+            {
+              label: "Performance Marketing",
+              href: "/services/performance-marketing",
+            },
+            { label: "Web Design", href: "/services/webdesign" },
+          ],
+        },
         { label: "About", href: "#about-us" },
       ],
       contactLabel: "Book a consultation",

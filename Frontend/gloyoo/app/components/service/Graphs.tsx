@@ -1,5 +1,5 @@
 import type { LocaleDictionary } from "../../lib/i18n";
-
+import Image from "next/image";
 type GraphsProps = {
   content: LocaleDictionary["servicePage"]["features"];
 };
@@ -52,12 +52,14 @@ export default function Graphs({ content }: GraphsProps) {
               ) : null}
 
               <div className="flex flex-1 items-center justify-center">
-                <img
+                <Image
                   className={`w-full object-contain ${
                     index === 0 ? "max-w-56" : index === 2 ? "max-w-60" : ""
                   }`}
                   src={featureImages[index] ?? featureImages[0]}
                   alt={item.imageAlt}
+                  width={index === 0 ? 224 : index === 2 ? 240 : 0}
+                  height={index === 0 ? 224 : index === 2 ? 240 : 0}
                 />
               </div>
               <h3 className="mt-8 text-left text-base font-medium text-white">

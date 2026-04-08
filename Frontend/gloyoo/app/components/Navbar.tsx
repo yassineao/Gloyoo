@@ -51,13 +51,42 @@ export default function Navbar({
           <div className="hidden lg:col-span-2 lg:block lg:justify-self-center">
             <ul className="flex items-center gap-1 xl:gap-2">
               {content.items.map((item) => (
-                <li key={item.href}>
+                <li key={item.href} className="group relative">
                   <Link
                     href={localizedHref(item.href)}
                     className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-[#A1A1AA] transition-colors hover:bg-white/8 hover:text-white focus:outline-none"
                   >
                     {item.label}
+                    {item.children?.length ? (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        className="ml-1 size-4 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
+                      >
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    ) : null}
                   </Link>
+
+                  {item.children?.length ? (
+                    <div className="invisible absolute left-0 top-full z-30 mt-2 w-64 translate-y-1 rounded-xl border border-white/10 bg-[#0B0B0F]/95 p-2 opacity-0 shadow-[0_16px_40px_rgba(0,0,0,0.35)] backdrop-blur-md transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                      <ul className="space-y-1">
+                        {item.children.map((child) => (
+                          <li key={child.href}>
+                            <Link
+                              href={localizedHref(child.href)}
+                              className="block rounded-lg px-3 py-2 text-sm text-[#A1A1AA] transition-colors hover:bg-white/8 hover:text-white focus:outline-none"
+                            >
+                              {child.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : null}
                 </li>
               ))}
             </ul>
@@ -130,6 +159,22 @@ export default function Navbar({
                 >
                   {item.label}
                 </Link>
+
+                {item.children?.length ? (
+                  <ul className="ml-4 mt-2 space-y-2 border-l border-white/10 pl-4 text-sm">
+                    {item.children.map((child) => (
+                      <li key={child.href}>
+                        <Link
+                          href={localizedHref(child.href)}
+                          className="block py-1 hover:text-white"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
               </li>
             ))}
             <li>

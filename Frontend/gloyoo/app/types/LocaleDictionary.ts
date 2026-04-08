@@ -4,6 +4,7 @@ import type { ServiceFeatures, ServiceHeroCollection } from "./Service";
 type NavItem = {
   label: string;
   href: string;
+  children?: NavItem[];
 };
 
 type ServiceItem = {

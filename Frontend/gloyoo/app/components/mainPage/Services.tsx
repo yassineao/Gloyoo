@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Grainient from "../Grainient";
 import type { LocaleDictionary } from "../../lib/i18n";
 
@@ -41,10 +42,14 @@ export default function Services({
                                 >
                                     <div className="relative flex h-48 w-full items-center justify-center overflow-hidden sm:h-56">
                                         <Grainient className="h-full w-full" color1="#A855F7" color2="#2563EB" color3="#0B0B0F" />
-                                        <img
+                                        <Image
+                                            
                                             src={art.src}
                                             alt={art.alt}
                                             className="absolute z-10 h-auto w-36 max-w-[70%] object-contain sm:w-40"
+                                            width={144}
+                                            height={144}
+
                                         />
                                     </div>
 

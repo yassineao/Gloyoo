@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Infos } from "@/app/types/Infos";
 
 type FormProps = {
@@ -101,10 +102,13 @@ export default function Form({ content }: FormProps) {
         </div>
 
         <div className="relative hidden min-h-[662px] w-full max-w-[520px] flex-col justify-between overflow-hidden rounded-3xl p-10 md:flex">
-          <img
+          <Image
             src={content.testimonial.imageUrl}
             alt={content.testimonial.imageAlt}
             className="absolute inset-0 h-full w-full object-cover"
+            width={520}
+            height={662}
+
           />
 
           <div className="relative z-10 mt-auto">
