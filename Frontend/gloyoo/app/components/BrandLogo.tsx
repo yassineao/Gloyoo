@@ -21,8 +21,8 @@ export default function BrandLogo({
       <Image
         src="/Logo.png"
         alt="Gloyoo Logo"
-        width={96}
-        height={96}
+        width={986}
+        height={948}
         quality={80}
         priority={priority}
         sizes={isFooter ? "96px" : "(max-width: 640px) 40px, 48px"}

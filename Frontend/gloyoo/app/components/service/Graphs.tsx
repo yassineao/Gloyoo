@@ -12,7 +12,7 @@ const featureImages = [
 
 export default function Graphs({ content }: GraphsProps) {
   return (
-    <section id="services-overview" className="px-4 py-16">
+    <section id="services-overview" className="px-4 py-16 ">
       <div className="flex flex-col items-center justify-center text-center">
         <button className="rounded-full bg-neutral-800 px-6 py-2.5 text-sm text-white/80">
           {content.badge}

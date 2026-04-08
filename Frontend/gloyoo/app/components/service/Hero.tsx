@@ -9,14 +9,14 @@ export default function Hero({ content }: HeroProps) {
   return (
       <section className="px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
         <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-20">
-          <div className="order-2 flex justify-center lg:order-1 lg:justify-end">
+          <div className="order-2 hidden justify-center md:flex lg:order-1 lg:justify-end">
             <Image
               src={content.imageUrl}
               alt={content.imageAlt}
               width={960}
               height={1200}
               priority
-              className="max-h-[400px] w-full max-w-xl rounded-3xl object-cover lg:max-h-[800px]"
+              className="max-h-[400px] w-full max-w-xl rounded-3xl object-cover lg:max-h-[800px] "
             />
           </div>
 
@@ -40,7 +40,7 @@ export default function Hero({ content }: HeroProps) {
               </button>
               <button
                 type="button"
-                className="inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md border border-input bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-zinc-100 hover:text-zinc-800 sm:w-auto"
+                className="inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md border border-input bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-zinc-100 hover:text-zinc-800 sm:w-auto text-black sm:mt-2"
               >
                 {content.secondaryCta}
                 <svg

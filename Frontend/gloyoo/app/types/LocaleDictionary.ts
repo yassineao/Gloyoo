@@ -1,5 +1,5 @@
 import type { Infos } from "./Infos";
-import type { ServiceFeatures, ServiceHeroCollection } from "./Service";
+import type { ServiceFeatures, ServiceHero2, ServiceHeroCollection } from "./Service";
 
 type NavItem = {
   label: string;
@@ -83,6 +83,7 @@ type ServicePageContent = {
   hero: ServiceHeroCollection;
   features: ServiceFeatures;
   seo: PageSeo;
+  hero2: ServiceHero2;
 };
 
 type LocaleDictionary = {

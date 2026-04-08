@@ -13,6 +13,15 @@ type ServiceHero = {
   imageAlt: string;
     imageUrl: string;
 };
+type ServiceHero2 = {
+  badge: string;
+  title: string;
+  description: string;
+  subtitle: string;
+  subdescription: string;
+  imageAlt: string;
+    imageUrl: string;
+};
 
 type ServiceHeroCollection = Record<ServiceSlug, ServiceHero>;
 
@@ -43,4 +52,5 @@ export type {
   ServiceHero,
   ServiceHeroCollection,
   ServiceSlug,
+  ServiceHero2,
 };

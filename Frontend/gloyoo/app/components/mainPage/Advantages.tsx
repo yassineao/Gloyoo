@@ -16,8 +16,8 @@ export default function Advantages({
                    <Image
                         src="/Logo.png"
                         alt="Gloyoo Logo"
-                        width={1203}
-                        height={1203}
+                        width={986}
+                        height={948}
                         quality={100}
                         priority
                         sizes="(max-width: 1000px) 120px, 208px"

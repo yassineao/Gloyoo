@@ -41,8 +41,8 @@ export default function Navbar({
               <Image
                 src="/Logo.png"
                 alt="Gloyoo Logo"
-                width={96}
-                height={96}
+                width={986}
+                height={948}
                 quality={80}
                 priority
                 sizes="(max-width: 640px) 36px, (max-width: 1024px) 44px, 52px"

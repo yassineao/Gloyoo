@@ -132,7 +132,7 @@ export default async function LocalizedServicePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Background>
-        <div className="mt-16 flex flex-1 flex-col items-center justify-center overflow-hidden bg-[#0B0B0F]/30 font-sans">
+        <div className=" overflow-hidden bg-[#0B0B0F]/30 font-sans">
           <Service content={servicePage} service={service} />
         </div>
       </Background>
