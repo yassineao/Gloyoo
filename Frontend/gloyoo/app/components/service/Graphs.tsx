@@ -58,8 +58,8 @@ export default function Graphs({ content }: GraphsProps) {
                   }`}
                   src={featureImages[index] ?? featureImages[0]}
                   alt={item.imageAlt}
-                  width={index === 0 ? 224 : index === 2 ? 240 : 0}
-                  height={index === 0 ? 224 : index === 2 ? 240 : 0}
+                  width={400}
+                  height={300}
                 />
               </div>
               <h3 className="mt-8 text-left text-base font-medium text-white">

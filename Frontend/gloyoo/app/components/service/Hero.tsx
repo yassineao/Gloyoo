@@ -1,6 +1,5 @@
 import Image from "next/image";
 import type { ServiceHero } from "@/app/types/Service";
-import Background from "../Background";
 
 type HeroProps = {
   content: ServiceHero;
@@ -8,7 +7,6 @@ type HeroProps = {
 
 export default function Hero({ content }: HeroProps) {
   return (
-    <Background>
       <section className="px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
         <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-20">
           <div className="order-2 flex justify-center lg:order-1 lg:justify-end">
@@ -23,9 +21,7 @@ export default function Hero({ content }: HeroProps) {
           </div>
 
           <div className="order-1 flex flex-col items-center text-center lg:order-2 lg:max-w-3xl lg:items-start lg:text-left">
-            <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-[#A855F7]">
-              {content.badge}
-            </span>
+           
 
             <h1 className="my-6 text-pretty text-4xl font-bold text-white lg:text-6xl xl:text-7xl">
               {content.title}
@@ -67,6 +63,5 @@ export default function Hero({ content }: HeroProps) {
           </div>
         </div>
       </section>
-    </Background>
   );
 }

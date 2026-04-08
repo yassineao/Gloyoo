@@ -1,4 +1,3 @@
-import Background from "../Background";
 import Samsung from "./Samsung";
 import type { LocaleDictionary } from "../../lib/i18n";
 
@@ -8,7 +7,6 @@ export default function Hero({
   content: LocaleDictionary["home"]["hero"];
 }) {
   return (
-    <Background>
       <section
         id="home"
         className="min-h-screen scroll-mt-24 px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pt-36 lg:mt-10"
@@ -64,28 +62,29 @@ export default function Hero({
               </div>
             </div>
 
-            <div className="relative mx-auto flex w-full max-w-[320px] justify-center sm:max-w-[420px] lg:max-w-[520px]">
-              <div className="relative z-10">
+            <div className="relative mx-auto flex w-full max-w-[320px] justify-center  lg:max-w-[520px]">
+              {/* <div className="relative z-10">
                 <Samsung
                   media="/intro.mp4"
                   mediaType="video"
                   width={220}
                   alt={content.videoAlt}
                 />
-              </div>
+              </div> */}
 
               <div className="absolute -right-2 top-8 scale-75 opacity-90 sm:right-0 sm:top-10 sm:scale-90 md:right-4 lg:top-14">
                 <Samsung
-                  media="/intro.png"
+                  media="/intro-hero.jpg"
                   mediaType="image"
                   width={220}
                   alt={content.imageAlt}
+                  imagePriority
+                  imageQuality={65}
                 />
               </div>
             </div>
           </div>
         </div>
       </section>
-    </Background>
   );
 }

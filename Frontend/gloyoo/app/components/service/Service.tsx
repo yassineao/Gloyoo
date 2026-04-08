@@ -2,6 +2,7 @@ import type { LocaleDictionary } from "@/app/lib/i18n";
 import type { ServiceSlug } from "@/app/types/Service";
 import Graphs from "./Graphs";
 import Hero from "./Hero";
+import Features from "./Features";
 
 type ServiceProps = {
   content: LocaleDictionary["servicePage"];
@@ -15,6 +16,7 @@ export default function Service({ content, service }: ServiceProps) {
     <div>
       <Hero content={heroContent} />
       <Graphs content={content.features} />
+      <Features />
     </div>
   );
 }

@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Grainient from "../Grainient";
 import type { LocaleDictionary } from "../../lib/i18n";

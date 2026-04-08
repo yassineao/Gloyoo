@@ -1,10 +1,6 @@
- "use client";
-
 import type { SamsungS26MockupProps } from "@/app/types/Samsung";
 import { Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-
 
 export default function Samsung({
   media,
@@ -13,34 +9,10 @@ export default function Samsung({
   width = 340,
   children,
   className = "",
+  imagePriority = false,
+  imageQuality,
   videoProps,
 }: SamsungS26MockupProps) {
-  const [isMediaReady, setIsMediaReady] = useState(mediaType !== "video");
-
-  useEffect(() => {
-    if (mediaType !== "video") {
-      return;
-    }
-
-    const scheduleMediaLoad = () => setIsMediaReady(true);
-
-    if (typeof window === "undefined") {
-      return;
-    }
-
-    if ("requestIdleCallback" in window) {
-      const idleCallbackId = window.requestIdleCallback(scheduleMediaLoad, {
-        timeout: 1200,
-      });
-
-      return () => window.cancelIdleCallback(idleCallbackId);
-    }
-
-    const timeoutId = setTimeout(scheduleMediaLoad, 600);
-
-    return () => clearTimeout(timeoutId);
-  }, [mediaType]);
-
   const height = Math.round(width * 2.08);
   const bezel = Math.max(8, Math.round(width * 0.028));
   const screenRadius = Math.round(width * 0.09);
@@ -53,19 +25,16 @@ export default function Samsung({
       style={{ width, height }}
       aria-label="Samsung-style phone mockup"
     >
-      {/* Outer metal frame */}
       <div
         className="absolute inset-0 rounded-[3rem] bg-gradient-to-b from-zinc-300 via-zinc-100 to-zinc-400 shadow-2xl"
         style={{ borderRadius: shellRadius }}
       />
 
-      
       <div
-        className="absolute right-[2px] top-[20px] bottom-[20px] w-[1px] rounded-full bg-black/20"
+        className="absolute bottom-[20px] right-[2px] top-[20px] w-[1px] rounded-full bg-black/20"
         aria-hidden="true"
       />
 
-      {/* Buttons */}
       <div
         className="absolute -right-[3px] top-[20%] h-[12%] w-[4px] rounded-full bg-zinc-300 shadow-md"
         aria-hidden="true"
@@ -79,13 +48,11 @@ export default function Samsung({
         aria-hidden="true"
       />
 
-      {/* Black phone body */}
       <div
         className="absolute inset-[3px] bg-black shadow-inner"
         style={{ borderRadius: shellRadius - 4 }}
       />
 
-      {/* Screen */}
       <div
         className="absolute overflow-hidden bg-neutral-950"
         style={{
@@ -96,19 +63,19 @@ export default function Samsung({
           borderRadius: screenRadius,
         }}
       >
-        {/* Display image */}
         {media ? (
           mediaType === "video" ? (
             <div className="h-full w-full justify-center bg-black">
               <video
-                src={isMediaReady ? media : undefined}
+                src={media}
                 className="max-h-full max-w-full object-contain"
-                autoPlay={isMediaReady}
+                autoPlay
                 muted
                 loop
                 playsInline
                 controls={false}
                 preload="none"
+                poster="/intro-hero.jpg"
                 {...videoProps}
               />
             </div>
@@ -119,9 +86,11 @@ export default function Samsung({
                 alt={alt}
                 fill
                 sizes={`${width}px`}
+                quality={imageQuality ?? (imagePriority ? 70 : 80)}
+                priority={imagePriority}
                 className="object-contain"
-                loading="lazy"
-                fetchPriority="low"
+                loading={imagePriority ? undefined : "lazy"}
+                fetchPriority={imagePriority ? "high" : "low"}
               />
             </div>
           )
@@ -139,10 +108,10 @@ export default function Samsung({
           </div>
         )}
 
-        {/* Optional overlay content */}
-        {children ? <div className="pointer-events-none absolute inset-0">{children}</div> : null}
+        {children ? (
+          <div className="pointer-events-none absolute inset-0">{children}</div>
+        ) : null}
 
-        {/* Front camera punch hole */}
         <div
           className="absolute left-1/2 top-3 z-20 -translate-x-1/2 rounded-full border border-white/10 bg-black shadow-brand-camera"
           style={{ width: cameraSize, height: cameraSize }}
@@ -152,31 +121,13 @@ export default function Samsung({
           <div className="absolute left-[26%] top-[22%] h-[20%] w-[20%] rounded-full bg-sky-200/20 blur-[1px]" />
         </div>
 
-        {/* Top glass reflection */}
         <div className="pointer-events-none absolute inset-0 bg-brand-glass" />
-
-        {/* Subtle inner edge */}
         <div className="pointer-events-none absolute inset-0 rounded-[inherit] ring-1 ring-white/5" />
       </div>
 
-      {/* Samsung-style branding area hint on chin/frame
-      <div className="absolute bottom-[10px] left-1/2 -translate-x-1/2 text-[9px] font-medium uppercase tracking-[0.35em] text-white/20">
-        Galaxy
-      </div> */}
-
-      {/* Tiny accessibility fallback */}
       <span className="sr-only">
         Samsung-inspired phone frame with a centered punch-hole camera and image preview on screen.
       </span>
     </div>
   );
 }
-
-// <SamsungS26Mockup photo="/screens/app-preview.png" width={360} />
-//
-// With overlays:
-// <SamsungS26Mockup photo="/screens/app-preview.png">
-//   <div className="absolute bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-black/60 px-4 py-2 text-xs text-white backdrop-blur">
-//     Interactive prototype
-//   </div>
-// </SamsungS26Mockup>

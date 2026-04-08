@@ -121,14 +121,16 @@ export default async function LocalizedHome({
       />
 
       <div className="flex flex-1 flex-col items-center justify-center overflow-hidden bg-[#0B0B0F] font-sans lg:mt-10">
-        <Hero content={home.hero} />
+        <Background>
+          <Hero content={home.hero} />
+        </Background>
       </div>
 
-      <div className="  " id="advantages">
+      <div className="defer-section" id="advantages">
         <Advantages content={home.advantages} />
       </div>
 
-      <div className=" lg:mt-10 lg:mb-10 " id="services">
+      <div className="defer-section lg:mt-10 lg:mb-10" id="services">
         <Background>
           <div className="lg:mt-20">
             <ScrollVelocity
@@ -141,7 +143,9 @@ export default async function LocalizedHome({
           </div>
         </Background>
       </div>
-      <AboutUs content={home.about} locale={locale} />
+      <div className="defer-section">
+        <AboutUs content={home.about} locale={locale} />
+      </div>
     </main>
   );
 }

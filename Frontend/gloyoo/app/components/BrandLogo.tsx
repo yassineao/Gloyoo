@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 type BrandLogoProps = {
@@ -23,9 +21,9 @@ export default function BrandLogo({
       <Image
         src="/Logo.png"
         alt="Gloyoo Logo"
-        width={1203}
-        height={1203}
-        quality={100}
+        width={96}
+        height={96}
+        quality={80}
         priority={priority}
         sizes={isFooter ? "96px" : "(max-width: 640px) 40px, 48px"}
         className={[
