@@ -1,23 +1,25 @@
 # Gloyoo Frontend
 
-A modern bilingual marketing website for **Gloyoo**, built to showcase social media services, performance marketing, content creation, and web design.
+A modern **bilingual agency website** for **Gloyoo**, built to present services in social media management, content creation, performance marketing, and web design.
 
-The project uses `Next.js 16`, `React 19`, `TypeScript`, and `Tailwind CSS 4`, with localized routes, SEO metadata, animated UI sections, and dedicated service pages.
+The application is developed with **Next.js 16**, **React 19**, **TypeScript**, and **Tailwind CSS 4**, and uses localized routes, reusable sections, and SEO metadata to support a polished marketing presence.
 
 ---
 
-## ✨ Highlights
+## ✨ What This App Includes
 
-- **German and English support** with locale-based routing: `/de` and `/en`
-- **Localized landing page** with hero, advantages, services, and about sections
+- **German and English support** with locale-based routing (`/de`, `/en`)
+- **Localized homepage** with hero, advantages, services, and about sections
 - **Dedicated service pages** for:
   - `social-media`
   - `content-creation`
   - `performance-marketing`
   - `webdesign`
 - **Consultation form page** at `/:locale/form`
-- **SEO-ready setup** with route metadata, Open Graph, Twitter cards, JSON-LD, `robots.ts`, and `sitemap.ts`
-- **Animated visual experience** powered by `motion`, `gsap`, and custom background effects
+- **SEO-ready metadata** including Open Graph, Twitter cards, JSON-LD, `robots.ts`, and `sitemap.ts`
+- **Animated UI experience** powered by `motion`, `gsap`, and visual background effects
+
+---
 
 ## 🧱 Tech Stack
 
@@ -27,7 +29,9 @@ The project uses `Next.js 16`, `React 19`, `TypeScript`, and `Tailwind CSS 4`, w
 | UI | `React 19`, `TypeScript` |
 | Styling | `Tailwind CSS 4` |
 | Animation | `motion`, `gsap`, `ogl` |
-| Code Quality | `ESLint 9` |
+| Quality | `ESLint 9` |
+
+---
 
 ## 📁 Project Structure
 
@@ -36,38 +40,50 @@ gloyoo/
 ├─ app/
 │  ├─ [locale]/
 │  │  ├─ page.tsx                    # localized homepage
-│  │  ├─ form/page.tsx               # contact/consultation form page
+│  │  ├─ form/page.tsx               # consultation/contact form
 │  │  └─ services/[service]/page.tsx # service detail pages
 │  ├─ components/
 │  │  ├─ mainPage/                   # homepage sections
-│  │  ├─ service/                    # service-page UI
+│  │  ├─ service/                    # service-page components
 │  │  └─ form/                       # form UI
 │  ├─ lib/
-│  │  ├─ i18n.ts                     # locale dictionaries and helpers
-│  │  └─ seo.ts                      # site metadata helpers
+│  │  ├─ i18n.ts                     # localization dictionaries
+│  │  └─ seo.ts                      # SEO helpers and site config
 │  ├─ robots.ts
-│  └─ sitemap.ts
+│  ├─ sitemap.ts
+│  ├─ layout.tsx
+│  └─ page.tsx                       # redirects to /de
 ├─ public/
 ├─ next.config.ts
+├─ tsconfig.json
 └─ package.json
 ```
 
+---
+
 ## 🚀 Getting Started
 
-### 1. Install dependencies
+### Prerequisites
+
+- **Node.js 20+** recommended
+- **npm**
+
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-### 2. Start the development server
+### Start development
 
 ```bash
 npm run dev
 ```
 
 Then open [http://localhost:3000](http://localhost:3000).
-The root route redirects automatically to `http://localhost:3000/de`.
+The app redirects the root route automatically to `/de`.
+
+---
 
 ## 📜 Available Scripts
 
@@ -77,6 +93,8 @@ The root route redirects automatically to `http://localhost:3000/de`.
 | `npm run build` | Build the app for production |
 | `npm run start` | Run the production build locally |
 | `npm run lint` | Run ESLint |
+
+---
 
 ## 🌍 Routing Overview
 
@@ -94,53 +112,67 @@ Supported locales:
 - `de`
 - `en`
 
+Supported service slugs:
+
+- `social-media`
+- `content-creation`
+- `performance-marketing`
+- `webdesign`
+
+---
+
 ## 🗂️ Content & Localization
 
-Most marketing copy, labels, metadata, and service content are managed in:
+Most marketing copy, labels, and service details are managed in:
 
 - `app/lib/i18n.ts`
 
-If you want to update:
+Use that file to update:
 
 - navigation labels
-- hero text
+- hero content
 - service descriptions
 - SEO titles and descriptions
-- form labels and testimonials
+- form copy and text blocks
 
-start with that file.
+---
 
-## 🔎 SEO Configuration
+## 🔎 SEO Setup
 
-SEO helpers and site-level metadata live in:
+SEO-related logic lives in:
 
 - `app/lib/seo.ts`
 - `app/layout.tsx`
 - `app/robots.ts`
 - `app/sitemap.ts`
+- route-level `generateMetadata()` functions
 
-You can optionally define the public site URL in `.env.local`:
+You can optionally set the public site URL in `.env.local`:
 
 ```env
 NEXT_PUBLIC_SITE_URL=https://your-domain.com
 ```
 
-If not set, the project falls back to `https://gloyoo.vercel.app`.
+If no value is provided, the app falls back to `https://gloyoo.vercel.app`.
 
-## 📝 Notes
+---
 
-- `app/api/` is currently empty, so the form is presentational unless a backend endpoint is added.
-- The site is structured as a lead-generation/agency website and is a strong fit for deployment on **Vercel**.
+## 📝 Development Notes
+
+- The project is currently **frontend-focused**.
+- The consultation form is present in the UI, but backend submission handling can be added later if needed.
+- The app is well suited for deployment on **Vercel**.
 
 ---
 
 ## ✅ Summary
 
-This frontend is a clean, multilingual agency site for Gloyoo with:
+This frontend provides a solid foundation for a modern digital agency website with:
 
-- strong landing-page structure
-- reusable components
-- localized SEO support
-- room for future form/API integration
+- multilingual support
+- clean component organization
+- service-focused landing pages
+- SEO-friendly structure
+- room for future backend/API integration
 
 
