@@ -64,21 +64,13 @@ export default function Hero({
 
             <div className="relative mx-auto flex w-full max-w-[320px] justify-center  lg:max-w-[520px] lg:ml-4">
               <div className="relative z-10">
-                {/* <Samsung
-                  media="/intro.mp4"
+                <Samsung
+                  media="/introo.mp4"
                   mediaType="video"
                   width={280}
                   alt={content.videoAlt}
-                /> */}
-                <Samsung
-                  media="/compressed-intro.png"
-                  mediaType="image"
-                  width={280}
-                  alt={content.imageAlt}
-                  imagePriority
-                  imageQuality={65}
-                  imageSizes="(max-width: 639px) 280px, (max-width: 1023px) 280px, 326px"
                 />
+                
               </div>
 
               <div className="absolute -right-2 top-4 scale-75 opacity-90 sm:right-0 sm:top-10 sm:scale-90 md:right-4 lg:top-14">

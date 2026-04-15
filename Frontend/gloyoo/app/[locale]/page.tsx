@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Hero from "../components/mainPage/Hero";
-import Services from "../components/mainPage/Services";
-import ScrollVelocity from "../components/ScrollVelocity";
-import AboutUs from "../components/mainPage/AboutUs";
-import Advantages from "../components/mainPage/Advantages";
-import Background from "../components/Background";
+import MainPage from "../components/mainPage/MainPage";
 import {
   getAlternateLocale,
   getDictionary,
@@ -13,7 +8,7 @@ import {
   locales,
   type Locale,
 } from "../lib/i18n";
-import { getSiteUrl, siteConfig } from "../lib/seo";
+import { siteConfig } from "../lib/seo";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -87,65 +82,5 @@ export default async function LocalizedHome({
   }
 
   const dictionary = getDictionary(locale as Locale);
-  const home = dictionary.home;
-  const siteUrl = getSiteUrl();
-  const localizedUrl = `${siteUrl}/${locale}`;
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: siteConfig.name,
-    url: localizedUrl,
-    description: home.metadata.description,
-    inLanguage: locale === "de" ? "de-DE" : "en-US",
-    areaServed: home.seo.areaServed,
-    image: `${siteUrl}/Logo.png`,
-    knowsAbout: home.seo.knowsAbout,
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: home.seo.offerCatalogName,
-      itemListElement: home.seo.services.map((service) => ({
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: service,
-        },
-      })),
-    },
-  };
-
-  return (
-    <main className="overflow-x-hidden bg-[#0B0B0F]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
-      <div className="flex flex-1 flex-col items-center justify-center overflow-hidden bg-[#0B0B0F] font-sans lg:mt-10">
-        <Background>
-          <Hero content={home.hero} />
-        </Background>
-      </div>
-
-      <div className="defer-section" id="advantages">
-        <Advantages content={home.advantages} />
-      </div>
-
-      <div className="defer-section lg:mt-10 lg:mb-10" id="services">
-        <Background>
-          <div className="lg:mt-20">
-            <ScrollVelocity
-              texts={home.scrollTexts}
-              velocity={100}
-              className="custom-scroll-text text-3xl font-bold text-[#A855F7] sm:text-4xl lg:text-6xl xl:text-7xl "
-            />
-
-            <Services content={home.services} />
-          </div>
-        </Background>
-      </div>
-      <div className="defer-section">
-        <AboutUs content={home.about} locale={locale} />
-      </div>
-    </main>
-  );
+  return <MainPage home={dictionary.home} locale={locale as Locale} />;
 }

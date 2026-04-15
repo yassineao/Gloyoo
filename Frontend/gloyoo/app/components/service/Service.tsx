@@ -3,7 +3,7 @@ import type { ServiceSlug } from "@/app/types/Service";
 import Graphs from "./Graphs";
 import Hero from "./Hero";
 import Features from "./Features";
-import Hero2 from "./Hero2";
+import Hero2 from "../Hero2";
 
 type ServiceProps = {
   content: LocaleDictionary["servicePage"];
