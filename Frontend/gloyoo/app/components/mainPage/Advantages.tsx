@@ -9,7 +9,7 @@ export default function Advantages({
     return (
         <section
             id="advantages"
-            className="scroll-mt-24 overflow-hidden bg-[#0B0B0F] py-2 sm:py-20 lg:py-4"
+            className="scroll-mt-24 overflow-hidden bg-brand-navyDark py-2 sm:py-20 lg:py-4"
             aria-labelledby="advantages-heading"
         >
                 <div className="flex w-full justify-center">
@@ -27,13 +27,13 @@ export default function Advantages({
            
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-4xl text-center">
-                    <p className="text-sm font-semibold uppercase tracking-widest text-[#A1A1AA]">
+                    <p className="text-sm font-semibold uppercase tracking-widest text-brand-graySoft">
                         {content.eyebrow}
                     </p>
                     <h2 id="advantages-heading" className="mt-4 text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
                         {content.title}
                     </h2>
-                    <p className="mt-4 text-base leading-7 text-[#A1A1AA] sm:text-lg">
+                    <p className="mt-4 text-base leading-7 text-brand-graySoft sm:text-lg">
                         {content.description}
                     </p>
                 </div>
@@ -43,16 +43,16 @@ export default function Advantages({
                     {content.items.map((item) => (
                         <div
                             key={item.title}
-                            className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#7C3AED]/18 to-[#2563EB]/18 p-6 text-center shadow-[0_0_40px_rgba(168,85,247,0.14)] sm:p-8"
+                            className="rounded-3xl border border-white/10 bg-gradient-to-br from-brand-purple/18 to-brand-teal/18 p-6 text-center shadow-brand-panel sm:p-8"
                         >
-                            <p className="text-4xl font-semibold text-[#A855F7] sm:text-5xl lg:text-6xl">
+                            <p className="text-4xl font-semibold text-brand-petalPink sm:text-5xl lg:text-6xl">
                                 {item.value}
                             </p>
-                            <p className="bg-gradient-to-r from-[#7C3AED] to-[#2563EB] bg-clip-text text-4xl font-semibold text-transparent sm:text-5xl lg:text-6xl">
+                            <p className="bg-gradient-to-r from-brand-purple to-brand-teal bg-clip-text text-4xl font-semibold text-transparent sm:text-5xl lg:text-6xl">
                                 {item.title}
                             </p>
 
-                            <p className="mt-8 pt-3 text-base leading-7 text-[#A1A1AA] sm:text-sm">
+                            <p className="mt-8 pt-3 text-base leading-7 text-brand-graySoft sm:text-sm">
                                 {item.subtitle}
                             </p>
                         </div>

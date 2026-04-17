@@ -30,3 +30,42 @@ body {
   content-visibility: auto;
   contain-intrinsic-size: 700px;
 }
+
+.scroll-velocity-row {
+  display: flex;
+  width: 100%;
+}
+
+.scroll-velocity-track {
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+  animation: scroll-velocity-marquee var(--scroll-duration, 18s) linear infinite;
+  will-change: transform;
+}
+
+.scroll-velocity-track--reverse {
+  animation-direction: reverse;
+}
+
+.scroll-velocity-group {
+  display: flex;
+  flex-shrink: 0;
+}
+
+@keyframes scroll-velocity-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-velocity-track {
+    animation: none;
+    transform: none;
+  }
+}

@@ -11,7 +11,7 @@ export default function AboutUs({
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
                     <div className="order-2 overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-brand-soft lg:order-1">
-                        <div className="relative h-72 w-full overflow-hidden bg-[#0B0B0F] sm:h-80 lg:h-[520px]">
+                        <div className="relative h-72 w-full overflow-hidden bg-brand-navyDark sm:h-80 lg:h-[520px]">
                             <div
                                 aria-hidden="true"
                                 className="absolute inset-0"
@@ -32,7 +32,7 @@ export default function AboutUs({
                     </div>
 
                     <div className="order-1 flex flex-col items-center text-center lg:order-2 lg:items-start lg:text-left">
-                        <div className="inline-flex items-center rounded-full border border-white/10 bg-white/6 px-3 py-1 text-xs font-semibold text-white shadow-[0_0_30px_rgba(168,85,247,0.14)]">
+                        <div className="inline-flex items-center rounded-full border border-white/10 bg-white/6 px-3 py-1 text-xs font-semibold text-white shadow-brand-pill">
                             {content.eyebrow}
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -55,15 +55,15 @@ export default function AboutUs({
                             {content.title}
                         </h2>
 
-                        <p className="max-w-xl text-base leading-7 text-[#A1A1AA] sm:text-lg sm:leading-8 lg:text-xl">
+                        <p className="max-w-xl text-base leading-7 text-brand-graySoft sm:text-lg sm:leading-8 lg:text-xl">
                             {content.paragraphs[0]}
                         </p>
-                        <p className="mt-4 max-w-xl text-base leading-7 text-[#A1A1AA] sm:text-lg sm:leading-8 lg:text-xl">
+                        <p className="mt-4 max-w-xl text-base leading-7 text-brand-graySoft sm:text-lg sm:leading-8 lg:text-xl">
                             {content.paragraphs[1]}
                         </p>
                         <a
                             href={`/${locale}/form`}
-                            className="mt-8 inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#7C3AED] to-[#2563EB] px-5 py-3 text-sm font-semibold text-white shadow-[0_14px_34px_rgba(37,99,235,0.28)] transition-all hover:brightness-110"
+                            className="mt-8 inline-flex items-center justify-center rounded-md bg-gradient-to-r from-brand-purple to-brand-teal px-5 py-3 text-sm font-semibold text-white shadow-brand-cta transition-all hover:brightness-110"
                         >
                             {content.cta}
                         </a>

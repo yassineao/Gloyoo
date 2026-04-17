@@ -17,13 +17,13 @@ export default function Services({
             <section id="services-list" className="mx-auto w-full max-w-7xl scroll-mt-24 py-8" aria-labelledby="services-heading">
                 <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
                     <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center sm:gap-6 ">
-                        <div className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-[#A1A1AA]">
+                        <div className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-brand-graySoft">
                             {content.eyebrow}
                         </div>
                         <h2 id="services-heading" className="text-balance text-3xl font-medium text-white sm:text-4xl lg:text-5xl">
                             {content.title}
                         </h2>
-                        <p className="max-w-2xl text-sm leading-7 text-[#A1A1AA] sm:text-base sm:leading-8 lg:text-lg">
+                        <p className="max-w-2xl text-sm leading-7 text-brand-graySoft sm:text-base sm:leading-8 lg:text-lg">
                             {content.description}
                         </p>
                     </div>
@@ -35,7 +35,7 @@ export default function Services({
                             return (
                                 <article
                                     key={item.title}
-                                    className="w-full max-w-sm overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#7C3AED]/16 to-[#2563EB]/90 shadow-brand-soft backdrop-blur-sm"
+                                    className="w-full max-w-sm overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-brand-purple/16 to-brand-teal/90 shadow-brand-soft backdrop-blur-sm"
                                 >
                                     <div className="relative flex h-48 w-full items-center justify-center overflow-hidden sm:h-56">
                                         <div

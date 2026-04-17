@@ -27,6 +27,10 @@ const config = {
       boxShadow: {
         "brand-soft": "0 18px 60px rgba(37, 99, 235, 0.16)",
         "brand-camera": "0 0 0 1px rgba(255, 255, 255, 0.04)",
+        "brand-cta": "0 14px 34px rgba(37, 99, 235, 0.28)",
+        "brand-glow": "0 0 24px rgba(168, 85, 247, 0.4)",
+        "brand-panel": "0 0 40px rgba(168, 85, 247, 0.14)",
+        "brand-pill": "0 0 30px rgba(168, 85, 247, 0.14)",
       },
       backgroundImage: {
         "brand-glass":

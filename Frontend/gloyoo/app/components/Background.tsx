@@ -8,7 +8,7 @@ export default function Background({
   animated?: boolean;
 }) {
   return (
-    <div className="relative min-h-[600px] w-full overflow-hidden bg-[#0B0B0F]">
+    <div className="relative min-h-[600px] w-full overflow-hidden bg-brand-navyDark">
       <div className="pointer-events-none absolute inset-0 z-0">
         {animated ? (
           <BackgroundVisual />

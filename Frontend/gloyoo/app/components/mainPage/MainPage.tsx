@@ -41,13 +41,13 @@ export default function MainPage({
   };
 
   return (
-    <main className="overflow-x-hidden bg-[#0B0B0F]">
+    <main className="overflow-x-hidden bg-brand-navyDark">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="flex flex-1 flex-col items-center justify-center overflow-hidden bg-[#0B0B0F] font-sans lg:mt-10">
+      <div className="flex flex-1 flex-col items-center justify-center overflow-hidden bg-brand-navyDark font-sans lg:mt-10">
         <Background>
           <Hero content={home.hero} />
         </Background>
@@ -63,7 +63,7 @@ export default function MainPage({
             <ScrollVelocity
               texts={home.scrollTexts}
               velocity={100}
-              className="custom-scroll-text text-3xl font-bold text-[#A855F7] sm:text-4xl lg:text-6xl xl:text-7xl"
+              className="custom-scroll-text text-3xl font-bold text-brand-petalPink sm:text-4xl lg:text-6xl xl:text-7xl"
             />
 
             <Services content={home.services} />

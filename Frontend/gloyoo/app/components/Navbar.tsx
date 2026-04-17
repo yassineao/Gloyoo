@@ -58,7 +58,7 @@ export default function Navbar({
                 <li key={item.href} className="group relative">
                   <Link
                     href={localizedHref(item.href)}
-                    className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-[#A1A1AA] transition-colors hover:bg-white/8 hover:text-white focus:outline-none"
+                    className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-brand-graySoft transition-colors hover:bg-white/8 hover:text-white focus:outline-none"
                   >
                     {item.label}
                     {item.children?.length ? (
@@ -85,7 +85,7 @@ export default function Navbar({
                           <li key={child.href}>
                             <Link
                               href={localizedHref(child.href)}
-                              className="block rounded-lg px-3 py-2 text-sm text-[#A1A1AA] transition-colors hover:bg-white/8 hover:text-white focus:outline-none"
+                              className="block rounded-lg px-3 py-2 text-sm text-brand-graySoft transition-colors hover:bg-white/8 hover:text-white focus:outline-none"
                             >
                               {child.label}
                             </Link>
@@ -103,15 +103,15 @@ export default function Navbar({
             <LocaleSwitchLink
               alternateLocale={alternateLocale}
               label={content.switchLabel}
-              className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-[#A1A1AA] transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A855F7] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0B0F]"
+              className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-brand-graySoft transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-petalPink focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navyDark"
             />
 
             <Link
               href={`/${locale}/form`}
-              className="group text-center relative inline-flex h-11 items-center justify-center overflow-hidden rounded-xl border border-[#A855F7] px-4 text-sm font-semibold text-[#A855F7] transition duration-300 ease-out hover:border-[#2563EB] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A855F7] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B0B0F] sm:px-5 sm:text-sm xl:px-6 xl:text-base"
+              className="group relative inline-flex h-11 items-center justify-center overflow-hidden rounded-xl border border-brand-petalPink px-4 text-center text-sm font-semibold text-brand-petalPink transition duration-300 ease-out hover:border-brand-teal hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-petalPink focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navyDark sm:px-5 sm:text-sm xl:px-6 xl:text-base"
             >
               <span className="relative z-10">{content.contactLabel}</span>
-              <span className="absolute inset-0 origin-left scale-x-0 bg-gradient-to-r from-[#7C3AED] to-[#2563EB] transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100"></span>
+              <span className="absolute inset-0 origin-left scale-x-0 bg-gradient-to-r from-brand-purple to-brand-teal transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100"></span>
             </Link>
           </div>
 

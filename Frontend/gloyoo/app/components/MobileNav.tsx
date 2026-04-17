@@ -18,7 +18,7 @@ export default function MobileNav({ locale, content }: MobileNavProps) {
           <LocaleSwitchLink
             alternateLocale={alternateLocale}
             label={content.switchLabel}
-            className="mr-4 block py-2 text-sm font-medium text-[#A1A1AA] hover:text-white"
+            className="mr-4 block py-2 text-sm font-medium text-brand-graySoft hover:text-white"
           />
           <span
             className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/12 bg-white/6 text-sm font-medium text-white transition-colors hover:bg-white/10"
@@ -45,7 +45,7 @@ export default function MobileNav({ locale, content }: MobileNavProps) {
       </summary>
 
       <div className="absolute left-0 top-full w-full rounded-b-lg bg-transparent px-4 pt-2 shadow-lg sm:px-6">
-        <ul className="space-y-3 rounded-lg border border-white/10 bg-[#0B0B0F]/92 px-4 pb-4 text-[#A1A1AA] backdrop-blur-md">
+        <ul className="space-y-3 rounded-lg border border-white/10 bg-brand-navyDark/92 px-4 pb-4 text-brand-graySoft backdrop-blur-md">
           {content.items.map((item) => (
             <li key={item.href}>
               <Link href={localizedHref(item.href)} className="block py-2 hover:text-white">

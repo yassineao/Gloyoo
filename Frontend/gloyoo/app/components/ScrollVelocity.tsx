@@ -1,5 +1,4 @@
 import type { CSSProperties, ReactNode, RefObject } from "react";
-import "../styles/ScrollVelocity.css";
 
 interface VelocityMapping {
   input: [number, number];
