@@ -20,19 +20,60 @@ const Grainient = dynamic(() => import("./Grainient"), {
 });
 
 export default function BackgroundVisual() {
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [shouldRenderShader, setShouldRenderShader] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 768px)");
-    const update = () => setIsDesktop(mediaQuery.matches);
+    const desktopQuery = window.matchMedia("(min-width: 768px)");
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let idleId: number | null = null;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+
+    const cancelScheduledLoad = () => {
+      if (idleId !== null && "cancelIdleCallback" in window) {
+        window.cancelIdleCallback(idleId);
+      }
+
+      if (timeoutId !== null) {
+        globalThis.clearTimeout(timeoutId);
+      }
+    };
+
+    const scheduleLoad = () => {
+      cancelScheduledLoad();
+
+      const enableShader = () => setShouldRenderShader(true);
+
+      if ("requestIdleCallback" in window) {
+        idleId = window.requestIdleCallback(enableShader, { timeout: 1200 });
+      } else {
+        timeoutId = globalThis.setTimeout(enableShader, 150);
+      }
+    };
+
+    const update = () => {
+      const canAnimate = desktopQuery.matches && !motionQuery.matches;
+
+      if (!canAnimate) {
+        cancelScheduledLoad();
+        setShouldRenderShader(false);
+        return;
+      }
+
+      scheduleLoad();
+    };
 
     update();
-    mediaQuery.addEventListener("change", update);
+    desktopQuery.addEventListener("change", update);
+    motionQuery.addEventListener("change", update);
 
-    return () => mediaQuery.removeEventListener("change", update);
+    return () => {
+      cancelScheduledLoad();
+      desktopQuery.removeEventListener("change", update);
+      motionQuery.removeEventListener("change", update);
+    };
   }, []);
 
-  if (!isDesktop) {
+  if (!shouldRenderShader) {
     return fallbackBackground;
   }
 

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Grainient from "../Grainient";
 import type { LocaleDictionary } from "../../lib/i18n";
 
 export default function Services({
@@ -39,15 +38,29 @@ export default function Services({
                                     className="w-full max-w-sm overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#7C3AED]/16 to-[#2563EB]/90 shadow-brand-soft backdrop-blur-sm"
                                 >
                                     <div className="relative flex h-48 w-full items-center justify-center overflow-hidden sm:h-56">
-                                        <Grainient className="h-full w-full" color1="#A855F7" color2="#2563EB" color3="#0B0B0F" />
+                                        <div
+                                            aria-hidden="true"
+                                            className="absolute inset-0"
+                                            style={{
+                                                background:
+                                                    "radial-gradient(circle at 30% 28%, rgba(168,85,247,0.45), transparent 30%), radial-gradient(circle at 72% 42%, rgba(37,99,235,0.4), transparent 32%), linear-gradient(145deg, #0B0B0F 10%, #17377c 58%, #A855F7 100%)",
+                                            }}
+                                        />
+                                        <div
+                                            aria-hidden="true"
+                                            className="absolute inset-0 opacity-25"
+                                            style={{
+                                                background:
+                                                    "linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.12) 48%, transparent 100%)",
+                                            }}
+                                        />
                                         <Image
-                                            
                                             src={art.src}
                                             alt={art.alt}
                                             className="absolute z-10 h-auto w-36 max-w-[70%] object-contain sm:w-40"
                                             width={144}
                                             height={144}
-
+                                            loading="lazy"
                                         />
                                     </div>
 

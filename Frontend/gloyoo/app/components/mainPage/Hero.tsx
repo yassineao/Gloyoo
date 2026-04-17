@@ -1,4 +1,4 @@
-import Samsung from "./Samsung";
+// import Samsung from "./Samsung";
 import type { LocaleDictionary } from "../../lib/i18n";
 
 export default function Hero({
@@ -14,7 +14,7 @@ export default function Hero({
         <div className="mx-auto max-w-7xl">
           <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 xl:gap-1">
             <div className="flex max-w-3xl flex-col items-start text-left">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#A1A1AA]">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-[#A1A1AA]">
                 {content.eyebrow}
               </p>
               <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl xl:text-6xl">
@@ -62,12 +62,13 @@ export default function Hero({
               </div>
             </div>
 
-            <div className="relative mx-auto flex w-full max-w-[320px] justify-center  lg:max-w-[520px] lg:ml-4">
+            {/* <div className="relative mx-auto flex w-full max-w-[320px] justify-center  lg:max-w-[520px] lg:ml-4">
               <div className="relative z-10">
                 <Samsung
                   media="/introo.mp4"
                   mediaType="video"
                   width={280}
+                  videoProps={{ preload: "metadata" }}
                   alt={content.videoAlt}
                 />
                 
@@ -83,7 +84,7 @@ export default function Hero({
                   imageSizes="(max-width: 639px) 210px, (max-width: 1023px) 252px, 293px"
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

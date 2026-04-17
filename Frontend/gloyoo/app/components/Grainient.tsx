@@ -165,7 +165,7 @@ const Grainient: React.FC<GrainientProps> = ({
       webgl: 2,
       alpha: true,
       antialias: false,
-      dpr: Math.min(window.devicePixelRatio || 1, 2),
+      dpr: Math.min(window.devicePixelRatio || 1, 1.5),
     });
 
     const gl = renderer.gl;
@@ -226,15 +226,49 @@ const Grainient: React.FC<GrainientProps> = ({
 
     let raf = 0;
     const t0 = performance.now();
-    const loop = (t: number) => {
+    let isVisible = true;
+
+    const renderFrame = (t: number) => {
       (program.uniforms.iTime as { value: number }).value = (t - t0) * 0.001;
       renderer.render({ scene: mesh });
+    };
+
+    const loop = (t: number) => {
+      renderFrame(t);
       raf = requestAnimationFrame(loop);
     };
-    raf = requestAnimationFrame(loop);
+
+    const startLoop = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(loop);
+    };
+
+    const stopLoop = () => {
+      if (!raf) return;
+      cancelAnimationFrame(raf);
+      raf = 0;
+    };
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry?.isIntersecting ?? true;
+
+        if (isVisible) {
+          startLoop();
+        } else {
+          stopLoop();
+          renderFrame(performance.now());
+        }
+      },
+      { threshold: 0.01 }
+    );
+
+    io.observe(container);
+    startLoop();
 
     return () => {
-      cancelAnimationFrame(raf);
+      stopLoop();
+      io.disconnect();
       ro.disconnect();
       try {
         container.removeChild(canvas);

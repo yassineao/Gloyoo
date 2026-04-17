@@ -1,4 +1,5 @@
 import type { CSSProperties, ReactNode, RefObject } from "react";
+import "../styles/ScrollVelocity.css";
 
 interface VelocityMapping {
   input: [number, number];
@@ -51,7 +52,7 @@ export default function ScrollVelocity({
             style={parallaxStyle}
           >
             <div
-              className={`${directionClass} ${scrollerClassName} flex whitespace-nowrap text-center font-sans text-4xl font-bold tracking-[-0.02em] drop-shadow md:text-[5rem] md:leading-[5rem]`}
+              className={`${directionClass} ${scrollerClassName} flex whitespace-nowrap text-center font-sans text-4xl font-bold tracking-tight drop-shadow md:text-7xl md:leading-none`}
               style={{
                 ...(scrollerStyle ?? {}),
                 ["--scroll-duration" as string]: duration,

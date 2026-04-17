@@ -1,4 +1,3 @@
-import Grainient from "../Grainient";
 import type { LocaleDictionary } from "../../lib/i18n";
 
 export default function AboutUs({
@@ -12,8 +11,23 @@ export default function AboutUs({
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
                     <div className="order-2 overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-brand-soft lg:order-1">
-                        <div className="h-72 w-full sm:h-80 lg:h-[520px]">
-                            <Grainient className="h-full w-full" color1="#A855F7" color2="#2563EB" color3="#0B0B0F" />
+                        <div className="relative h-72 w-full overflow-hidden bg-[#0B0B0F] sm:h-80 lg:h-[520px]">
+                            <div
+                                aria-hidden="true"
+                                className="absolute inset-0"
+                                style={{
+                                    background:
+                                        "radial-gradient(circle at 28% 32%, rgba(168,85,247,0.45), transparent 32%), radial-gradient(circle at 72% 36%, rgba(37,99,235,0.38), transparent 34%), linear-gradient(145deg, #0B0B0F 12%, #17377c 56%, #A855F7 100%)",
+                                }}
+                            />
+                            <div
+                                aria-hidden="true"
+                                className="absolute inset-0 opacity-30"
+                                style={{
+                                    background:
+                                        "linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.1) 45%, transparent 100%)",
+                                }}
+                            />
                         </div>
                     </div>
 

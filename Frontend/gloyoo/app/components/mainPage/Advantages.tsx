@@ -18,8 +18,8 @@ export default function Advantages({
                         alt="Gloyoo Logo"
                         width={986}
                         height={948}
-                        quality={100}
-                        priority
+                        quality={85}
+                        loading="lazy"
                         sizes="(max-width: 1000px) 120px, 208px"
                         className="h-20 w-auto shrink-0 sm:h-32 lg:h-60"
                     />
@@ -27,7 +27,7 @@ export default function Advantages({
            
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-4xl text-center">
-                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#A1A1AA]">
+                    <p className="text-sm font-semibold uppercase tracking-widest text-[#A1A1AA]">
                         {content.eyebrow}
                     </p>
                     <h2 id="advantages-heading" className="mt-4 text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">

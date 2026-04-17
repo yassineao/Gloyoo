@@ -17,7 +17,7 @@ export default function Graphs({ content }: GraphsProps) {
         <button className="rounded-full bg-neutral-800 px-6 py-2.5 text-sm text-white/80">
           {content.badge}
         </button>
-        <h2 className="mt-6 text-4xl font-medium text-white md:text-[40px]">
+        <h2 className="mt-6 text-4xl font-medium text-white">
           {content.title}
         </h2>
         <p className="mt-2 max-w-lg text-base text-white/60">
@@ -31,7 +31,7 @@ export default function Graphs({ content }: GraphsProps) {
               className="flex flex-col rounded-2xl border border-neutral-800 bg-neutral-900 p-6 transition duration-300 hover:-translate-y-3"
             >
               {item.statLabel ? (
-                <div className="mb-4 ml-auto flex w-fit items-center gap-1.5 rounded-full bg-[#262626] px-2 py-1">
+                <div className="mb-4 ml-auto flex w-fit items-center gap-1.5 rounded-full bg-neutral-800 px-2 py-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"

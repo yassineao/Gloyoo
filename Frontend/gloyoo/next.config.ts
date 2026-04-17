@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["lucide-react"],
   },
   images: {
+    qualities: [75, 80, 85],
     remotePatterns: [
       {
         protocol: "https",

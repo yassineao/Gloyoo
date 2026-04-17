@@ -1,6 +1,9 @@
+"use client";
+
 import type { SamsungS26MockupProps } from "@/app/types/Samsung";
 import { Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 export default function Samsung({
   media,
@@ -14,11 +17,40 @@ export default function Samsung({
   imageSizes,
   videoProps,
 }: SamsungS26MockupProps) {
+  const videoWrapperRef = useRef<HTMLDivElement | null>(null);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(mediaType !== "video");
   const height = Math.round(width * 2.08);
   const bezel = Math.max(8, Math.round(width * 0.028));
   const screenRadius = Math.round(width * 0.09);
   const shellRadius = Math.round(width * 0.12);
   const cameraSize = Math.max(10, Math.round(width * 0.035));
+
+  useEffect(() => {
+    if (mediaType !== "video" || !media || shouldLoadVideo) {
+      return;
+    }
+
+    const videoWrapper = videoWrapperRef.current;
+
+    if (!videoWrapper || typeof IntersectionObserver === "undefined") {
+      setShouldLoadVideo(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setShouldLoadVideo(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+
+    observer.observe(videoWrapper);
+
+    return () => observer.disconnect();
+  }, [media, mediaType, shouldLoadVideo]);
 
   return (
     <div
@@ -27,31 +59,35 @@ export default function Samsung({
       aria-label="Samsung-style phone mockup"
     >
       <div
-        className="absolute inset-0 rounded-[3rem] bg-gradient-to-b from-zinc-300 via-zinc-100 to-zinc-400 shadow-2xl"
+        className="absolute inset-0 bg-gradient-to-b from-zinc-300 via-zinc-100 to-zinc-400 shadow-2xl"
         style={{ borderRadius: shellRadius }}
       />
 
       <div
-        className="absolute bottom-[20px] right-[2px] top-[20px] w-[1px] rounded-full bg-black/20"
+        className="absolute rounded-full bg-black/20"
+        style={{ top: 20, right: 2, bottom: 20, width: 1 }}
         aria-hidden="true"
       />
 
       <div
-        className="absolute -right-[3px] top-[20%] h-[12%] w-[4px] rounded-full bg-zinc-300 shadow-md"
+        className="absolute rounded-full bg-zinc-300 shadow-md"
+        style={{ top: "20%", right: -3, height: "12%", width: 4 }}
         aria-hidden="true"
       />
       <div
-        className="absolute -right-[3px] top-[35%] h-[7%] w-[4px] rounded-full bg-zinc-300 shadow-md"
+        className="absolute rounded-full bg-zinc-300 shadow-md"
+        style={{ top: "35%", right: -3, height: "7%", width: 4 }}
         aria-hidden="true"
       />
       <div
-        className="absolute -left-[3px] top-[26%] h-[10%] w-[4px] rounded-full bg-zinc-300 shadow-md"
+        className="absolute rounded-full bg-zinc-300 shadow-md"
+        style={{ top: "26%", left: -3, height: "10%", width: 4 }}
         aria-hidden="true"
       />
 
       <div
-        className="absolute inset-[3px] bg-black shadow-inner"
-        style={{ borderRadius: shellRadius - 4 }}
+        className="absolute bg-black shadow-inner"
+        style={{ inset: 3, borderRadius: shellRadius - 4 }}
       />
 
       <div
@@ -66,9 +102,12 @@ export default function Samsung({
       >
         {media ? (
           mediaType === "video" ? (
-            <div className="h-full w-full justify-center bg-black">
-              <video
-                src={media}
+            <div
+              ref={videoWrapperRef}
+              className="h-full w-full justify-center bg-black"
+            >
+              {/* <video
+                src={shouldLoadVideo ? media : undefined}
                 className="max-h-full max-w-full object-contain"
                 autoPlay
                 muted
@@ -78,7 +117,7 @@ export default function Samsung({
                 preload="none"
                 poster="/intro-hero.jpg"
                 {...videoProps}
-              />
+              /> */}
             </div>
           ) : (
             <div className="relative h-full w-full justify-center bg-black">
@@ -113,17 +152,20 @@ export default function Samsung({
           <div className="pointer-events-none absolute inset-0">{children}</div>
         ) : null}
 
-        <div
-          className="absolute left-1/2 top-3 z-20 -translate-x-1/2 rounded-full border border-white/10 bg-black shadow-brand-camera"
-          style={{ width: cameraSize, height: cameraSize }}
-          aria-label="Front camera"
-        >
-          <div className="absolute inset-[22%] rounded-full bg-zinc-900" />
-          <div className="absolute left-[26%] top-[22%] h-[20%] w-[20%] rounded-full bg-sky-200/20 blur-[1px]" />
+          <div
+            className="absolute left-1/2 top-3 z-20 -translate-x-1/2 rounded-full border border-white/10 bg-black shadow-brand-camera"
+            style={{ width: cameraSize, height: cameraSize }}
+            aria-label="Front camera"
+          >
+          <div className="absolute rounded-full bg-zinc-900" style={{ inset: "22%" }} />
+          <div
+            className="absolute rounded-full bg-sky-200/20"
+            style={{ left: "26%", top: "22%", width: "20%", height: "20%", filter: "blur(1px)" }}
+          />
         </div>
 
         <div className="pointer-events-none absolute inset-0 bg-brand-glass" />
-        <div className="pointer-events-none absolute inset-0 rounded-[inherit] ring-1 ring-white/5" />
+        <div className="pointer-events-none absolute inset-0 ring-1 ring-white/5" style={{ borderRadius: "inherit" }} />
       </div>
 
       <span className="sr-only">

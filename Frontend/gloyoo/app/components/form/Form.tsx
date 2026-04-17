@@ -79,7 +79,7 @@ export default function Form({ content }: FormProps) {
             <div className="mb-6 flex items-center gap-2">
               <input
                 type="checkbox"
-                className="h-5 w-5 cursor-pointer rounded-[5px] text-white accent-indigo-500"
+                className="h-5 w-5 cursor-pointer rounded text-white accent-indigo-500"
               />
               <label className="cursor-pointer text-sm text-white">
                 {content.consent.prefix}{" "}
@@ -94,7 +94,7 @@ export default function Form({ content }: FormProps) {
 
             <button
               type="submit"
-              className="w-full cursor-pointer rounded-lg bg-linear-to-br from-indigo-500 to-purple-600 py-3.5 text-sm text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_20px_rgba(99,102,241,0.3)]"
+              className="w-full cursor-pointer rounded-lg bg-linear-to-br from-indigo-500 to-purple-600 py-3.5 text-sm text-white transition-all hover:-translate-y-0.5"
             >
               {content.submitLabel}
             </button>
