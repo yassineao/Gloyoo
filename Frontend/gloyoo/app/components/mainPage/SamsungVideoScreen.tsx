@@ -34,29 +34,51 @@ export default function SamsungVideoScreen({
 
   useEffect(() => {
     const videoWrapper = videoWrapperRef.current;
+    let idleId: number | null = null;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
 
     if (!videoWrapper || shouldLoadVideo) {
       return;
     }
 
+    const scheduleVideoLoad = () => {
+      if ("requestIdleCallback" in window) {
+        idleId = window.requestIdleCallback(() => setShouldLoadVideo(true), {
+          timeout: 1200,
+        });
+      } else {
+        timeoutId = globalThis.setTimeout(() => setShouldLoadVideo(true), 250);
+      }
+    };
+
     if (typeof IntersectionObserver === "undefined") {
-      setShouldLoadVideo(true);
+      scheduleVideoLoad();
       return;
     }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry?.isIntersecting) {
-          setShouldLoadVideo(true);
+          scheduleVideoLoad();
           observer.disconnect();
         }
       },
-      { rootMargin: "200px" },
+      { rootMargin: "0px" },
     );
 
     observer.observe(videoWrapper);
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+
+      if (idleId !== null && "cancelIdleCallback" in window) {
+        window.cancelIdleCallback(idleId);
+      }
+
+      if (timeoutId !== null) {
+        window.clearTimeout(timeoutId);
+      }
+    };
   }, [shouldLoadVideo]);
 
   return (

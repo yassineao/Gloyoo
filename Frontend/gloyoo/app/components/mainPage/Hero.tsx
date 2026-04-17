@@ -70,7 +70,6 @@ export default function Hero({
                   width={280}
                   imagePriority={true}
                   imageSizes="(max-width: 639px) 280px, 280px"
-                  videoProps={{ preload: "metadata" }}
                   alt={content.videoAlt}
                 />
                 
