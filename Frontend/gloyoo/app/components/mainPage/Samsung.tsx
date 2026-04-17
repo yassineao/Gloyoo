@@ -106,7 +106,7 @@ export default function Samsung({
               ref={videoWrapperRef}
               className="h-full w-full justify-center bg-black"
             >
-              {/* <video
+              <video
                 src={shouldLoadVideo ? media : undefined}
                 className="max-h-full max-w-full object-contain"
                 autoPlay
@@ -117,7 +117,7 @@ export default function Samsung({
                 preload="none"
                 poster="/intro-hero.jpg"
                 {...videoProps}
-              /> */}
+              />
             </div>
           ) : (
             <div className="relative h-full w-full justify-center bg-black">
