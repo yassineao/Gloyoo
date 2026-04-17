@@ -24,8 +24,15 @@ function isValidServiceSlug(service: string): service is ServiceSlug {
 }
 
 export async function generateStaticParams() {
-  return locales.flatMap((locale) =>
-    serviceSlugs.map((service) => ({ locale, service }))
+  return locales.reduce<Array<{ locale: Locale; service: ServiceSlug }>>(
+    (params, locale) => {
+      serviceSlugs.forEach((service) => {
+        params.push({ locale, service });
+      });
+
+      return params;
+    },
+    [],
   );
 }
 

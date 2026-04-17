@@ -9,6 +9,7 @@ type SamsungS26MockupProps = {
   imagePriority?: boolean;
   imageQuality?: number;
   imageSizes?: string;
+  videoPoster?: string;
   videoProps?: React.VideoHTMLAttributes<HTMLVideoElement>;
 };
 

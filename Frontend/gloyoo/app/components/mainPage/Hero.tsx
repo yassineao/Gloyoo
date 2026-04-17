@@ -68,6 +68,8 @@ export default function Hero({
                   media="/Intro.mp4"
                   mediaType="video"
                   width={280}
+                  imagePriority={true}
+                  imageSizes="(max-width: 639px) 280px, 280px"
                   videoProps={{ preload: "metadata" }}
                   alt={content.videoAlt}
                 />
@@ -81,7 +83,7 @@ export default function Hero({
                   width={280}
                   alt={content.imageAlt}
                   imageQuality={55}
-                  imageSizes="(max-width: 639px) 210px, (max-width: 1023px) 252px, 293px"
+                  imageSizes="(max-width: 639px) 210px, 252px"
                 />
               </div>
             </div>

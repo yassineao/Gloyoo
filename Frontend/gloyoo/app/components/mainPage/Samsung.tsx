@@ -1,9 +1,7 @@
-"use client";
-
 import type { SamsungS26MockupProps } from "@/app/types/Samsung";
 import { Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import SamsungVideoScreen from "./SamsungVideoScreen";
 
 export default function Samsung({
   media,
@@ -15,42 +13,15 @@ export default function Samsung({
   imagePriority = false,
   imageQuality,
   imageSizes,
+  videoPoster = "/intro-hero.jpg",
   videoProps,
 }: SamsungS26MockupProps) {
-  const videoWrapperRef = useRef<HTMLDivElement | null>(null);
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(mediaType !== "video");
   const height = Math.round(width * 2.08);
   const bezel = Math.max(8, Math.round(width * 0.028));
   const screenRadius = Math.round(width * 0.09);
   const shellRadius = Math.round(width * 0.12);
   const cameraSize = Math.max(10, Math.round(width * 0.035));
-
-  useEffect(() => {
-    if (mediaType !== "video" || !media || shouldLoadVideo) {
-      return;
-    }
-
-    const videoWrapper = videoWrapperRef.current;
-
-    if (!videoWrapper || typeof IntersectionObserver === "undefined") {
-      setShouldLoadVideo(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setShouldLoadVideo(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "200px" },
-    );
-
-    observer.observe(videoWrapper);
-
-    return () => observer.disconnect();
-  }, [media, mediaType, shouldLoadVideo]);
+  const responsiveSizes = imageSizes ?? `${width}px`;
 
   return (
     <div
@@ -102,30 +73,22 @@ export default function Samsung({
       >
         {media ? (
           mediaType === "video" ? (
-            <div
-              ref={videoWrapperRef}
-              className="h-full w-full justify-center bg-black"
-            >
-              <video
-                src={shouldLoadVideo ? media : undefined}
-                className="max-h-full max-w-full object-contain"
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls={false}
-                preload="none"
-                poster="/intro-hero.jpg"
-                {...videoProps}
-              />
-            </div>
+            <SamsungVideoScreen
+              alt={alt}
+              imagePriority={imagePriority}
+              imageQuality={imageQuality}
+              media={media}
+              responsiveSizes={responsiveSizes}
+              videoPoster={videoPoster}
+              videoProps={videoProps}
+            />
           ) : (
             <div className="relative h-full w-full justify-center bg-black">
               <Image
                 src={media}
                 alt={alt}
                 fill
-                sizes={imageSizes ?? `${width}px`}
+                sizes={responsiveSizes}
                 quality={imageQuality ?? (imagePriority ? 70 : 80)}
                 priority={imagePriority}
                 className="object-contain"
@@ -152,11 +115,11 @@ export default function Samsung({
           <div className="pointer-events-none absolute inset-0">{children}</div>
         ) : null}
 
-          <div
-            className="absolute left-1/2 top-3 z-20 -translate-x-1/2 rounded-full border border-white/10 bg-black shadow-brand-camera"
-            style={{ width: cameraSize, height: cameraSize }}
-            aria-label="Front camera"
-          >
+        <div
+          className="absolute left-1/2 top-3 z-20 -translate-x-1/2 rounded-full border border-white/10 bg-black shadow-brand-camera"
+          style={{ width: cameraSize, height: cameraSize }}
+          aria-label="Front camera"
+        >
           <div className="absolute rounded-full bg-zinc-900" style={{ inset: "22%" }} />
           <div
             className="absolute rounded-full bg-sky-200/20"
