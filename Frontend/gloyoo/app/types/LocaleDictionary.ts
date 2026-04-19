@@ -26,12 +26,12 @@ type FooterLink = {
 type PageMetadata = {
   title: string;
   description: string;
-  locale: string;
+  locale: "de_DE" | "en_US" | "nl_NL";
   keywords: string[];
 };
 
 type PageSeo = {
-  areaServed: string;
+  areaServed: string[];
   knowsAbout: string[];
   offerCatalogName: string;
   services: string[];

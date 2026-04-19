@@ -38,52 +38,62 @@ export const deDictionary: LocaleDictionary = {
       servicesTitle: "Leistungen",
       contactTitle: "Kontakt",
       navigationLinks: [
-        { label: "Startseite", href: "#home" },
+        { label: "Startseite", href: "/" }, // ✅ Fixed: was "#home"
         { label: "Vorteile", href: "#advantages" },
         { label: "Leistungen", href: "#services" },
         { label: "Über uns", href: "#about-us" },
       ],
       serviceLinks: [
-        { label: "Social Media Betreuung", href: "#services-list" },
-        { label: "Content Creation", href: "#services-list" },
-        { label: "Performance Marketing", href: "#services-list" },
-        { label: "Webdesign", href: "#about-us" },
+        { label: "Social Media Betreuung", href: "/services/social-media" }, // ✅ Fixed
+        { label: "Content Creation", href: "/services/content-creation" }, // ✅ Fixed
+        { label: "Performance Marketing", href: "/services/performance-marketing" }, // ✅ Fixed
+        { label: "Webdesign", href: "/services/webdesign" }, // ✅ Fixed
       ],
       contactLinks: [
-        { label: "Beratung anfragen", href: "#about-us" },
-        { label: "Projekt starten", href: "#home" },
+        { label: "Beratung anfragen", href: "/form" }, // ✅ Fixed
+        { label: "Projekt starten", href: "/form" }, // ✅ Fixed
         { label: "Leistungen entdecken", href: "#services" },
       ],
       rights: "Alle Rechte vorbehalten.",
       legalLinks: [
-        { label: "Datenschutz", href: "#about-us" },
-        { label: "Impressum", href: "#about-us" },
+        { label: "Datenschutz", href: "/datenschutz" }, // ✅ Fixed: was "#about-us"
+        { label: "Impressum", href: "/impressum" }, // ✅ Fixed: was "#about-us"
       ],
     },
     home: {
       metadata: {
-        title: "Social Media Agentur für mehr Sichtbarkeit und Kunden",
+        // ✅ IMPROVED: More specific, keyword-rich title
+        title: "Social Media Agentur | Content, Ads & Webdesign | Gloyoo",
+        
+        // ✅ IMPROVED: Removed "aus Deutschland", added remote positioning, more compelling
         description:
-          "Social Media Betreuung, Content Creation, Performance Marketing und moderne Webseiten für Unternehmen, die online sichtbar werden und mehr Anfragen gewinnen wollen.",
+          "Social Media Agentur für mehr Sichtbarkeit und Kunden. Professionelle Betreuung, Content Creation und Performance Marketing. 100% remote, deutschlandweit verfügbar.",
+        
         locale: "de_DE",
+        
+        // ✅ IMPROVED: Updated keywords (removed generic ones, added specific services)
         keywords: [
-          "Social Media Agentur",
-          "Webagentur Deutschland",
-          "Social Media Betreuung",
-          "Content Creation",
-          "Performance Marketing",
-          "Webdesign",
-          "Leadgenerierung",
-          "Online Sichtbarkeit",
-          "Gloyoo",
+          "social media agentur",
+          "content creation agentur",
+          "performance marketing",
+          "webdesign agentur",
+          "instagram marketing",
+          "facebook werbung",
+          "social media betreuung",
+          "online marketing agentur",
         ],
       },
       hero: {
-        eyebrow: "Social Media Agentur und Webagentur aus Deutschland",
+        // ✅ IMPROVED: Removed "aus Deutschland" - focus on value
+        eyebrow: "Social Media Agentur und Webagentur",
+        
         titleFirst: "Mehr Kunden",
         titleSecond: "durch Social Media und moderne Webseiten",
+        
+        // ✅ IMPROVED: Removed location, added remote benefit
         description:
-          "Gloyoo ist Ihre Social Media und Webagentur in Deutschland. Wir helfen Unternehmen dabei, online sichtbar zu werden, Vertrauen aufzubauen und qualifizierte Kundenanfragen zu gewinnen.",
+          "Wir helfen Unternehmen dabei, online sichtbar zu werden, Vertrauen aufzubauen und qualifizierte Kundenanfragen zu gewinnen. 100% remote, flexibel und deutschlandweit verfügbar.",
+        
         primaryCta: "Kostenloses Beratungsgespräch",
         secondaryCta: "Leistungen ansehen",
         videoAlt: "Video-Vorschau einer Social-Media-Kampagne von Gloyoo",
@@ -142,113 +152,140 @@ export const deDictionary: LocaleDictionary = {
       about: {
         eyebrow: "Über Gloyoo",
         title: "Ihre Agentur für Social Media und moderne Webseiten",
+        
+        // ✅ IMPROVED: Added remote positioning, removed generic filler
         paragraphs: [
           "Bei Gloyoo unterstützen wir Unternehmen dabei, ihre digitale Präsenz professionell aufzubauen und gezielt zu optimieren. Unser Fokus liegt auf messbaren Ergebnissen: mehr Reichweite, mehr Anfragen und mehr Umsatz.",
-          "Wir kombinieren modernes Webdesign mit effektiven Social Media Strategien und begleiten Marken von der Positionierung bis zur laufenden Betreuung - alles aus einer Hand.",
+          "Als Remote-Agentur kombinieren wir modernes Webdesign mit effektiven Social Media Strategien und begleiten Marken von der Positionierung bis zur laufenden Betreuung – flexibel, digital und deutschlandweit verfügbar.",
         ],
+        
         cta: "Projekt mit uns starten",
       },
       scrollTexts: ["Social Media", "Moderne Webseiten"],
       seo: {
-        areaServed: "Deutschland",
+        // ✅ IMPROVED: Updated for schema (consistent with metadata)
+        areaServed: ["Germany", "Austria", "Switzerland"],
         knowsAbout: [
+          "Social Media Marketing",
+          "Content Creation",
+          "Performance Marketing",
+          "Webdesign",
+          "Instagram Marketing",
+          "Facebook Advertising",
+          "Digital Marketing",
+        ],
+        offerCatalogName: "Unsere Leistungen",
+        services: [
           "Social Media Betreuung",
           "Content Creation",
           "Performance Marketing",
           "Webdesign",
         ],
-        offerCatalogName: "Leistungen von Gloyoo",
-        services: [
-          "Social Media Betreuung",
-          "Content Creation",
-          "Performance Marketing",
-        ],
       },
     },
     servicePage: {
       metadata: {
-        title: "Leistungen von Gloyoo | Social Media, Content und Webdesign",
+        // ✅ IMPROVED: More specific, keyword-rich
+        title: "Unsere Leistungen | Social Media, Content & Webdesign | Gloyoo",
+        
+        // ✅ IMPROVED: Better flow, removed "fuer" typo
         description:
-          "Entdecken Sie die Leistungen von Gloyoo: strategische Social-Media-Betreuung, Content Creation, Performance Marketing und Webdesign fuer mehr Sichtbarkeit und Anfragen.",
+          "Entdecken Sie unsere Leistungen: strategische Social-Media-Betreuung, Content Creation, Performance Marketing und Webdesign für mehr Sichtbarkeit und Anfragen.",
+        
         locale: "de_DE",
+        
         keywords: [
-          "Gloyoo Leistungen",
-          "Social Media Betreuung",
-          "Content Creation Agentur",
-          "Performance Marketing",
-          "Webdesign Deutschland",
+          "social media betreuung",
+          "content creation agentur",
+          "performance marketing",
+          "webdesign",
+          "instagram marketing",
+          "facebook ads",
         ],
       },
       hero: {
         "social-media": {
-                    imageUrl: "https://imgs.search.brave.com/k2Mb30Q2GikWc_eQ-lCn9Ra7fIm3d-Lm-8ePAocKomI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LW1hbmFnZW1l/bnQtZmlsZXMuY2Fu/dmEuY29tLzBlNmZi/OTMwLTI2NGItNGRl/Ny1iNzRjLTM5ZTMw/MzMzNzcwNy9oZWFk/ZXJwaW50ZXJlc3Qu/cG5n",
-
+          imageUrl: "https://imgs.search.brave.com/k2Mb30Q2GikWc_eQ-lCn9Ra7fIm3d-Lm-8ePAocKomI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LW1hbmFnZW1l/bnQtZmlsZXMuY2Fu/dmEuY29tLzBlNmZi/OTMwLTI2NGItNGRl/Ny1iNzRjLTM5ZTMw/MzMzNzcwNy9oZWFk/ZXJwaW50ZXJlc3Qu/cG5n",
           badge: "Social Media Betreuung",
           title: "Social Media Betreuung, die Ihre Marke sichtbar macht",
+          
+          // ✅ IMPROVED: Fixed typo "Kanaele" → "Kanäle", "regelmaessig" → "regelmäßig"
           description:
-            "Wir planen, gestalten und betreuen Ihre Kanaele so, dass Ihre Marke professionell auftritt und regelmaessig qualifizierte Anfragen gewinnt.",
+            "Wir planen, gestalten und betreuen Ihre Kanäle so, dass Ihre Marke professionell auftritt und regelmäßig qualifizierte Anfragen gewinnt.",
+          
           primaryCta: "Beratung anfragen",
           secondaryCta: "Mehr erfahren",
-          imageAlt: "Visual fuer Social Media Betreuung von Gloyoo",
+          imageAlt: "Social Media Betreuung von Gloyoo",
         },
         "content-creation": {
           badge: "Content Creation",
-                    imageUrl: "/test.png",
-
+          imageUrl: "/test.png",
           title: "Content Creation, die Aufmerksamkeit in Vertrauen verwandelt",
+          
+          // ✅ IMPROVED: Fixed typo "staerken" → "stärken"
           description:
-            "Von Reels bis Brand Assets erstellen wir Inhalte, die Ihre Zielgruppe ansprechen, Wiedererkennung schaffen und Ihre Marke staerken.",
+            "Von Reels bis Brand Assets erstellen wir Inhalte, die Ihre Zielgruppe ansprechen, Wiedererkennung schaffen und Ihre Marke stärken.",
+          
           primaryCta: "Projekt anfragen",
           secondaryCta: "Referenzen ansehen",
-          imageAlt: "Visual fuer Content Creation von Gloyoo",
+          imageAlt: "Content Creation von Gloyoo",
         },
         "performance-marketing": {
-                    imageUrl: "https://imgs.search.brave.com/k2Mb30Q2GikWc_eQ-lCn9Ra7fIm3d-Lm-8ePAocKomI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LW1hbmFnZW1l/bnQtZmlsZXMuY2Fu/dmEuY29tLzBlNmZi/OTMwLTI2NGItNGRl/Ny1iNzRjLTM5ZTMw/MzMzNzcwNy9oZWFk/ZXJwaW50ZXJlc3Qu/cG5n",
-
+          imageUrl: "https://imgs.search.brave.com/k2Mb30Q2GikWc_eQ-lCn9Ra7fIm3d-Lm-8ePAocKomI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LW1hbmFnZW1l/bnQtZmlsZXMuY2Fu/dmEuY29tLzBlNmZi/OTMwLTI2NGItNGRl/Ny1iNzRjLTM5ZTMw/MzMzNzcwNy9oZWFk/ZXJwaW50ZXJlc3Qu/cG5n",
           badge: "Performance Marketing",
           title: "Performance Marketing mit Fokus auf Leads und Umsatz",
+          
+          // ✅ IMPROVED: Fixed typo "Kanaelen" → "Kanälen", "zaehlen" → "zählen"
           description:
-            "Mit datenbasierten Kampagnen steigern wir Reichweite, Conversions und messbare Ergebnisse auf den Kanaelen, die fuer Ihr Unternehmen zaehlen.",
+            "Mit datenbasierten Kampagnen steigern wir Reichweite, Conversions und messbare Ergebnisse auf den Kanälen, die für Ihr Unternehmen zählen.",
+          
           primaryCta: "Strategie anfragen",
           secondaryCta: "Potenzial entdecken",
-          imageAlt: "Visual fuer Performance Marketing von Gloyoo",
+          imageAlt: "Performance Marketing von Gloyoo",
         },
         webdesign: {
-                    imageUrl: "/test.png",
-
+          imageUrl: "/test.png",
           badge: "Webdesign",
-          title: "Webdesign, das ueberzeugt und Anfragen erzeugt",
+          
+          // ✅ IMPROVED: Fixed typo "ueberzeugt" → "überzeugt"
+          title: "Webdesign, das überzeugt und Anfragen erzeugt",
+          
+          // ✅ IMPROVED: Fixed typos "praesentieren" → "präsentieren"
           description:
-            "Wir entwickeln moderne Websites, die Ihre Marke professionell praesentieren, Vertrauen aufbauen und Besucher in Kundenanfragen verwandeln.",
+            "Wir entwickeln moderne Websites, die Ihre Marke professionell präsentieren, Vertrauen aufbauen und Besucher in Kundenanfragen verwandeln.",
+          
           primaryCta: "Website planen",
           secondaryCta: "Mehr erfahren",
-          imageAlt: "Visual fuer Webdesign von Gloyoo",
+          imageAlt: "Webdesign von Gloyoo",
         },
       },
       features: {
         badge: "Unsere Kernleistungen",
         title: "Jede Marke braucht einen klaren, starken digitalen Auftritt.",
+        
+        // ✅ IMPROVED: Fixed typos throughout
         description:
-          "Wir kombinieren Strategie, Kreativitaet und Umsetzung, damit Ihre Online-Praesenz professionell wirkt und messbare Ergebnisse liefert.",
+          "Wir kombinieren Strategie, Kreativität und Umsetzung, damit Ihre Online-Präsenz professionell wirkt und messbare Ergebnisse liefert.",
+        
         items: [
           {
             title: "Mehr Reichweite",
             description:
               "Steigern Sie Sichtbarkeit, Website-Besuche und qualifizierte Kontakte über starke Inhalte und Kampagnen.",
-            imageAlt: "Diagramm zur Reichweitensteigerung",
+            imageAlt: "Reichweitensteigerung durch Social Media",
             statLabel: "45%",
           },
           {
             title: "Struktur für Ihr Marketing",
             description:
               "Klare Prozesse, abgestimmte Inhalte und ein konsistenter Markenauftritt für nachhaltiges Wachstum.",
-            imageAlt: "Dashboard zur Marketingstruktur",
+            imageAlt: "Marketing-Struktur und Prozesse",
           },
           {
             title: "Nahtlose Umsetzung",
             description:
               "Webdesign, Content und Performance Marketing greifen ineinander und sorgen für ein stimmiges Gesamterlebnis.",
-            imageAlt: "Illustration zur digitalen Integration",
+            imageAlt: "Integrierte digitale Marketing-Lösungen",
           },
         ],
         sections: [
@@ -257,13 +294,13 @@ export const deDictionary: LocaleDictionary = {
             points: [
               "Klare Content- und Kampagnenplanung für Ihre Ziele",
               "Abgestimmte Prozesse zwischen Marke, Design und Performance",
-              "Messbare Prioritaeten für nachhaltiges Wachstum",
+              "Messbare Prioritäten für nachhaltiges Wachstum",
               "Mehr Struktur für interne und externe Zusammenarbeit",
               "Schnellere Abstimmungen mit klaren Freigabewegen",
-              "Bessere übersicht über laufende Massnahmen",
-              "Verlaessliche Umsetzung über alle Kanaele hinweg",
+              "Bessere Übersicht über laufende Maßnahmen",
+              "Verlässliche Umsetzung über alle Kanäle hinweg",
               "Transparente Kommunikation zu Fortschritt und Ergebnissen",
-              "Planbare Massnahmen statt spontaner Einzelaktionen",
+              "Planbare Maßnahmen statt spontaner Einzelaktionen",
             ],
           },
           {
@@ -273,11 +310,11 @@ export const deDictionary: LocaleDictionary = {
               "Design und Nutzerführung für mehr Vertrauen optimieren",
               "Klare Botschaften für Angebote und Leistungen ausarbeiten",
               "Responsives Erlebnis für Mobile und Desktop sicherstellen",
-              "Schnelle Anpassungen ohne unnoetige Komplexitaet ermoeglichen",
+              "Schnelle Anpassungen ohne unnötige Komplexität ermöglichen",
               "Einheitlichen Markenauftritt über alle Seiten halten",
               "Conversion-starke Elemente bewusst platzieren",
               "Inhalte flexibel für Kampagnen und Aktionen erweitern",
-              "Technische Basis für Sichtbarkeit und Performance staerken",
+              "Technische Basis für Sichtbarkeit und Performance stärken",
             ],
           },
           {
@@ -288,10 +325,10 @@ export const deDictionary: LocaleDictionary = {
               "Designsysteme schaffen, die im Alltag nutzbar bleiben",
               "Vorlagen für Posts, Landingpages und Kampagnen vorbereiten",
               "Kreative Ideen sauber in die Umsetzung bringen",
-              "Markenwerte in Bildsprache und Tonalitaet übersetzen",
+              "Markenwerte in Bildsprache und Tonalität übersetzen",
               "Flexibel auf neue Formate und Trends reagieren",
               "Professionellen Auftritt über alle Kontaktpunkte sichern",
-              "Mehr Konsistenz ohne an Individualitaet zu verlieren",
+              "Mehr Konsistenz ohne an Individualität zu verlieren",
             ],
           },
         ],
@@ -303,19 +340,21 @@ export const deDictionary: LocaleDictionary = {
           "Wir entwickeln keine Standardlösungen. Jedes Unternehmen, jede Marke und jedes Ziel ist anders. Deshalb arbeiten wir eng mit Ihnen zusammen, um eine individuelle Strategie und einen Auftritt zu schaffen, der wirklich zu Ihnen passt.",
         subtitle: "Lassen Sie uns gemeinsam Ihre digitale Präsenz gestalten.",
         subdescription:
-          "Ob Social Media, Content oder Webdesign - wir bringen Ihre Marke online zum Strahlen und sorgen dafür, dass Sie dort sichtbar wird, wo Ihre Zielgruppe unterwegs ist.",
-        imageAlt: "Abstrakte 3D-Formen im Hintergrund des Service-Hero-Bereichs",
+          "Ob Social Media, Content oder Webdesign – wir bringen Ihre Marke online zum Strahlen und sorgen dafür, dass Sie dort sichtbar wird, wo Ihre Zielgruppe unterwegs ist.",
+        imageAlt: "Abstrakte 3D-Formen im Hintergrund",
         imageUrl: "/test.png",
       },
       seo: {
-        areaServed: "Deutschland",
+        areaServed: ["Germany", "Austria", "Switzerland"],
         knowsAbout: [
-          "Social Media Betreuung",
+          "Social Media Marketing",
           "Content Creation",
           "Performance Marketing",
           "Webdesign",
+          "Instagram Marketing",
+          "Facebook Advertising",
         ],
-        offerCatalogName: "Leistungen von Gloyoo",
+        offerCatalogName: "Unsere Leistungen",
         services: [
           "Social Media Betreuung",
           "Content Creation",
@@ -326,22 +365,29 @@ export const deDictionary: LocaleDictionary = {
     },
     form: {
       metadata: {
-        title: "Kontaktformular für Ihre Anfrage an Gloyoo",
+        // ✅ IMPROVED: More action-oriented title
+        title: "Kontakt & Beratung | Projekt mit Gloyoo starten",
+        
         description:
-          "Senden Sie Gloyoo Ihre Anfrage zu Social Media, Content Creation, Performance Marketing oder Webdesign und wir melden uns zeitnah bei Ihnen.",
+          "Starten Sie Ihr Projekt mit Gloyoo. Kontaktieren Sie uns für Social Media, Content Creation, Performance Marketing oder Webdesign – wir melden uns zeitnah bei Ihnen.",
+        
         locale: "de_DE",
+        
         keywords: [
-          "Kontakt Gloyoo",
-          "Anfrage Social Media Agentur",
-          "Kontaktformular Webagentur",
-          "Beratung Social Media",
-          "Webdesign Anfrage",
+          "kontakt gloyoo",
+          "beratung social media",
+          "projekt anfragen",
+          "social media agentur kontakt",
+          "webdesign anfrage",
         ],
       },
       content: {
         title: "Kontakt aufnehmen",
+        
+        // ✅ IMPROVED: Fixed typo "Gespraech" → "Gespräch"
         description:
-          "Sie haben eine Frage oder schon eine konkrete Idee? Unser Team freut sich darauf, mit Ihnen ins Gespraech zu kommen.",
+          "Sie haben eine Frage oder schon eine konkrete Idee? Unser Team freut sich darauf, mit Ihnen ins Gespräch zu kommen.",
+        
         fields: {
           companyName: "Firmenname",
           lastName: "Nachname",
@@ -354,13 +400,18 @@ export const deDictionary: LocaleDictionary = {
           lastName: "Mustermann",
           email: "hallo@unternehmen.de",
           phoneNumber: "+49 123 456789",
-          message: "Erzaehlen Sie uns kurz von Ihrem Projekt",
+          
+          // ✅ IMPROVED: Fixed typo "Erzaehlen" → "Erzählen"
+          message: "Erzählen Sie uns kurz von Ihrem Projekt",
         },
         consent: {
           prefix: "Sie stimmen unseren",
           terms: "Bedingungen",
           and: "und der",
-          privacyPolicy: "Datenschutzerklaerung",
+          
+          // ✅ IMPROVED: Fixed typo "Datenschutzerklaerung" → "Datenschutzerklärung"
+          privacyPolicy: "Datenschutzerklärung",
+          suffix: "zu.",
         },
         submitLabel: "Nachricht senden",
         testimonial: {
@@ -372,14 +423,14 @@ export const deDictionary: LocaleDictionary = {
         },
       },
       seo: {
-        areaServed: "Deutschland",
+        areaServed: ["Germany", "Austria", "Switzerland"],
         knowsAbout: [
-          "Social Media Betreuung",
+          "Social Media Marketing",
           "Content Creation",
           "Performance Marketing",
           "Webdesign",
         ],
-        offerCatalogName: "Kontakt und Beratung von Gloyoo",
+        offerCatalogName: "Kontakt und Beratung",
         services: [
           "Social Media Betreuung",
           "Content Creation",

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import MobileNav from "./MobileNav";
 import LocaleSwitchLink from "./LocaleSwitchLink";
-import { getAlternateLocale, type Locale, type LocaleDictionary } from "../lib/i18n";
+import { type Locale, type LocaleDictionary } from "../lib/i18n";
 
 export default function Navbar({
   locale,
@@ -11,7 +11,6 @@ export default function Navbar({
   locale: Locale;
   content: LocaleDictionary["nav"];
 }) {
-  const alternateLocale = getAlternateLocale(locale);
   const localizedHref = (href: string) => `/${locale}${href}`;
 
   return (
@@ -77,7 +76,7 @@ export default function Navbar({
 
                   {item.children?.length ? (
                     <div
-                      className="invisible absolute left-0 top-full z-30 mt-2 w-64 translate-y-1 rounded-xl border border-white/10 p-2 opacity-0 shadow-2xl backdrop-blur-md transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100"
+                      className="invisible absolute left-0 top-full z-30 mt-2 w-64 translate-y-1 rounded-xl border border-white/10 p-2 opacity-0 shadow-2xl backdrop-blur-md transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 "
                       style={{ backgroundColor: "rgba(11, 11, 15, 0.95)" }}
                     >
                       <ul className="space-y-1">
@@ -101,7 +100,7 @@ export default function Navbar({
 
           <div className="hidden items-center gap-2 text-right lg:col-span-1 lg:flex lg:justify-end xl:gap-4">
             <LocaleSwitchLink
-              alternateLocale={alternateLocale}
+              currentLocale={locale}
               label={content.switchLabel}
               className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-brand-graySoft transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-petalPink focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navyDark"
             />

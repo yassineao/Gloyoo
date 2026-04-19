@@ -1,6 +1,6 @@
 import Link from "next/link";
 import LocaleSwitchLink from "./LocaleSwitchLink";
-import { getAlternateLocale, type Locale, type LocaleDictionary } from "../lib/i18n";
+import { type Locale, type LocaleDictionary } from "../lib/i18n";
 
 type MobileNavProps = {
   locale: Locale;
@@ -9,17 +9,16 @@ type MobileNavProps = {
 
 export default function MobileNav({ locale, content }: MobileNavProps) {
   const localizedHref = (href: string) => `/${locale}${href}`;
-  const alternateLocale = getAlternateLocale(locale);
 
   return (
     <details className="relative justify-self-end lg:hidden [&_summary::-webkit-details-marker]:hidden">
-      <summary className="flex cursor-pointer list-none items-center">
-        <div className="flex items-center">
-          <LocaleSwitchLink
-            alternateLocale={alternateLocale}
-            label={content.switchLabel}
-            className="mr-4 block py-2 text-sm font-medium text-brand-graySoft hover:text-white"
-          />
+      <div className="flex items-center">
+        <LocaleSwitchLink
+          currentLocale={locale}
+          label={content.switchLabel}
+          className="mr-4 inline-flex items-center py-2 text-sm font-medium text-brand-graySoft hover:text-white"
+        />
+        <summary className="flex cursor-pointer list-none items-center">
           <span
             className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/12 bg-white/6 text-sm font-medium text-white transition-colors hover:bg-white/10"
             aria-label={content.mobileMenuLabel}
@@ -41,8 +40,8 @@ export default function MobileNav({ locale, content }: MobileNavProps) {
               <line x1="4" x2="20" y1="18" y2="18" />
             </svg>
           </span>
-        </div>
-      </summary>
+        </summary>
+      </div>
 
       <div className="absolute left-0 top-full w-full rounded-b-lg bg-transparent px-4 pt-2 shadow-lg sm:px-6">
         <ul className="space-y-3 rounded-lg border border-white/10 bg-brand-navyDark/92 px-4 pb-4 text-brand-graySoft backdrop-blur-md">

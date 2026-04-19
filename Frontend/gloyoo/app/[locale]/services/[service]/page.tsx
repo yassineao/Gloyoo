@@ -6,6 +6,7 @@ import Service from "../../../components/service/Service";
 import {
   getAlternateLocale,
   getDictionary,
+  getLanguageTag,
   isValidLocale,
   locales,
   type Locale,
@@ -115,7 +116,7 @@ export default async function LocalizedServicePage({
     name: siteConfig.name,
     url: localizedUrl,
     description: serviceHero.description,
-    inLanguage: locale === "de" ? "de-DE" : "en-US",
+    inLanguage: getLanguageTag(locale),
     areaServed: servicePage.seo.areaServed,
     image: `${siteUrl}/Logo.png`,
     knowsAbout: servicePage.seo.knowsAbout,

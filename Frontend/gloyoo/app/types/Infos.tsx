@@ -20,6 +20,7 @@ type Infos = {
     terms: string;
     and: string;
     privacyPolicy: string;
+    suffix: string;
   };
   submitLabel: string;
   testimonial: {

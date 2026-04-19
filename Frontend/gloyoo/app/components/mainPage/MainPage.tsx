@@ -1,7 +1,7 @@
 import Background from "../Background";
 import ScrollVelocity from "../ScrollVelocity";
 import type { HomeContent } from "../../types/LocaleDictionary";
-import type { Locale } from "../../lib/i18n";
+import { getLanguageTag, type Locale } from "../../lib/i18n";
 import { getSiteUrl, siteConfig } from "../../lib/seo";
 import AboutUs from "./AboutUs";
 import Advantages from "./Advantages";
@@ -23,7 +23,7 @@ export default function MainPage({
     name: siteConfig.name,
     url: localizedUrl,
     description: home.metadata.description,
-    inLanguage: locale === "de" ? "de-DE" : "en-US",
+    inLanguage: getLanguageTag(locale),
     areaServed: home.seo.areaServed,
     image: `${siteUrl}/Logo.png`,
     knowsAbout: home.seo.knowsAbout,

@@ -4,6 +4,7 @@ import Form from "../../components/form/Form";
 import {
   getAlternateLocale,
   getDictionary,
+  getLanguageTag,
   isValidLocale,
   locales,
   type Locale,
@@ -92,7 +93,7 @@ export default async function FormPage({
     name: siteConfig.name,
     url: localizedUrl,
     description: form.metadata.description,
-    inLanguage: locale === "de" ? "de-DE" : "en-US",
+    inLanguage: getLanguageTag(locale),
     areaServed: form.seo.areaServed,
     image: `${siteUrl}/Logo.png`,
     knowsAbout: form.seo.knowsAbout,
