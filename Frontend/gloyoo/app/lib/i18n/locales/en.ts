@@ -57,7 +57,7 @@ export const enDictionary: LocaleDictionary = {
       rights: "All rights reserved.",
       legalLinks: [
         { label: "Privacy", href: "/privacy" },
-        { label: "Legal Notice", href: "/legal" },
+        { label: "Legal Notice", href: "/impressum" },
       ],
     },
     home: {
@@ -185,7 +185,7 @@ export const enDictionary: LocaleDictionary = {
       },
       hero: {
         "social-media": {
-          imageUrl: "https://imgs.search.brave.com/k2Mb30Q2GikWc_eQ-lCn9Ra7fIm3d-Lm-8ePAocKomI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LW1hbmFnZW1l/bnQtZmlsZXMuY2Fu/dmEuY29tLzBlNmZi/OTMwLTI2NGItNGRl/Ny1iNzRjLTM5ZTMw/MzMzNzcwNy9oZWFk/ZXJwaW50ZXJlc3Qu/cG5n",
+          imageUrl: "/bg.jpg",
           badge: "Social Media Management",
           title: "Social Media Management That Makes Your Brand Visible",
           description:
@@ -196,7 +196,7 @@ export const enDictionary: LocaleDictionary = {
         },
         "content-creation": {
           badge: "Content Creation",
-          imageUrl: "/test.png",
+          imageUrl: "/bg.jpg",
           title: "Content Creation That Turns Attention Into Trust",
           description:
             "From reels to brand assets, we create content that appeals to your target audience, creates recognition, and strengthens your brand.",
@@ -205,7 +205,7 @@ export const enDictionary: LocaleDictionary = {
           imageAlt: "Content Creation by Gloyoo",
         },
         "performance-marketing": {
-          imageUrl: "https://imgs.search.brave.com/k2Mb30Q2GikWc_eQ-lCn9Ra7fIm3d-Lm-8ePAocKomI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LW1hbmFnZW1l/bnQtZmlsZXMuY2Fu/dmEuY29tLzBlNmZi/OTMwLTI2NGItNGRl/Ny1iNzRjLTM5ZTMw/MzMzNzcwNy9oZWFk/ZXJwaW50ZXJlc3Qu/cG5n",
+          imageUrl: "/bg.jpg",
           badge: "Performance Marketing",
           title: "Performance Marketing Focused on Leads and Revenue",
           description:
@@ -215,7 +215,7 @@ export const enDictionary: LocaleDictionary = {
           imageAlt: "Performance Marketing by Gloyoo",
         },
         webdesign: {
-          imageUrl: "/test.png",
+          imageUrl: "/bg.jpg",
           badge: "Web Design",
           title: "Web Design That Convinces and Generates Inquiries",
           description:
@@ -305,7 +305,7 @@ export const enDictionary: LocaleDictionary = {
         subdescription:
           "Whether social media, content, or web design—we make your brand shine online and ensure it becomes visible where your target audience is.",
         imageAlt: "Abstract 3D shapes in the background",
-        imageUrl: "/test.png",
+        imageUrl: "/bg.jpg",
       },
       seo: {
         areaServed: ["Germany", "Europe", "International"],
@@ -371,7 +371,7 @@ export const enDictionary: LocaleDictionary = {
             "We don't develop standard solutions. Together we create a presence that makes visible what your brand stands for.",
           author: "Gloyoo Team",
           imageAlt: "Abstract 3D shapes in the background of the contact form",
-          imageUrl: "/test.png",
+          imageUrl: "/bg.jpg",
         },
       },
       seo: {
@@ -389,6 +389,175 @@ export const enDictionary: LocaleDictionary = {
           "Performance Marketing",
           "Web Design",
         ],
+      },
+    },
+    pages: {
+      about: {
+        metadata: {
+          title: "About Us | Gloyoo",
+          description:
+            "Learn more about Gloyoo, how we work, and how we support businesses with social media, content, and web design.",
+          locale: "en_US",
+          keywords: [
+            "about gloyoo",
+            "social media agency team",
+            "web design agency about",
+            "digital agency values",
+          ],
+        },
+        eyebrow: "About Gloyoo",
+        title: "Your Agency for Social Media and Modern Websites",
+        intro:
+          "At Gloyoo, we help businesses build and optimize their digital presence professionally. Our focus is on measurable results: more reach, more inquiries, and more revenue.",
+        sections: [
+          {
+            title: "Our approach",
+            paragraphs: [
+              "At Gloyoo, we help businesses build and optimize their digital presence professionally. Our focus is on measurable results: more reach, more inquiries, and more revenue.",
+              "As a remote agency, we combine modern web design with effective social media strategies and support brands from positioning to ongoing management, flexible, digital, and available across Europe.",
+            ],
+          },
+          {
+            title: "How we work",
+            bullets: [
+              "We focus on clear strategy instead of random activity and combine creativity with measurable goals.",
+              "Our collaboration is remote, flexible, and built around transparent communication.",
+              "We support projects from positioning through ongoing management and optimization.",
+            ],
+          },
+          {
+            title: "What matters to us",
+            bullets: [
+              "Reliable execution and honest advice.",
+              "Design and content that build trust and generate qualified inquiries.",
+              "Digital solutions that fit your business, your offer, and your available resources.",
+            ],
+          },
+        ],
+        ctaLabel: "Start Your Project With Us",
+      },
+      privacy: {
+        metadata: {
+          title: "Privacy | Gloyoo",
+          description:
+            "Information about how personal data is processed on the Gloyoo website.",
+          locale: "en_US",
+          keywords: [
+            "gloyoo privacy",
+            "privacy policy",
+            "gdpr website notice",
+            "contact form privacy",
+          ],
+        },
+        eyebrow: "Privacy",
+        title: "Privacy Policy",
+        intro:
+          "Protecting personal data matters to us. This page explains which data may be processed when visiting this website and when submitting a contact request.",
+        sections: [
+          {
+            title: "Controller",
+            paragraphs: [
+              "Gloyoo",
+              "Before publishing, please add the full legal company name or personal name, the complete business address, and a valid contact email address.",
+            ],
+          },
+          {
+            title: "What data may be processed",
+            bullets: [
+              "Technical access data such as IP address, browser type, date, and time may be processed on the server side to provide the website securely and reliably.",
+              "When you use the contact form, we process the details you submit, such as name, company, email address, phone number, and message.",
+              "We use this information only to respond to inquiries, evaluate project requests, and communicate with potential clients.",
+            ],
+          },
+          {
+            title: "Purpose and legal basis",
+            bullets: [
+              "Processing is carried out to provide the website and to handle contact requests.",
+              "Relevant legal bases may include Art. 6(1)(b) GDPR for pre-contractual communication and Art. 6(1)(f) GDPR for the secure and technically necessary operation of the website.",
+            ],
+          },
+          {
+            title: "Storage period",
+            paragraphs: [
+              "Personal data is stored only as long as necessary to process the request, comply with legal retention requirements, or protect legitimate business interests.",
+            ],
+          },
+          {
+            title: "Your rights",
+            bullets: [
+              "You have the right to access, rectify, erase, restrict processing, and receive your data within the scope of applicable law.",
+              "You may object to processing where it is based on legitimate interests.",
+              "You also have the right to lodge a complaint with a competent data protection authority.",
+            ],
+          },
+          {
+            title: "Update notice",
+            paragraphs: [
+              "If additional tools are added, such as analytics, external form providers, scheduling tools, newsletters, or embedded third-party content, this privacy policy should be updated accordingly.",
+            ],
+          },
+        ],
+        note:
+          "Before publishing, replace the controller section and add any third-party services actually used on the live site and hosting setup.",
+      },
+      impressum: {
+        metadata: {
+          title: "Legal Notice | Gloyoo",
+          description:
+            "Legal notice and provider information for the Gloyoo website.",
+          locale: "en_US",
+          keywords: [
+            "gloyoo legal notice",
+            "website provider information",
+            "imprint",
+            "legal disclosure",
+          ],
+        },
+        eyebrow: "Legal",
+        title: "Legal Notice",
+        intro:
+          "This legal notice serves as a template for the mandatory provider information. Please complete all real business details before publishing.",
+        sections: [
+          {
+            title: "Provider information",
+            bullets: [
+              "Gloyoo",
+              "[Full legal name or business entity]",
+              "[Street and number]",
+              "[Postal code and city]",
+              "[Country]",
+            ],
+          },
+          {
+            title: "Contact",
+            bullets: [
+              "Email: [Your business email address]",
+              "Phone: [Your phone number]",
+            ],
+          },
+          {
+            title: "Represented by",
+            paragraphs: [
+              "If applicable, add the authorized representative, owner, or managing director here.",
+            ],
+          },
+          {
+            title: "Register and VAT details",
+            bullets: [
+              "Commercial register: [Court and registration number, if applicable]",
+              "VAT ID: [VAT number, if applicable]",
+              "Additional regulatory information: [if required for your business]",
+            ],
+          },
+          {
+            title: "Liability for content",
+            paragraphs: [
+              "The content of this website has been created with care. However, no guarantee can be given for the accuracy, completeness, or timeliness of the content.",
+            ],
+          },
+        ],
+        note:
+          "Replace every placeholder before publishing. For a legally reliable notice, adapt the details to your actual legal entity and business location.",
       },
     },
 };

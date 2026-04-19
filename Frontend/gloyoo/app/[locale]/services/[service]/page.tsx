@@ -62,6 +62,7 @@ export async function generateMetadata({
       languages: {
         de: `/de/services/${service}`,
         en: `/en/services/${service}`,
+        nl: `/nl/services/${service}`,
         "x-default": `/de/services/${service}`,
       },
     },
@@ -139,11 +140,9 @@ export default async function LocalizedServicePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Background>
-        <div className=" overflow-hidden bg-[#0B0B0F]/30 font-sans">
-          <Service content={servicePage} service={service} />
+        <div className=" overflow-hidden  font-sans">
+          <Service content={servicePage} locale={locale} service={service} />
         </div>
-      </Background>
     </main>
   );
 }

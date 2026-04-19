@@ -56,7 +56,7 @@ export const deDictionary: LocaleDictionary = {
       ],
       rights: "Alle Rechte vorbehalten.",
       legalLinks: [
-        { label: "Datenschutz", href: "/datenschutz" }, // ✅ Fixed: was "#about-us"
+        { label: "Datenschutz", href: "/privacy" }, // ✅ Fixed: was "#about-us"
         { label: "Impressum", href: "/impressum" }, // ✅ Fixed: was "#about-us"
       ],
     },
@@ -205,7 +205,7 @@ export const deDictionary: LocaleDictionary = {
       },
       hero: {
         "social-media": {
-          imageUrl: "https://imgs.search.brave.com/k2Mb30Q2GikWc_eQ-lCn9Ra7fIm3d-Lm-8ePAocKomI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LW1hbmFnZW1l/bnQtZmlsZXMuY2Fu/dmEuY29tLzBlNmZi/OTMwLTI2NGItNGRl/Ny1iNzRjLTM5ZTMw/MzMzNzcwNy9oZWFk/ZXJwaW50ZXJlc3Qu/cG5n",
+          imageUrl: "/bg.jpg",
           badge: "Social Media Betreuung",
           title: "Social Media Betreuung, die Ihre Marke sichtbar macht",
           
@@ -219,7 +219,7 @@ export const deDictionary: LocaleDictionary = {
         },
         "content-creation": {
           badge: "Content Creation",
-          imageUrl: "/test.png",
+          imageUrl: "/bg.jpg",
           title: "Content Creation, die Aufmerksamkeit in Vertrauen verwandelt",
           
           // ✅ IMPROVED: Fixed typo "staerken" → "stärken"
@@ -231,7 +231,7 @@ export const deDictionary: LocaleDictionary = {
           imageAlt: "Content Creation von Gloyoo",
         },
         "performance-marketing": {
-          imageUrl: "https://imgs.search.brave.com/k2Mb30Q2GikWc_eQ-lCn9Ra7fIm3d-Lm-8ePAocKomI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LW1hbmFnZW1l/bnQtZmlsZXMuY2Fu/dmEuY29tLzBlNmZi/OTMwLTI2NGItNGRl/Ny1iNzRjLTM5ZTMw/MzMzNzcwNy9oZWFk/ZXJwaW50ZXJlc3Qu/cG5n",
+          imageUrl: "/bg.jpg",
           badge: "Performance Marketing",
           title: "Performance Marketing mit Fokus auf Leads und Umsatz",
           
@@ -244,7 +244,7 @@ export const deDictionary: LocaleDictionary = {
           imageAlt: "Performance Marketing von Gloyoo",
         },
         webdesign: {
-          imageUrl: "/test.png",
+          imageUrl: "/bg.jpg",
           badge: "Webdesign",
           
           // ✅ IMPROVED: Fixed typo "ueberzeugt" → "überzeugt"
@@ -342,7 +342,7 @@ export const deDictionary: LocaleDictionary = {
         subdescription:
           "Ob Social Media, Content oder Webdesign – wir bringen Ihre Marke online zum Strahlen und sorgen dafür, dass Sie dort sichtbar wird, wo Ihre Zielgruppe unterwegs ist.",
         imageAlt: "Abstrakte 3D-Formen im Hintergrund",
-        imageUrl: "/test.png",
+        imageUrl: "/bg.jpg",
       },
       seo: {
         areaServed: ["Germany", "Austria", "Switzerland"],
@@ -419,7 +419,7 @@ export const deDictionary: LocaleDictionary = {
             "Wir entwickeln keine Standardlösungen. Gemeinsam schaffen wir einen Auftritt, der sichtbar macht, wofür Ihre Marke steht.",
           author: "Gloyoo Team",
           imageAlt: "Abstrakte 3D-Formen im Hintergrund des Kontaktformulars",
-          imageUrl: "/test.png",
+          imageUrl: "/bg.jpg",
         },
       },
       seo: {
@@ -437,6 +437,175 @@ export const deDictionary: LocaleDictionary = {
           "Performance Marketing",
           "Webdesign",
         ],
+      },
+    },
+    pages: {
+      about: {
+        metadata: {
+          title: "Über Uns | Gloyoo",
+          description:
+            "Erfahren Sie mehr über Gloyoo, unsere Arbeitsweise und wie wir Unternehmen mit Social Media, Content und Webdesign beim Wachstum unterstützen.",
+          locale: "de_DE",
+          keywords: [
+            "über gloyoo",
+            "social media agentur team",
+            "webdesign agentur",
+            "digitale agentur werte",
+          ],
+        },
+        eyebrow: "Über Gloyoo",
+        title: "Ihre Agentur für Social Media und moderne Webseiten",
+        intro:
+          "Bei Gloyoo unterstützen wir Unternehmen dabei, ihre digitale Präsenz professionell aufzubauen und gezielt zu optimieren. Unser Fokus liegt auf messbaren Ergebnissen: mehr Reichweite, mehr Anfragen und mehr Umsatz.",
+        sections: [
+          {
+            title: "Unser Ansatz",
+            paragraphs: [
+              "Bei Gloyoo unterstützen wir Unternehmen dabei, ihre digitale Präsenz professionell aufzubauen und gezielt zu optimieren. Unser Fokus liegt auf messbaren Ergebnissen: mehr Reichweite, mehr Anfragen und mehr Umsatz.",
+              "Als Remote-Agentur kombinieren wir modernes Webdesign mit effektiven Social Media Strategien und begleiten Marken von der Positionierung bis zur laufenden Betreuung, flexibel, digital und deutschlandweit verfügbar.",
+            ],
+          },
+          {
+            title: "Wie wir arbeiten",
+            bullets: [
+              "Wir setzen auf klare Strategien statt Aktionismus und verbinden Kreativität mit messbaren Zielen.",
+              "Unsere Zusammenarbeit ist remote, flexibel und auf transparente Kommunikation ausgelegt.",
+              "Wir begleiten Projekte von der Positionierung bis zur laufenden Betreuung und Optimierung.",
+            ],
+          },
+          {
+            title: "Worauf wir Wert legen",
+            bullets: [
+              "Verlässliche Umsetzung und ehrliche Beratung.",
+              "Design und Inhalte, die Vertrauen aufbauen und Anfragen fördern.",
+              "Digitale Lösungen, die zu Ihrem Unternehmen, Ihrem Angebot und Ihren Ressourcen passen.",
+            ],
+          },
+        ],
+        ctaLabel: "Projekt mit uns starten",
+      },
+      privacy: {
+        metadata: {
+          title: "Datenschutz | Gloyoo",
+          description:
+            "Informationen zur Verarbeitung personenbezogener Daten auf der Website von Gloyoo.",
+          locale: "de_DE",
+          keywords: [
+            "gloyoo datenschutz",
+            "datenschutzerklärung",
+            "dsgvo website",
+            "kontaktformular datenschutz",
+          ],
+        },
+        eyebrow: "Datenschutz",
+        title: "Datenschutzerklärung",
+        intro:
+          "Der Schutz personenbezogener Daten ist uns wichtig. Auf dieser Seite informieren wir darüber, welche Daten beim Besuch dieser Website und bei einer Kontaktanfrage verarbeitet werden.",
+        sections: [
+          {
+            title: "Verantwortliche Stelle",
+            paragraphs: [
+              "Gloyoo",
+              "Bitte ergänzen Sie hier vor Veröffentlichung den vollständigen Namen oder die juristische Firmierung, die ladungsfähige Anschrift sowie eine gültige Kontakt-E-Mail.",
+            ],
+          },
+          {
+            title: "Welche Daten verarbeitet werden",
+            bullets: [
+              "Technische Zugriffsdaten wie IP-Adresse, Browsertyp, Datum und Uhrzeit können serverseitig verarbeitet werden, um die Website sicher und stabil bereitzustellen.",
+              "Bei Nutzung des Kontaktformulars verarbeiten wir die von Ihnen eingegebenen Angaben, zum Beispiel Name, Unternehmen, E-Mail-Adresse, Telefonnummer und Ihre Nachricht.",
+              "Wir verwenden diese Daten ausschließlich, um Anfragen zu beantworten, Projekte einzuordnen und die Kommunikation mit Interessenten zu ermöglichen.",
+            ],
+          },
+          {
+            title: "Zweck und Rechtsgrundlage",
+            bullets: [
+              "Die Verarbeitung erfolgt zur Bereitstellung der Website und zur Bearbeitung von Kontaktanfragen.",
+              "Rechtsgrundlagen können Art. 6 Abs. 1 lit. b DSGVO für vorvertragliche Kommunikation sowie Art. 6 Abs. 1 lit. f DSGVO für die sichere und technisch notwendige Bereitstellung der Website sein.",
+            ],
+          },
+          {
+            title: "Speicherdauer",
+            paragraphs: [
+              "Personenbezogene Daten werden nur so lange gespeichert, wie es für die Bearbeitung der Anfrage, gesetzliche Aufbewahrungspflichten oder berechtigte Interessen erforderlich ist.",
+            ],
+          },
+          {
+            title: "Ihre Rechte",
+            bullets: [
+              "Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit im Rahmen der gesetzlichen Vorgaben.",
+              "Sie können einer Verarbeitung widersprechen, sofern diese auf berechtigten Interessen beruht.",
+              "Außerdem besteht ein Beschwerderecht bei einer zuständigen Datenschutzaufsichtsbehörde.",
+            ],
+          },
+          {
+            title: "Hinweis zur Aktualisierung",
+            paragraphs: [
+              "Wenn zusätzliche Dienste wie Analytics, externe Form-Tools, Terminbuchung, Newsletter oder eingebettete Drittanbieter-Inhalte eingesetzt werden, muss diese Datenschutzerklärung entsprechend ergänzt werden.",
+            ],
+          },
+        ],
+        note:
+          "Vor der Veröffentlichung sollten die Angaben zur verantwortlichen Stelle und zu eventuell eingesetzten Drittanbietern mit den tatsächlichen Unternehmens- und Hostingdaten ergänzt werden.",
+      },
+      impressum: {
+        metadata: {
+          title: "Impressum | Gloyoo",
+          description:
+            "Rechtliche Anbieterkennzeichnung und Pflichtangaben für die Website von Gloyoo.",
+          locale: "de_DE",
+          keywords: [
+            "gloyoo impressum",
+            "anbieterkennzeichnung",
+            "pflichtangaben website",
+            "rechtliche hinweise",
+          ],
+        },
+        eyebrow: "Rechtliches",
+        title: "Impressum",
+        intro:
+          "Dieses Impressum dient als Vorlage für die gesetzlich erforderlichen Pflichtangaben. Bitte ergänzen Sie vor der Veröffentlichung alle tatsächlichen Unternehmensdaten.",
+        sections: [
+          {
+            title: "Angaben gemäß § 5 TMG",
+            bullets: [
+              "Gloyoo",
+              "[Vollständiger Name oder Unternehmensbezeichnung]",
+              "[Straße und Hausnummer]",
+              "[PLZ und Ort]",
+              "[Land]",
+            ],
+          },
+          {
+            title: "Kontakt",
+            bullets: [
+              "E-Mail: [Ihre geschäftliche E-Mail-Adresse]",
+              "Telefon: [Ihre Telefonnummer]",
+            ],
+          },
+          {
+            title: "Vertreten durch",
+            paragraphs: [
+              "Falls zutreffend, ergänzen Sie hier die vertretungsberechtigte Person oder Geschäftsführung.",
+            ],
+          },
+          {
+            title: "Register und Umsatzsteuer",
+            bullets: [
+              "Handelsregister: [Registergericht und Registernummer, falls vorhanden]",
+              "Umsatzsteuer-ID: [USt-IdNr. nach § 27a UStG, falls vorhanden]",
+              "Weitere berufsrechtliche Angaben: [falls für Ihr Unternehmen erforderlich]",
+            ],
+          },
+          {
+            title: "Haftung für Inhalte",
+            paragraphs: [
+              "Die Inhalte dieser Website wurden mit Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.",
+            ],
+          },
+        ],
+        note:
+          "Ersetzen Sie alle Platzhalter vor der Veröffentlichung. Für ein rechtssicheres Impressum sollten die Angaben an Ihre tatsächliche Rechtsform und Ihren Unternehmenssitz angepasst werden.",
       },
     },
 };

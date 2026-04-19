@@ -40,6 +40,7 @@ export async function generateMetadata({
       languages: {
         de: "/de/form",
         en: "/en/form",
+        nl: "/nl/form",
         "x-default": "/de/form",
       },
     },

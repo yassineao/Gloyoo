@@ -37,6 +37,22 @@ type PageSeo = {
   services: string[];
 };
 
+type ContentSection = {
+  title: string;
+  paragraphs?: string[];
+  bullets?: string[];
+};
+
+type ContentPage = {
+  metadata: PageMetadata;
+  eyebrow: string;
+  title: string;
+  intro: string;
+  sections: ContentSection[];
+  note?: string;
+  ctaLabel?: string;
+};
+
 type HomeContent = {
   metadata: PageMetadata;
   hero: {
@@ -110,10 +126,17 @@ type LocaleDictionary = {
   home: HomeContent;
   servicePage: ServicePageContent;
   form: FormContent;
+  pages: {
+    about: ContentPage;
+    privacy: ContentPage;
+    impressum: ContentPage;
+  };
 };
 
 export type {
   AdvantageItem,
+  ContentPage,
+  ContentSection,
   FooterLink,
   FormContent,
   HomeContent,

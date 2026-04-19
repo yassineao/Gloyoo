@@ -1,11 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
+import type { Locale } from "@/app/lib/i18n";
 import type { ServiceHero } from "@/app/types/Service";
 
 type HeroProps = {
   content: ServiceHero;
+  locale: Locale;
 };
 
-export default function Hero({ content }: HeroProps) {
+export default function Hero({ content, locale }: HeroProps) {
   return (
       <section className="px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
         <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-20">
@@ -32,15 +35,15 @@ export default function Hero({ content }: HeroProps) {
             </p>
 
             <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-              <button
-                type="button"
+              <Link
+                href={`/${locale}/form`}
                 className="inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-900/90 sm:w-auto"
               >
                 {content.primaryCta}
-              </button>
-              <button
+              </Link>
+              {/* <button
                 type="button"
-                className="inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md border border-input bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-zinc-100 hover:text-zinc-800 sm:w-auto text-black sm:mt-2"
+                className="inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md border border-input bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-zinc-100 hover:text-zinc-800 sm:w-auto text-black "
               >
                 {content.secondaryCta}
                 <svg
@@ -58,7 +61,7 @@ export default function Hero({ content }: HeroProps) {
                   <path d="m7 7 10 10"></path>
                   <path d="M17 7v10H7"></path>
                 </svg>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

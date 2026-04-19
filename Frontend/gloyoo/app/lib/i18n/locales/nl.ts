@@ -57,7 +57,7 @@ export const nlDictionary: LocaleDictionary = {
       rights: "Alle rechten voorbehouden.",
       legalLinks: [
         { label: "Privacy", href: "/privacy" },
-        { label: "Colofon", href: "/colofon" },
+        { label: "Colofon", href: "/impressum" },
       ],
     },
     home: {
@@ -185,7 +185,7 @@ export const nlDictionary: LocaleDictionary = {
       },
       hero: {
         "social-media": {
-          imageUrl: "https://imgs.search.brave.com/k2Mb30Q2GikWc_eQ-lCn9Ra7fIm3d-Lm-8ePAocKomI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LW1hbmFnZW1l/bnQtZmlsZXMuY2Fu/dmEuY29tLzBlNmZi/OTMwLTI2NGItNGRl/Ny1iNzRjLTM5ZTMw/MzMzNzcwNy9oZWFk/ZXJwaW50ZXJlc3Qu/cG5n",
+          imageUrl: "/bg.jpg",
           badge: "Social Media Beheer",
           title: "Social Media Beheer dat Uw Merk Zichtbaar Maakt",
           description:
@@ -196,7 +196,7 @@ export const nlDictionary: LocaleDictionary = {
         },
         "content-creation": {
           badge: "Contentcreatie",
-          imageUrl: "/test.png",
+          imageUrl: "/bg.jpg",
           title: "Contentcreatie die Aandacht Omzet in Vertrouwen",
           description:
             "Van reels tot brand assets, we creëren content die uw doelgroep aanspreekt, herkenbaarheid creëert en uw merk versterkt.",
@@ -205,7 +205,7 @@ export const nlDictionary: LocaleDictionary = {
           imageAlt: "Contentcreatie door Gloyoo",
         },
         "performance-marketing": {
-          imageUrl: "https://imgs.search.brave.com/k2Mb30Q2GikWc_eQ-lCn9Ra7fIm3d-Lm-8ePAocKomI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LW1hbmFnZW1l/bnQtZmlsZXMuY2Fu/dmEuY29tLzBlNmZi/OTMwLTI2NGItNGRl/Ny1iNzRjLTM5ZTMw/MzMzNzcwNy9oZWFk/ZXJwaW50ZXJlc3Qu/cG5n",
+          imageUrl: "/bg.jpg",
           badge: "Performance Marketing",
           title: "Performance Marketing Gericht op Leads en Omzet",
           description:
@@ -215,7 +215,7 @@ export const nlDictionary: LocaleDictionary = {
           imageAlt: "Performance Marketing door Gloyoo",
         },
         webdesign: {
-          imageUrl: "/test.png",
+          imageUrl: "/bg.jpg",
           badge: "Webdesign",
           title: "Webdesign dat Overtuigt en Aanvragen Genereert",
           description:
@@ -305,7 +305,7 @@ export const nlDictionary: LocaleDictionary = {
         subdescription:
           "Of het nu gaat om social media, content of webdesign—we laten uw merk online stralen en zorgen dat u zichtbaar wordt waar uw doelgroep actief is.",
         imageAlt: "Abstracte 3D-vormen op de achtergrond",
-        imageUrl: "/test.png",
+        imageUrl: "/bg.jpg",
       },
       seo: {
         areaServed: ["Netherlands", "Belgium"],
@@ -371,7 +371,7 @@ export const nlDictionary: LocaleDictionary = {
             "We ontwikkelen geen standaardoplossingen. Samen creëren we een uitstraling die zichtbaar maakt waar uw merk voor staat.",
           author: "Gloyoo Team",
           imageAlt: "Abstracte 3D-vormen op de achtergrond van het contactformulier",
-          imageUrl: "/test.png",
+          imageUrl: "/bg.jpg",
         },
       },
       seo: {
@@ -389,6 +389,175 @@ export const nlDictionary: LocaleDictionary = {
           "Performance Marketing",
           "Webdesign",
         ],
+      },
+    },
+    pages: {
+      about: {
+        metadata: {
+          title: "Over Ons | Gloyoo",
+          description:
+            "Lees meer over Gloyoo, onze werkwijze en hoe we bedrijven ondersteunen met social media, content en webdesign.",
+          locale: "nl_NL",
+          keywords: [
+            "over gloyoo",
+            "social media bureau team",
+            "webdesign bureau",
+            "digitale bureau waarden",
+          ],
+        },
+        eyebrow: "Over Gloyoo",
+        title: "Uw Bureau voor Social Media en Moderne Websites",
+        intro:
+          "Bij Gloyoo helpen we bedrijven hun digitale aanwezigheid professioneel op te bouwen en gericht te optimaliseren. Onze focus ligt op meetbare resultaten: meer bereik, meer aanvragen en meer omzet.",
+        sections: [
+          {
+            title: "Onze aanpak",
+            paragraphs: [
+              "Bij Gloyoo helpen we bedrijven hun digitale aanwezigheid professioneel op te bouwen en gericht te optimaliseren. Onze focus ligt op meetbare resultaten: meer bereik, meer aanvragen en meer omzet.",
+              "Als remote bureau combineren we modern webdesign met effectieve social media strategieën en begeleiden we merken van positionering tot doorlopend beheer, flexibel, digitaal en overal in Nederland beschikbaar.",
+            ],
+          },
+          {
+            title: "Hoe wij werken",
+            bullets: [
+              "We werken met een duidelijke strategie in plaats van losse acties en combineren creativiteit met meetbare doelen.",
+              "Onze samenwerking is remote, flexibel en gebaseerd op transparante communicatie.",
+              "We begeleiden projecten van positionering tot doorlopend beheer en optimalisatie.",
+            ],
+          },
+          {
+            title: "Waar wij waarde aan hechten",
+            bullets: [
+              "Betrouwbare uitvoering en eerlijk advies.",
+              "Design en content die vertrouwen opbouwen en kwalitatieve aanvragen stimuleren.",
+              "Digitale oplossingen die passen bij uw bedrijf, aanbod en beschikbare middelen.",
+            ],
+          },
+        ],
+        ctaLabel: "Start Uw Project Met Ons",
+      },
+      privacy: {
+        metadata: {
+          title: "Privacy | Gloyoo",
+          description:
+            "Informatie over hoe persoonsgegevens op de website van Gloyoo worden verwerkt.",
+          locale: "nl_NL",
+          keywords: [
+            "gloyoo privacy",
+            "privacybeleid",
+            "avg website",
+            "contactformulier privacy",
+          ],
+        },
+        eyebrow: "Privacy",
+        title: "Privacybeleid",
+        intro:
+          "De bescherming van persoonsgegevens is voor ons belangrijk. Op deze pagina leggen we uit welke gegevens kunnen worden verwerkt bij het bezoeken van deze website en bij het indienen van een contactaanvraag.",
+        sections: [
+          {
+            title: "Verwerkingsverantwoordelijke",
+            paragraphs: [
+              "Gloyoo",
+              "Vul hier voor publicatie de volledige juridische naam of bedrijfsnaam, het volledige bedrijfsadres en een geldig contact-e-mailadres in.",
+            ],
+          },
+          {
+            title: "Welke gegevens kunnen worden verwerkt",
+            bullets: [
+              "Technische toegangsgegevens zoals IP-adres, browsertype, datum en tijd kunnen server-side worden verwerkt om de website veilig en stabiel aan te bieden.",
+              "Wanneer u het contactformulier gebruikt, verwerken wij de gegevens die u invult, zoals naam, bedrijf, e-mailadres, telefoonnummer en bericht.",
+              "Wij gebruiken deze informatie uitsluitend om aanvragen te beantwoorden, projectaanvragen te beoordelen en met potentiële klanten te communiceren.",
+            ],
+          },
+          {
+            title: "Doel en rechtsgrond",
+            bullets: [
+              "De verwerking vindt plaats om de website beschikbaar te stellen en contactaanvragen af te handelen.",
+              "Mogelijke rechtsgronden zijn art. 6 lid 1 sub b AVG voor precontractuele communicatie en art. 6 lid 1 sub f AVG voor de veilige en technisch noodzakelijke werking van de website.",
+            ],
+          },
+          {
+            title: "Bewaartermijn",
+            paragraphs: [
+              "Persoonsgegevens worden alleen bewaard zolang dat nodig is voor de afhandeling van de aanvraag, wettelijke bewaarplichten of gerechtvaardigde bedrijfsbelangen.",
+            ],
+          },
+          {
+            title: "Uw rechten",
+            bullets: [
+              "U heeft recht op inzage, correctie, verwijdering, beperking van de verwerking en dataportabiliteit binnen de grenzen van de toepasselijke wetgeving.",
+              "U kunt bezwaar maken tegen verwerking wanneer deze is gebaseerd op gerechtvaardigde belangen.",
+              "Daarnaast heeft u het recht een klacht in te dienen bij een bevoegde toezichthoudende autoriteit.",
+            ],
+          },
+          {
+            title: "Opmerking over actualisering",
+            paragraphs: [
+              "Wanneer extra diensten worden toegevoegd, zoals analytics, externe formulierdiensten, planningstools, nieuwsbrieven of ingesloten content van derden, moet dit privacybeleid daarop worden aangepast.",
+            ],
+          },
+        ],
+        note:
+          "Vervang voor publicatie de gegevens van de verwerkingsverantwoordelijke en voeg alle werkelijk gebruikte diensten van derden en hostinginformatie toe.",
+      },
+      impressum: {
+        metadata: {
+          title: "Colofon | Gloyoo",
+          description:
+            "Juridische kennisgeving en verplichte aanbiedergegevens voor de website van Gloyoo.",
+          locale: "nl_NL",
+          keywords: [
+            "gloyoo colofon",
+            "aanbiedergegevens website",
+            "juridische kennisgeving",
+            "bedrijfsinformatie website",
+          ],
+        },
+        eyebrow: "Juridisch",
+        title: "Colofon",
+        intro:
+          "Dit colofon dient als sjabloon voor de verplichte aanbiedergegevens. Vul voor publicatie alle werkelijke bedrijfsgegevens in.",
+        sections: [
+          {
+            title: "Aanbiedergegevens",
+            bullets: [
+              "Gloyoo",
+              "[Volledige juridische naam of bedrijfsnaam]",
+              "[Straat en huisnummer]",
+              "[Postcode en plaats]",
+              "[Land]",
+            ],
+          },
+          {
+            title: "Contact",
+            bullets: [
+              "E-mail: [Uw zakelijke e-mailadres]",
+              "Telefoon: [Uw telefoonnummer]",
+            ],
+          },
+          {
+            title: "Vertegenwoordigd door",
+            paragraphs: [
+              "Voeg hier indien van toepassing de bevoegde vertegenwoordiger, eigenaar of directie toe.",
+            ],
+          },
+          {
+            title: "Registratie en btw-gegevens",
+            bullets: [
+              "Handelsregister: [Rechtbank en registratienummer, indien van toepassing]",
+              "Btw-nummer: [Btw-nummer, indien van toepassing]",
+              "Aanvullende beroeps- of branchegegevens: [indien vereist voor uw bedrijf]",
+            ],
+          },
+          {
+            title: "Aansprakelijkheid voor inhoud",
+            paragraphs: [
+              "De inhoud van deze website is met zorg samengesteld. Er kan echter geen garantie worden gegeven voor de juistheid, volledigheid of actualiteit van de inhoud.",
+            ],
+          },
+        ],
+        note:
+          "Vervang alle placeholders voor publicatie. Voor een juridisch bruikbaar colofon moeten de gegevens worden aangepast aan uw daadwerkelijke rechtsvorm en vestigingsplaats.",
       },
     },
 };
