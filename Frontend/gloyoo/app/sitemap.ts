@@ -56,6 +56,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
+      url: `${siteUrl}/${locale}/terms`,
+      lastModified,
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
+      alternates: {
+        languages: buildAlternateLanguages("/terms"),
+      },
+    },
+    {
+      url: `${siteUrl}/${locale}/cookie`,
+      lastModified,
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
+      alternates: {
+        languages: buildAlternateLanguages("/cookie"),
+      },
+    },
+    {
       url: `${siteUrl}/${locale}/form`,
       lastModified,
       changeFrequency: "monthly" as const,

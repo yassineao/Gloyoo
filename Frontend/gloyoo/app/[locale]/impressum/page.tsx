@@ -53,6 +53,7 @@ export default async function ImpressumPage({
       eyebrow={page.eyebrow}
       title={page.title}
       intro={page.intro}
+      heroMeta={page.heroMeta}
       sections={page.sections}
       note={page.note}
     />

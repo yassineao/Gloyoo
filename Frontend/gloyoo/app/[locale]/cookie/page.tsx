@@ -18,24 +18,24 @@ export async function generateMetadata({
     return {};
   }
 
-  const page = getDictionary(locale).pages.privacy;
+  const page = getDictionary(locale).pages.cookie;
 
   return {
     title: page.metadata.title,
     description: page.metadata.description,
     alternates: {
-      canonical: `/${locale}/privacy`,
+      canonical: `/${locale}/cookie`,
       languages: {
-        de: "/de/privacy",
-        en: "/en/privacy",
-        nl: "/nl/privacy",
-        "x-default": "/de/privacy",
+        de: "/de/cookie",
+        en: "/en/cookie",
+        nl: "/nl/cookie",
+        "x-default": "/de/cookie",
       },
     },
   };
 }
 
-export default async function DatenschutzPage({
+export default async function CookiePage({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -46,7 +46,7 @@ export default async function DatenschutzPage({
     notFound();
   }
 
-  const page = getDictionary(locale).pages.privacy;
+  const page = getDictionary(locale).pages.cookie;
 
   return (
     <LegalPage
@@ -54,7 +54,6 @@ export default async function DatenschutzPage({
       title={page.title}
       intro={page.intro}
       heroMeta={page.heroMeta}
-      contents={page.contents}
       sections={page.sections}
       note={page.note}
     />

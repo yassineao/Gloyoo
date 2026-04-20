@@ -18,24 +18,24 @@ export async function generateMetadata({
     return {};
   }
 
-  const page = getDictionary(locale).pages.privacy;
+  const page = getDictionary(locale).pages.terms;
 
   return {
     title: page.metadata.title,
     description: page.metadata.description,
     alternates: {
-      canonical: `/${locale}/privacy`,
+      canonical: `/${locale}/terms`,
       languages: {
-        de: "/de/privacy",
-        en: "/en/privacy",
-        nl: "/nl/privacy",
-        "x-default": "/de/privacy",
+        de: "/de/terms",
+        en: "/en/terms",
+        nl: "/nl/terms",
+        "x-default": "/de/terms",
       },
     },
   };
 }
 
-export default async function DatenschutzPage({
+export default async function TermsPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -46,7 +46,7 @@ export default async function DatenschutzPage({
     notFound();
   }
 
-  const page = getDictionary(locale).pages.privacy;
+  const page = getDictionary(locale).pages.terms;
 
   return (
     <LegalPage

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import type { Infos } from "@/app/types/Infos";
 
@@ -83,12 +84,14 @@ export default function Form({ content }: FormProps) {
               />
               <label className="cursor-pointer text-sm text-white">
                 {content.consent.prefix}{" "}
-                <span className="underline">{content.consent.terms}</span>{" "}
+                <Link href="./terms" className="underline">
+                  {content.consent.terms}
+                </Link>{" "}
                 {content.consent.and}{" "}
-                <span className="underline">
+                <Link href="./privacy" className="underline">
                   {content.consent.privacyPolicy}
-                </span>
-                .
+                </Link>
+                {content.consent.suffix}
               </label>
             </div>
 

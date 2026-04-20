@@ -41,6 +41,44 @@ type ContentSection = {
   title: string;
   paragraphs?: string[];
   bullets?: string[];
+  note?: string;
+  subsections?: {
+    title: string;
+    paragraphs?: string[];
+    bullets?: string[];
+    note?: string;
+    links?: {
+      label: string;
+      href: string;
+    }[];
+  }[];
+  table?: {
+    columns: string[];
+    rows: string[][];
+  };
+  rights?: {
+    article: string;
+    title: string;
+    description: string;
+  }[];
+  contactCards?: {
+    label: string;
+    value: string;
+  }[];
+  categories?: {
+    name: string;
+    description: string;
+    badge?: string;
+  }[];
+  cookieTables?: {
+    title: string;
+    columns: string[];
+    rows: string[][];
+  }[];
+  links?: {
+    label: string;
+    href: string;
+  }[];
 };
 
 type ContentPage = {
@@ -48,6 +86,8 @@ type ContentPage = {
   eyebrow: string;
   title: string;
   intro: string;
+  heroMeta?: string[];
+  contents?: string[];
   sections: ContentSection[];
   note?: string;
   ctaLabel?: string;
@@ -130,6 +170,8 @@ type LocaleDictionary = {
     about: ContentPage;
     privacy: ContentPage;
     impressum: ContentPage;
+    terms: ContentPage;
+    cookie: ContentPage;
   };
 };
 
