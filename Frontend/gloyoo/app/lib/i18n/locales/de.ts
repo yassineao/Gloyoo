@@ -26,7 +26,7 @@ export const deDictionary: LocaleDictionary = {
             { label: "Webdesign", href: "/services/webdesign" },
           ],
         },
-        { label: "Über uns", href: "#about-us" },
+        { label: "Über uns", href: "/about" },
       ],
       contactLabel: "Beratung anfragen",
       mobileMenuLabel: "Menü",
@@ -41,7 +41,7 @@ export const deDictionary: LocaleDictionary = {
         { label: "Startseite", href: "/" }, // ✅ Fixed: was "#home"
         { label: "Vorteile", href: "#advantages" },
         { label: "Leistungen", href: "#services" },
-        { label: "Über uns", href: "#about-us" },
+        { label: "Über uns", href: "/about" },
       ],
       serviceLinks: [
         { label: "Social Media Betreuung", href: "/services/social-media" }, // ✅ Fixed
@@ -58,6 +58,8 @@ export const deDictionary: LocaleDictionary = {
       legalLinks: [
         { label: "Datenschutz", href: "/privacy" }, // ✅ Fixed: was "#about-us"
         { label: "Impressum", href: "/impressum" }, // ✅ Fixed: was "#about-us"
+        { label: "Bedingungen", href: "/terms" },
+        { label: "Cookies", href: "/cookie" },
       ],
     },
     home: {
@@ -725,136 +727,357 @@ export const deDictionary: LocaleDictionary = {
         note:
           "Vor der Veroeffentlichung ersetzen Sie bitte alle Platzhalter wie [DATE], Firmenname, Anschrift, USt-Nummer, Privacy-E-Mail und DPO-Angaben. Pruefen Sie zudem, dass die aufgefuehrten Tools, Auftragsverarbeiter, Aufbewahrungsfristen und Rechtsgrundlagen mit den tatsaechlich eingesetzten Services des Live-Betriebs uebereinstimmen.",
       },
-      impressum: {
-        metadata: {
-          title: "Impressum | Gloyoo",
-          description:
-            "Rechtliche Anbieterkennzeichnung und Pflichtangaben für die Website von Gloyoo.",
-          locale: "de_DE",
-          keywords: [
-            "gloyoo impressum",
-            "anbieterkennzeichnung",
-            "pflichtangaben website",
-            "rechtliche hinweise",
+     impressum: {
+  metadata: {
+    title: "Impressum | Gloyoo",
+    description:
+      "Impressum und gesetzlich vorgeschriebene Anbieterkennzeichnung für die Gloyoo-Website gemäß den Anforderungen der Europäischen Union.",
+    locale: "de_DE",
+    keywords: [
+      "gloyoo impressum",
+      "impressum",
+      "anbieterkennzeichnung",
+      "anbieterinformationen",
+      "rechtliche angaben website",
+    ],
+  },
+  eyebrow: "Rechtliches",
+  title: "Impressum",
+  intro:
+    "Diese Seite enthält die gesetzlich vorgeschriebenen Anbieter- und Offenlegungsangaben für die Gloyoo-Website.",
+  heroMeta: [
+    "Zuletzt aktualisiert: [DATUM]",
+    "Gerichtsstand: Europäische Union",
+    "Gilt für alle EU-Besucher",
+  ],
+  sections: [
+    {
+      title: "Unternehmensangaben",
+      paragraphs: [
+        "In Übereinstimmung mit der Richtlinie 2000/31/EG über den elektronischen Geschäftsverkehr und den anwendbaren nationalen Gesetzen, einschließlich Art. 6 LCEN (Frankreich), §5 TMG (Deutschland), Art. 10 LSSI-CE (Spanien) sowie vergleichbaren nationalen Vorschriften, werden die folgenden Pflichtangaben bereitgestellt.",
+      ],
+      contactCards: [
+        { label: "Firmenname", value: "[IHR AGENTURNAME]" },
+        { label: "Rechtsform", value: "[z. B. SAS / GmbH / SRL / Ltd]" },
+        { label: "Stammkapital", value: "[z. B. 10.000 €]" },
+        {
+          label: "Geschäftsanschrift",
+          value: "[Straße, Stadt, Postleitzahl, Land]",
+        },
+        {
+          label: "Registernummer",
+          value: "[SIRET / HRB / KvK / CIF / etc.]",
+        },
+        {
+          label: "USt-IdNr.",
+          value: "[z. B. FR12345678901]",
+        },
+        {
+          label: "Verantwortlich für den Inhalt",
+          value: "[Name des gesetzlichen Vertreters]",
+        },
+        { label: "E-Mail", value: "[contact@youragency.com]" },
+        { label: "Telefon", value: "[+XX XXX XXX XXXX]" },
+      ],
+    },
+    {
+      title: "Hosting-Anbieter",
+      paragraphs: ["Diese Website wird von folgendem Anbieter gehostet."],
+      contactCards: [
+        {
+          label: "Hosting-Unternehmen",
+          value: "[z. B. OVH / Netlify / Hetzner]",
+        },
+        { label: "Adresse", value: "[Adresse des Hosters]" },
+        { label: "Land", value: "[Land]" },
+        { label: "Kontakt", value: "[Kontaktinformationen]" },
+      ],
+    },
+    {
+      title: "Urheberrecht",
+      paragraphs: [
+        "Alle Inhalte dieser Website sind Eigentum von [IHR AGENTURNAME] oder deren Partnern und durch EU-Urheberrecht geschützt (Richtlinie (EU) 2019/790).",
+        "Die Nutzung ohne vorherige schriftliche Zustimmung ist untersagt.",
+      ],
+      note:
+        "Ausnahme: Nutzung für private, nicht-kommerzielle Zwecke mit Quellenangabe ist erlaubt.",
+    },
+    {
+      title: "Haftungsausschluss",
+      paragraphs: [
+        "Alle Inhalte dienen nur zu Informationszwecken. Es wird keine Gewähr für Vollständigkeit oder Richtigkeit übernommen.",
+        "Für Inhalte externer Links wird keine Haftung übernommen.",
+        "Soweit gesetzlich zulässig, haftet [IHR AGENTURNAME] nicht für Schäden aus der Nutzung dieser Website.",
+      ],
+    },
+    {
+      title: "Rechtlicher Rahmen",
+      paragraphs: [
+        "Es gilt das Recht von [LAND] sowie EU-Recht.",
+        "Kontakt: [legal@youragency.com]",
+      ],
+      bullets: [
+        "Richtlinie 2000/31/EG — E-Commerce",
+        "Richtlinie (EU) 2019/790 — Urheberrecht",
+        "Verordnung (EU) 2016/679 — DSGVO",
+        "Richtlinie 2009/136/EG — ePrivacy",
+      ],
+    },
+  ],
+  note:
+    "Vor Veröffentlichung alle Platzhalter ersetzen (Name, Adresse, VAT, Hosting etc.).",
+},
+    terms: {
+  metadata: {
+    title: "TEST TITLE",
+    description:
+      "Allgemeine Geschäftsbedingungen für Gloyoo Dienstleistungen, einschließlich Social Media Management, Webdesign, Zahlungsbedingungen, Haftung und Streitbeilegung.",
+    locale: "de_DE",
+    keywords: [
+      "gloyoo agb",
+      "allgemeine geschäftsbedingungen",
+      "agentur agb",
+      "webdesign vertrag",
+      "social media management agb",
+    ],
+  },
+  eyebrow: "Rechtliches",
+  title: "Allgemeine Geschäftsbedingungen",
+  intro:
+    "Diese Seite beschreibt die Bedingungen für die von Gloyoo erbrachten Dienstleistungen, einschließlich Umfang, Zahlungen, geistigem Eigentum, Kündigung, Haftung und Streitbeilegung.",
+  heroMeta: [
+    "Zuletzt aktualisiert: [DATUM]",
+    "Richtlinie 2011/83/EU konform",
+    "Version 1.0",
+  ],
+  contents: [
+    "Definitionen",
+    "Dienstleistungen",
+    "Annahme der Bedingungen",
+    "Pflichten des Kunden",
+    "Geistiges Eigentum",
+    "Zahlung & Preise",
+    "Widerrufsrecht",
+    "Kündigung",
+    "Haftungsbeschränkung",
+    "Anwendbares Recht & Streitigkeiten",
+    "Sonstiges",
+    "Kontakt",
+  ],
+  sections: [
+    {
+      title: "Definitionen",
+      paragraphs: [
+        "Für die Zwecke dieser Allgemeinen Geschäftsbedingungen gelten die folgenden Begriffe.",
+      ],
+      bullets: [
+        '"Agentur" / "Wir" — [IHR AGENTURNAME]',
+        '"Kunde" / "Sie" — natürliche oder juristische Person',
+        '"Verbraucher" — gemäß EU-Richtlinie 2011/83/EU',
+        '"Dienstleistungen" — Social Media, Webdesign und digitale Services',
+        '"Vertrag" — Vereinbarung zwischen Agentur und Kunde',
+        '"Leistungen" — Inhalte, Code, Designs und Ergebnisse',
+        '"Leistungsbeschreibung (SOW)" — Umfang, Zeitplan und Preis',
+      ],
+    },
+    {
+      title: "Dienstleistungen",
+      subsections: [
+        {
+          title: "Social Media Management",
+          bullets: [
+            "Strategie und Redaktionsplanung",
+            "Content-Erstellung",
+            "Community Management",
+            "Paid Advertising (Meta, TikTok, LinkedIn, Google)",
+            "Reporting und Optimierung",
           ],
         },
-        eyebrow: "Rechtliches",
-        title: "Impressum",
-        intro:
-          "Dieses Impressum dient als Vorlage für die gesetzlich erforderlichen Pflichtangaben. Bitte ergänzen Sie vor der Veröffentlichung alle tatsächlichen Unternehmensdaten.",
-        sections: [
-          {
-            title: "Angaben gemäß § 5 TMG",
-            bullets: [
-              "Gloyoo",
-              "[Vollständiger Name oder Unternehmensbezeichnung]",
-              "[Straße und Hausnummer]",
-              "[PLZ und Ort]",
-              "[Land]",
-            ],
-          },
-          {
-            title: "Kontakt",
-            bullets: [
-              "E-Mail: [Ihre geschäftliche E-Mail-Adresse]",
-              "Telefon: [Ihre Telefonnummer]",
-            ],
-          },
-          {
-            title: "Vertreten durch",
-            paragraphs: [
-              "Falls zutreffend, ergänzen Sie hier die vertretungsberechtigte Person oder Geschäftsführung.",
-            ],
-          },
-          {
-            title: "Register und Umsatzsteuer",
-            bullets: [
-              "Handelsregister: [Registergericht und Registernummer, falls vorhanden]",
-              "Umsatzsteuer-ID: [USt-IdNr. nach § 27a UStG, falls vorhanden]",
-              "Weitere berufsrechtliche Angaben: [falls für Ihr Unternehmen erforderlich]",
-            ],
-          },
-          {
-            title: "Haftung für Inhalte",
-            paragraphs: [
-              "Die Inhalte dieser Website wurden mit Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.",
-            ],
-          },
-        ],
-        note:
-          "Ersetzen Sie alle Platzhalter vor der Veröffentlichung. Für ein rechtssicheres Impressum sollten die Angaben an Ihre tatsächliche Rechtsform und Ihren Unternehmenssitz angepasst werden.",
-      },
-      terms: {
-        metadata: {
-          title: "Bedingungen | Gloyoo",
-          description:
-            "Allgemeine Bedingungen zur Nutzung der Gloyoo-Website und fÃ¼r unverbindliche Projektanfragen.",
-          locale: "de_DE",
-          keywords: [
-            "gloyoo bedingungen",
-            "nutzungsbedingungen website",
-            "projektanfrage bedingungen",
-            "rechtliche bedingungen",
+        {
+          title: "Webdesign & Entwicklung",
+          bullets: [
+            "UX/UI Design",
+            "CMS (WordPress, Webflow, Shopify)",
+            "E-Commerce Entwicklung",
+            "Wartung & SEO",
+            "Barrierefreiheit (WCAG 2.1 / EN 301 549)",
           ],
         },
-        eyebrow: "Bedingungen",
-        title: "Allgemeine Bedingungen",
-        intro:
-          "Diese Bedingungen gelten fÃ¼r die Nutzung der Gloyoo-Website sowie fÃ¼r unverbindliche Kontakt- und Projektanfragen Ã¼ber diese Website.",
-        sections: [
-          {
-            title: "Geltungsbereich",
-            paragraphs: [
-              "Diese Bedingungen regeln den Zugang zu und die Nutzung dieser Website.",
-              "Durch das Absenden des Kontaktformulars kommt nicht automatisch ein verbindlicher Dienstleistungsvertrag zustande.",
-            ],
-          },
-          {
-            title: "Inhalte der Website",
-            bullets: [
-              "Alle Informationen auf dieser Website dienen der allgemeinen Darstellung von Gloyoo und den angebotenen Leistungen.",
-              "Inhalte kÃ¶nnen jederzeit ohne vorherige AnkÃ¼ndigung angepasst, ergÃ¤nzt oder entfernt werden.",
-              "Es wird keine GewÃ¤hr dafÃ¼r Ã¼bernommen, dass alle Inhalte vollstÃ¤ndig, richtig oder fÃ¼r jeden Einzelfall geeignet sind.",
-            ],
-          },
-          {
-            title: "Anfragen und Kommunikation",
-            bullets: [
-              "Projektanfragen Ã¼ber diese Website sind unverbindlich, sofern nicht ausdrÃ¼cklich schriftlich etwas anderes vereinbart wird.",
-              "Nutzer sollten zutreffende Kontaktdaten angeben, damit Anfragen sinnvoll bearbeitet werden kÃ¶nnen.",
-              "Anfragen mit rechtswidrigen, missbrÃ¤uchlichen oder offensichtlich sachfremden Inhalten kÃ¶nnen abgelehnt werden.",
-            ],
-          },
-          {
-            title: "Urheberrechte",
-            bullets: [
-              "Texte, Markenauftritte, Layouts, Grafiken und sonstige Inhalte dieser Website sind durch geltende Schutzrechte geschÃ¼tzt.",
-              "Eine VervielfÃ¤ltigung, Verbreitung oder Weiterverwendung ist ohne vorherige schriftliche Zustimmung nicht zulÃ¤ssig, soweit gesetzlich nichts anderes erlaubt ist.",
-            ],
-          },
-          {
-            title: "Haftung",
-            paragraphs: [
-              "Eine Haftung besteht nur im Rahmen der gesetzlich zwingenden Vorschriften. Insbesondere wird keine Haftung fÃ¼r Unterbrechungen, technische StÃ¶rungen oder Entscheidungen Ã¼bernommen, die ausschlieÃŸlich auf Grundlage der Inhalte dieser Website getroffen werden.",
-            ],
-          },
-          {
-            title: "Externe Links und Drittanbieter",
-            paragraphs: [
-              "Soweit diese Website auf externe Websites verweist oder spÃ¤ter Dienste Dritter einbindet, sind die jeweiligen Anbieter fÃ¼r deren Inhalte und Leistungen verantwortlich.",
-            ],
-          },
-          {
-            title: "Schlussbestimmungen",
-            paragraphs: [
-              "Sollten einzelne Bestimmungen dieser Bedingungen unwirksam sein, bleiben die Ã¼brigen Bestimmungen im gesetzlich zulÃ¤ssigen Umfang unberÃ¼hrt.",
-              "Vor der VerÃ¶ffentlichung sollten diese Bedingungen an das tatsÃ¤chliche GeschÃ¤ftsmodell, die zustÃ¤ndige Rechtsordnung und die konkret angebotenen Leistungen von Gloyoo angepasst werden.",
-            ],
-          },
-        ],
-        note:
-          "Diese Seite ist eine allgemeine Vorlage und ersetzt keine Rechtsberatung. Bitte passen Sie die Inhalte vor der VerÃ¶ffentlichung an Ihre tatsÃ¤chlichen Leistungen, VertragsablÃ¤ufe und die geltende Rechtslage an.",
-      },
+        {
+          title: "Zusatzleistungen",
+          bullets: [
+            "Branding",
+            "E-Mail-Marketing",
+            "Digitale Analysen",
+          ],
+        },
+      ],
+      note:
+        "Der genaue Leistungsumfang wird in einer Leistungsbeschreibung (SOW) definiert.",
+    },
+    {
+      title: "Annahme der Bedingungen",
+      paragraphs: [
+        "Durch die Nutzung unserer Dienstleistungen erklären Sie sich mit diesen Bedingungen einverstanden.",
+        "Die Annahme erfolgt durch Vertrag, Zahlung oder schriftliche Bestätigung.",
+        "Änderungen werden mindestens 30 Tage im Voraus mitgeteilt.",
+        "Bei Vertretung eines Unternehmens bestätigen Sie Ihre Berechtigung.",
+      ],
+      bullets: [
+        "Unterzeichnung eines Vertrags",
+        "Akzeptieren per Checkbox",
+        "Zahlung einer Rechnung",
+        "Bestätigung per E-Mail",
+      ],
+    },
+    {
+      title: "Pflichten des Kunden",
+      subsections: [
+        {
+          title: "Zusammenarbeit",
+          bullets: [
+            "Bereitstellung aller notwendigen Informationen",
+            "Feedback innerhalb von 5–7 Werktagen",
+            "Benennung eines Ansprechpartners",
+            "Mitteilung von Änderungen",
+          ],
+        },
+        {
+          title: "Rechtmäßigkeit",
+          bullets: [
+            "Rechte an bereitgestellten Materialien",
+            "Einhaltung von Plattformregeln",
+            "DSGVO-Konformität",
+          ],
+        },
+        {
+          title: "Verzögerungen",
+          paragraphs: [
+            "Die Agentur haftet nicht für Verzögerungen, die durch den Kunden verursacht werden.",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Geistiges Eigentum",
+      subsections: [
+        {
+          title: "Rechte der Agentur",
+          paragraphs: [
+            "Alle Tools und Methoden bleiben Eigentum der Agentur.",
+          ],
+        },
+        {
+          title: "Übertragung",
+          paragraphs: [
+            "Die Rechte werden erst nach vollständiger Zahlung übertragen.",
+          ],
+          bullets: [
+            "Reproduktion und Nutzung",
+            "Bearbeitung ohne falsche Urheberangabe",
+            "Veröffentlichung",
+          ],
+        },
+        {
+          title: "Portfolio",
+          paragraphs: [
+            "Die Agentur darf Arbeiten für Marketingzwecke verwenden.",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Zahlung & Preise",
+      subsections: [
+        {
+          title: "Preise",
+          paragraphs: [
+            "Alle Preise in Euro (€) zzgl. MwSt.",
+          ],
+        },
+        {
+          title: "Zahlungen",
+          bullets: [
+            "30–50% Anzahlung",
+            "Rest bei Meilensteinen",
+            "Monatliche Retainer",
+          ],
+        },
+        {
+          title: "Zahlungsbedingungen",
+          bullets: [
+            "30 Tage Zahlungsziel",
+            "SEPA, Karte etc.",
+          ],
+        },
+        {
+          title: "Zahlungsverzug",
+          note:
+            "EZB Zinssatz + 8 %, 40 € Gebühr, Serviceaussetzung möglich",
+        },
+      ],
+    },
+    {
+      title: "Widerrufsrecht",
+      note:
+        "Gilt nur für Verbraucher gemäß EU-Richtlinie.",
+      subsections: [
+        {
+          title: "Frist",
+          paragraphs: [
+            "14 Tage Widerrufsrecht.",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Kündigung",
+      subsections: [
+        {
+          title: "Durch Kunden",
+          paragraphs: [
+            "30 Tage Kündigungsfrist.",
+          ],
+        },
+        {
+          title: "Durch Agentur",
+          bullets: [
+            "Zahlungsverzug",
+            "Vertragsbruch",
+            "Rechtswidriges Verhalten",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Haftungsbeschränkung",
+      paragraphs: [
+        "Haftung begrenzt auf Gebühren der letzten 3 Monate.",
+      ],
+    },
+    {
+      title: "Anwendbares Recht & Streitigkeiten",
+      paragraphs: [
+        "Geltendes Recht: [LAND].",
+      ],
+    },
+    {
+      title: "Sonstiges",
+      paragraphs: [
+        "Diese Bedingungen stellen die gesamte Vereinbarung dar.",
+      ],
+    },
+    {
+      title: "Kontakt",
+      contactCards: [
+        { label: "Allgemein", value: "[contact@youragency.com]" },
+        { label: "Recht / Abrechnung", value: "[legal@youragency.com]" },
+        { label: "Adresse", value: "[Adresse]" },
+        { label: "Antwortzeit", value: "Innerhalb von 5 Werktagen" },
+      ],
+    },
+  ],
+},
       cookie: {
         metadata: {
           title: "Cookie-Richtlinie | Gloyoo",
@@ -1039,3 +1262,5 @@ export const deDictionary: LocaleDictionary = {
       },
     },
 };
+
+

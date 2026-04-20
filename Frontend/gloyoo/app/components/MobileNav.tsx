@@ -65,7 +65,7 @@ export default function MobileNav({ locale, content }: MobileNavProps) {
             </li>
           ))}
           <li>
-            <Link href={`/${locale}#about-us`} className="block py-2 hover:text-white">
+            <Link href={`/${locale}/form`} className="block py-2 hover:text-white">
               {content.contactLabel}
             </Link>
           </li>

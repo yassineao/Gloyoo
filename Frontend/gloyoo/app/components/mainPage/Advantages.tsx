@@ -45,14 +45,14 @@ export default function Advantages({
                             key={item.title}
                             className="rounded-3xl border border-white/10 bg-gradient-to-br from-brand-purple/18 to-brand-teal/18 p-6 text-center shadow-brand-panel sm:p-8"
                         >
-                            <p className="text-4xl font-semibold text-brand-petalPink sm:text-5xl lg:text-6xl">
+                            <p className="text-3xl font-semibold text-brand-petalPink sm:text-4xl lg:text-5xl">
                                 {item.value}
                             </p>
-                            <p className="bg-gradient-to-r from-brand-purple to-brand-teal bg-clip-text text-4xl font-semibold text-transparent sm:text-5xl lg:text-6xl">
+                            <p className="bg-gradient-to-r from-brand-purple to-brand-teal bg-clip-text text-3xl font-semibold text-transparent sm:text-4xl lg:text-5xl min-h-[4rem]">
                                 {item.title}
                             </p>
 
-                            <p className="mt-8 pt-3 text-base leading-7 text-brand-graySoft sm:text-sm">
+                            <p className=" pt-3 text-base leading-7 text-brand-white sm:text-sm">
                                 {item.subtitle}
                             </p>
                         </div>

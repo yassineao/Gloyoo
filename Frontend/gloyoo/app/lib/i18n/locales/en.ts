@@ -26,7 +26,7 @@ export const enDictionary: LocaleDictionary = {
             { label: "Web Design", href: "/services/webdesign" },
           ],
         },
-        { label: "About Us", href: "#about-us" },
+        { label: "About Us", href: "/about" },
       ],
       contactLabel: "Request Consultation",
       mobileMenuLabel: "Menu",
@@ -41,7 +41,7 @@ export const enDictionary: LocaleDictionary = {
         { label: "Home", href: "/" },
         { label: "Benefits", href: "#advantages" },
         { label: "Services", href: "#services" },
-        { label: "About Us", href: "#about-us" },
+        { label: "About Us", href: "/about" },
       ],
       serviceLinks: [
         { label: "Social Media Management", href: "/services/social-media" },
