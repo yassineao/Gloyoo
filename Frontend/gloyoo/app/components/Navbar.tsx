@@ -1,8 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Space_Grotesk } from "next/font/google";
 import MobileNav from "./MobileNav";
 import LocaleSwitchLink from "./LocaleSwitchLink";
 import { type Locale, type LocaleDictionary } from "../lib/i18n";
+
+// Load Space Grotesk for logo
+const logoFont = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["700"],
+  display: "swap",
+});
 
 export default function Navbar({
   locale,
@@ -36,7 +44,9 @@ export default function Navbar({
                 priority
                 className="h-6 w-auto sm:h-7 lg:h-8"
               />
-              <span className="text-xs font-bold tracking-wider text-white sm:text-sm lg:text-base">
+              <span 
+                className={`${logoFont.className} text-xs font-bold tracking-widest text-white sm:text-sm lg:text-base`}
+              >
                 GLOYOO
               </span>
             </div>
@@ -59,7 +69,11 @@ export default function Navbar({
                       stroke="currentColor"
                       strokeWidth={2}
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="m19 9-7 7-7-7" />
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        d="m19 9-7 7-7-7" 
+                      />
                     </svg>
                   )}
                 </Link>
