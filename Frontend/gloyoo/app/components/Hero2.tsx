@@ -23,13 +23,13 @@ export default function Hero2({ content }: Hero2Props){
         </div>
       </div>
       <div className="flex flex-col items-start mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pl-16 md:mb-0">
-        <span className="mb-8 text-xs font-bold tracking-widest text-blue-600 uppercase">  {content.title} </span>
-        <p className="mb-12 text-base leading-relaxed text-gray-500">{content.description}</p>
+        <span className="mb-8 text-xs font-bold tracking-widest text-blue-400 uppercase">  {content.title} </span>
+        <p className="mb-12 text-base leading-relaxed text-gwhite">{content.description}</p>
         <a className="inline-flex items-center w-full mb-4">
          <span className="flex flex-col flex-grow pl-3">
-            <h2 className="text-xs font-semibold tracking-widest text-blue-600 uppercase">
+            <h2 className="text-xs font-semibold tracking-widest text-blue-400 uppercase">
               {content.subtitle}
-              <span className="font-semibold text-gray-500 lg:mb-0">{content.subdescription}</span>
+              <span className="font-semibold text-white lg:mb-0">{content.subdescription}</span>
             </h2>
           </span>
         </a>

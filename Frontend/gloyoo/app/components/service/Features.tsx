@@ -35,7 +35,7 @@ export default function Features({ content }: FeaturesProps) {
           <h2 className="mb-2 text-center text-3xl font-semibold lg:text-4xl">
             {content.title}
           </h2>
-          <p className="text-center text-zinc-600 lg:text-lg">
+          <p className="text-center text-brand-petalPink lg:text-lg">
             {content.description}
           </p>
         </div>
@@ -54,7 +54,7 @@ export default function Features({ content }: FeaturesProps) {
                 </h3>
                 <ul className="col-span-3 grid gap-x-10 gap-y-4 lg:grid-cols-3">
                   {section.points.map((point) => (
-                    <li key={point} className="flex gap-1 text-zinc-600">
+                    <li key={point} className="flex gap-1 text-zinc-300">
                       <CheckIcon />
                       <span>{point}</span>
                     </li>

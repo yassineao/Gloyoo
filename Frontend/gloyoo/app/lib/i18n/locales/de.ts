@@ -530,7 +530,7 @@ export const deDictionary: LocaleDictionary = {
               "Wir verpflichten uns, Ihre personenbezogenen Daten zu schuetzen und sie fair, rechtmaessig und transparent zu verarbeiten.",
             ],
             note:
-              "[IHR AGENTURNAME]\n[Vollstaendige registrierte Anschrift]\nUSt-ID: [EU VAT number]\nE-Mail: [privacy@youragency.com]\n[Datenschutzbeauftragter (falls vorhanden): [dpo@youragency.com]]",
+              "Gloyoo\n[Vollstaendige registrierte Anschrift]\nUSt-ID: [EU VAT number]\nE-Mail: [privacy@youragency.com]\n[Datenschutzbeauftragter (falls vorhanden): [dpo@youragency.com]]",
           },
           {
             title: "Welche Daten wir erheben",
@@ -721,7 +721,7 @@ export const deDictionary: LocaleDictionary = {
               "Fuer alle datenschutzbezogenen Fragen, Antraege oder Beschwerden nutzen Sie bitte die nachstehenden Kontaktdaten.",
             ],
             note:
-              "Privacy & GDPR: [privacy@youragency.com]\nDatenschutzbeauftragter: [dpo@youragency.com] (falls vorhanden)\nPost: [IHR AGENTURNAME], [Vollstaendige Anschrift], z. Hd. Privacy Team\nAntwortfrist: Innerhalb von 30 Kalendertagen (GDPR-Frist)",
+              "Privacy & GDPR: [privacy@youragency.com]\nDatenschutzbeauftragter: [dpo@youragency.com] (falls vorhanden)\nPost: Gloyoo, [Vollstaendige Anschrift], z. Hd. Privacy Team\nAntwortfrist: Innerhalb von 30 Kalendertagen (GDPR-Frist)",
           },
         ],
         note:
@@ -757,7 +757,7 @@ export const deDictionary: LocaleDictionary = {
         "In Übereinstimmung mit der Richtlinie 2000/31/EG über den elektronischen Geschäftsverkehr und den anwendbaren nationalen Gesetzen, einschließlich Art. 6 LCEN (Frankreich), §5 TMG (Deutschland), Art. 10 LSSI-CE (Spanien) sowie vergleichbaren nationalen Vorschriften, werden die folgenden Pflichtangaben bereitgestellt.",
       ],
       contactCards: [
-        { label: "Firmenname", value: "[IHR AGENTURNAME]" },
+        { label: "Firmenname", value: "Gloyoo" },
         { label: "Rechtsform", value: "[z. B. SAS / GmbH / SRL / Ltd]" },
         { label: "Stammkapital", value: "[z. B. 10.000 €]" },
         {
@@ -776,7 +776,7 @@ export const deDictionary: LocaleDictionary = {
           label: "Verantwortlich für den Inhalt",
           value: "[Name des gesetzlichen Vertreters]",
         },
-        { label: "E-Mail", value: "[contact@youragency.com]" },
+        { label: "E-Mail", value: "contact@Gloyoo.com" },
         { label: "Telefon", value: "[+XX XXX XXX XXXX]" },
       ],
     },
@@ -796,7 +796,7 @@ export const deDictionary: LocaleDictionary = {
     {
       title: "Urheberrecht",
       paragraphs: [
-        "Alle Inhalte dieser Website sind Eigentum von [IHR AGENTURNAME] oder deren Partnern und durch EU-Urheberrecht geschützt (Richtlinie (EU) 2019/790).",
+        "Alle Inhalte dieser Website sind Eigentum von Gloyoo oder deren Partnern und durch EU-Urheberrecht geschützt (Richtlinie (EU) 2019/790).",
         "Die Nutzung ohne vorherige schriftliche Zustimmung ist untersagt.",
       ],
       note:
@@ -807,7 +807,7 @@ export const deDictionary: LocaleDictionary = {
       paragraphs: [
         "Alle Inhalte dienen nur zu Informationszwecken. Es wird keine Gewähr für Vollständigkeit oder Richtigkeit übernommen.",
         "Für Inhalte externer Links wird keine Haftung übernommen.",
-        "Soweit gesetzlich zulässig, haftet [IHR AGENTURNAME] nicht für Schäden aus der Nutzung dieser Website.",
+        "Soweit gesetzlich zulässig, haftet Gloyoo nicht für Schäden aus der Nutzung dieser Website.",
       ],
     },
     {
@@ -871,7 +871,7 @@ export const deDictionary: LocaleDictionary = {
         "Für die Zwecke dieser Allgemeinen Geschäftsbedingungen gelten die folgenden Begriffe.",
       ],
       bullets: [
-        '"Agentur" / "Wir" — [IHR AGENTURNAME]',
+        '"Agentur" / "Wir" — Gloyoo',
         '"Kunde" / "Sie" — natürliche oder juristische Person',
         '"Verbraucher" — gemäß EU-Richtlinie 2011/83/EU',
         '"Dienstleistungen" — Social Media, Webdesign und digitale Services',
@@ -1070,7 +1070,7 @@ export const deDictionary: LocaleDictionary = {
     {
       title: "Kontakt",
       contactCards: [
-        { label: "Allgemein", value: "[contact@youragency.com]" },
+        { label: "Allgemein", value: "contact@Gloyoo.com" },
         { label: "Recht / Abrechnung", value: "[legal@youragency.com]" },
         { label: "Adresse", value: "[Adresse]" },
         { label: "Antwortzeit", value: "Innerhalb von 5 Werktagen" },
