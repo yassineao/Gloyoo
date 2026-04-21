@@ -59,9 +59,9 @@ export default function MainPage({
       <div className="defer-section lg:py-16 bg-black">
         <Advantages content={home.advantages} />
       </div>
-<Background>
-      <div className="defer-section  lg:py-16" id="services">
-        
+      <Background>
+        <div className="defer-section  lg:py-16" id="services">
+
           <div className="">
             <ScrollVelocity
               texts={home.scrollTexts}
@@ -71,9 +71,9 @@ export default function MainPage({
 
             <Services content={home.services} />
           </div>
-      
-      </div>
-  </Background>
+
+        </div>
+      </Background>
       <div className="defer-section bg-black">
         <AboutUs content={home.about} locale={locale} />
       </div>

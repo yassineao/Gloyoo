@@ -32,7 +32,7 @@ export default function Hero({
 
               <div className="mt-8 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a
-                  href="#about-us"
+                  href="/form"
                   className="inline-flex h-11 w-full items-center justify-center rounded-md bg-gradient-to-r from-brand-purple to-brand-teal px-5 py-2 text-sm font-medium text-white shadow-brand-cta transition-all hover:brightness-110 sm:w-auto"
                 >
                   {content.primaryCta}
