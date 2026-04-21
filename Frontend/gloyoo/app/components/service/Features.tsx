@@ -16,9 +16,8 @@ function CheckIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="mr-2 mt-1 inline-block w-4 shrink-0"
+      className="mt-0.5 h-4 w-4 shrink-0 text-sky-400"
       aria-hidden="true"
-      color="blue"
     >
       <path d="M20 6 9 17l-5-5" />
     </svg>
@@ -27,37 +26,42 @@ function CheckIcon() {
 
 export default function Features({ content }: FeaturesProps) {
   return (
-    <section className="py-32">
-      <div className="container">
-        <div className="mx-auto flex max-w-screen-md flex-col items-center gap-6">
-          <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+    <section className="w-full py-16 sm:py-20 lg:py-32 lg:px-32">
+      <div className="container px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-screen-md flex-col items-center gap-4 sm:gap-6">
+          <div className="inline-flex items-center rounded-full border px-3 py-1 text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 sm:text-xs">
             {content.badge}
           </div>
-          <h2 className="mb-2 text-center text-3xl font-semibold lg:text-4xl">
+          <h2 className="mb-1 text-center text-2xl font-semibold leading-tight text-balance sm:text-3xl lg:mb-2 lg:text-4xl">
             {content.title}
           </h2>
-          <p className="text-center text-brand-petalPink lg:text-lg">
+          <p className="max-w-2xl text-center text-sm leading-7 text-brand-petalPink sm:text-base lg:text-lg">
             {content.description}
           </p>
         </div>
 
-        <div className="flex flex-col items-center justify-center">
-          {content.sections.map((section) => (
-            <div key={section.title} className="w-full max-w-96 lg:max-w-none">
+        <div className="mt-10 flex flex-col items-center justify-center sm:mt-14">
+          {content.sections.map((section, index) => (
+            <div key={section.title} className="w-full">
               <div
                 data-orientation="horizontal"
                 role="none"
-                className="my-16 h-[1px] w-full shrink-0 bg-border"
+                className={`hidden h-[1px] w-full shrink-0 bg-border lg:block ${
+                  index === 0 ? "mb-12" : "my-16"
+                }`}
               />
-              <div className="mx-auto inline-block w-full gap-x-10 lg:grid lg:grid-cols-4">
-                <h3 className="mb-4 text-2xl font-semibold lg:text-3xl">
+              <div className="mx-auto w-full rounded-3xl border border-white/10 bg-white/[0.03] p-5 sm:p-6 lg:grid lg:grid-cols-4 lg:gap-x-10 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0">
+                <h3 className="mb-5 text-xl font-semibold leading-tight text-white sm:text-2xl lg:mb-0 lg:text-3xl">
                   {section.title}
                 </h3>
-                <ul className="col-span-3 grid gap-x-10 gap-y-4 lg:grid-cols-3">
+                <ul className="col-span-3 grid gap-3 sm:gap-4 lg:grid-cols-3 lg:gap-x-10">
                   {section.points.map((point) => (
-                    <li key={point} className="flex gap-1 text-zinc-300">
+                    <li
+                      key={point}
+                      className="flex items-start gap-3 rounded-2xl bg-white/[0.04] p-3 text-sm leading-6 text-zinc-300 sm:text-base lg:rounded-none lg:bg-transparent lg:p-0"
+                    >
                       <CheckIcon />
-                      <span>{point}</span>
+                      <span className="min-w-0">{point}</span>
                     </li>
                   ))}
                 </ul>
