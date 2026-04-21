@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Background from "@/app/components/Background";
 import type { ServiceSlug } from "@/app/types/Service";
 import Service from "../../../components/service/Service";
 import {

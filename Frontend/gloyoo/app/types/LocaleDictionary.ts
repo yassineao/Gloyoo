@@ -1,5 +1,9 @@
 import type { Infos } from "./Infos";
-import type { ServiceFeatures, ServiceHero2, ServiceHeroCollection } from "./Service";
+import type {
+  ServiceFeatures,
+  ServiceHero2,
+  ServiceHeroCollection,
+} from "./Service";
 
 type NavItem = {
   label: string;
@@ -134,6 +138,18 @@ type FormContent = {
   seo: PageSeo;
 };
 
+type FaqContent = {
+  metadata: PageMetadata;
+  badge: string;
+  title: string;
+  description: string;
+  ctaLabel: string;
+  items: {
+    question: string;
+    answer: string;
+  }[];
+};
+
 type ServicePageContent = {
   metadata: PageMetadata;
   hero: ServiceHeroCollection;
@@ -164,6 +180,7 @@ type LocaleDictionary = {
     legalLinks: FooterLink[];
   };
   home: HomeContent;
+  faq: FaqContent;
   servicePage: ServicePageContent;
   form: FormContent;
   pages: {
@@ -180,6 +197,7 @@ export type {
   ContentPage,
   ContentSection,
   FooterLink,
+  FaqContent,
   FormContent,
   HomeContent,
   LocaleDictionary,

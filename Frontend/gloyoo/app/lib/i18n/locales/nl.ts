@@ -170,6 +170,83 @@ export const nlDictionary: LocaleDictionary = {
       ],
     },
   },
+  faq: {
+    metadata: {
+      title: "FAQ | Vragen over online marketing | Gloyoo",
+      description:
+        "Antwoorden op veelgestelde vragen over online marketing, bureaus, kosten, timing en hoe u het beste kunt starten.",
+      locale: "nl_NL",
+      keywords: [
+        "online marketing faq",
+        "vragen marketingbureau",
+        "online marketing kosten",
+        "digital marketing faq",
+        "hoe werkt online marketing",
+      ],
+    },
+    badge: "FAQ",
+    title: "Veelgestelde vragen over online marketing",
+    description:
+      "Een snel overzicht van vragen die bedrijven het vaakst stellen voordat ze starten met online marketing of met een bureau gaan samenwerken.",
+    ctaLabel: "Bekijk alle FAQs",
+    items: [
+      {
+        question: "Wat is online marketing precies?",
+        answer:
+          "Online marketing is het strategisch promoten van producten of diensten via het internet. Het omvat kanalen zoals zoekmachines, social media, websites, e-mail en betaalde advertenties om zichtbaarheid te vergroten en de juiste doelgroep te bereiken.",
+      },
+      {
+        question: "Wat zijn de voordelen van online marketing?",
+        answer:
+          "Online marketing biedt een groter bereik, meetbare prestaties, kostenefficiente advertentiemogelijkheden, gerichte targeting en de mogelijkheid om in realtime te reageren op gebruikersgedrag en klantinteracties.",
+      },
+      {
+        question: "Hoe werkt online marketing?",
+        answer:
+          "Het combineert relevante content, zichtbaarheid in zoekmachines, socialmedia-activiteit en gerichte campagnes over digitale kanalen. Het doel is om de juiste doelgroep te bereiken en aandacht om te zetten in aanvragen of verkoop.",
+      },
+      {
+        question: "Wie heeft een online marketingbureau nodig?",
+        answer:
+          "Bedrijven van elke omvang kunnen profiteren, vooral organisaties die hun online aanwezigheid willen verbeteren, hun klantenbestand willen uitbreiden en meer voorspelbare verkoopkansen willen opbouwen.",
+      },
+      {
+        question: "Waarom heeft mijn bedrijf een online marketingbureau nodig?",
+        answer:
+          "Een bureau brengt strategie, ervaring en uitvoeringskracht mee. Daardoor gaat u sneller vooruit, voorkomt u kostbaar giswerk en bouwt u een systeem dat zichtbaarheid en kwalitatieve leads duurzaam vergroot.",
+      },
+      {
+        question: "Hoe begin ik met online marketing?",
+        answer:
+          "Begin met duidelijke doelen en een scherp gedefinieerde doelgroep. Daarna kunt u de juiste mix opbouwen van content, social media, websiteverbeteringen en advertentiecampagnes.",
+      },
+      {
+        question: "Hoe kies ik het juiste online marketingbureau?",
+        answer:
+          "Kijk naar ervaring, reviews, passende diensten, kwaliteit van communicatie en transparantie in prijs. Het juiste bureau begrijpt uw doelen, past binnen uw budget en levert de diensten die uw bedrijf echt nodig heeft.",
+      },
+      {
+        question: "Wat kost samenwerken met een online marketingbureau?",
+        answer:
+          "De kosten hangen af van de scope van het werk, de gekozen kanalen en het gewenste niveau van ondersteuning. Het is slim om uw budget vooraf te bepalen en offertes te vergelijken op waarde, niet alleen op prijs.",
+      },
+      {
+        question: "Hoe lang duurt het voordat resultaten zichtbaar worden?",
+        answer:
+          "Dat hangt af van uw markt, concurrentie en uitgangssituatie. In veel gevallen worden de eerste verbeteringen na enkele maanden zichtbaar, terwijl sterke langetermijnresultaten voortkomen uit consistente uitvoering.",
+      },
+      {
+        question: "Kan ik online marketing zelf doen?",
+        answer:
+          "U kunt een deel intern oppakken, maar een bureau voegt expertise, beproefde processen en strategisch inzicht toe, wat meestal sneller tot sterkere resultaten leidt.",
+      },
+      {
+        question: "Wat is het verschil tussen online marketing en digital marketing?",
+        answer:
+          "Online marketing richt zich specifiek op internetgebaseerde kanalen. Digital marketing is breder en omvat ook digitale contactpunten buiten het internet, zoals apps of digitale schermen.",
+      },
+    ],
+  },
   servicePage: {
     metadata: {
       title: "Onze Diensten | Social Media, Content & Webdesign | Gloyoo",
@@ -1280,4 +1357,3 @@ export const nlDictionary: LocaleDictionary = {
     },
   },
 };
-

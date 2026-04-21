@@ -83,5 +83,11 @@ export default async function LocalizedHome({
   }
 
   const dictionary = getDictionary(locale as Locale);
-  return <MainPage home={dictionary.home} locale={locale as Locale} />;
+  return (
+    <MainPage
+      home={dictionary.home}
+      faq={dictionary.faq}
+      locale={locale as Locale}
+    />
+  );
 }

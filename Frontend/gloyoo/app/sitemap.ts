@@ -38,6 +38,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
+      url: `${siteUrl}/${locale}/faq`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      alternates: {
+        languages: buildAlternateLanguages("/faq"),
+      },
+    },
+    {
       url: `${siteUrl}/${locale}/privacy`,
       lastModified,
       changeFrequency: "yearly" as const,

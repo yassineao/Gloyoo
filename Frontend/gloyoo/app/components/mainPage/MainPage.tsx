@@ -1,6 +1,7 @@
 import Background from "../Background";
+import Faq from "../Faq";
 import ScrollVelocity from "../ScrollVelocity";
-import type { HomeContent } from "../../types/LocaleDictionary";
+import type { FaqContent, HomeContent } from "../../types/LocaleDictionary";
 import { getLanguageTag, type Locale } from "../../lib/i18n";
 import { getSiteUrl, siteConfig } from "../../lib/seo";
 import AboutUs from "./AboutUs";
@@ -10,9 +11,11 @@ import Services from "./Services";
 
 export default function MainPage({
   home,
+  faq,
   locale,
 }: {
   home: HomeContent;
+  faq: FaqContent;
   locale: Locale;
 }) {
   const siteUrl = getSiteUrl();
@@ -73,6 +76,14 @@ export default function MainPage({
 
       <div className="defer-section">
         <AboutUs content={home.about} locale={locale} />
+      </div>
+
+      <div className="defer-section bg-black">
+        <Faq
+          content={faq}
+          items={faq.items.slice(0, 4)}
+          ctaHref={`/${locale}/faq`}
+        />
       </div>
     </main>
   );

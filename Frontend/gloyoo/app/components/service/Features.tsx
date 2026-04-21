@@ -18,6 +18,7 @@ function CheckIcon() {
       strokeLinejoin="round"
       className="mr-2 mt-1 inline-block w-4 shrink-0"
       aria-hidden="true"
+      color="blue"
     >
       <path d="M20 6 9 17l-5-5" />
     </svg>

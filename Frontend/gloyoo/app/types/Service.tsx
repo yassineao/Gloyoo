@@ -37,6 +37,18 @@ type ServiceFeatureSection = {
   points: string[];
 };
 
+type ServiceFaqItem = {
+  question: string;
+  answer: string;
+};
+
+type ServiceFaq = {
+  badge: string;
+  title: string;
+  description: string;
+  items: ServiceFaqItem[];
+};
+
 type ServiceFeatures = {
   badge: string;
   title: string;
@@ -46,6 +58,8 @@ type ServiceFeatures = {
 };
 
 export type {
+  ServiceFaq,
+  ServiceFaqItem,
   ServiceFeatureSection,
   ServiceFeatures,
   ServiceFeaturesItem,

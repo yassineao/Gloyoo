@@ -170,6 +170,83 @@ export const enDictionary: LocaleDictionary = {
         ],
       },
     },
+    faq: {
+      metadata: {
+        title: "FAQ | Online Marketing Questions | Gloyoo",
+        description:
+          "Answers to common questions about online marketing, agency support, costs, timing, and getting started.",
+        locale: "en_US",
+        keywords: [
+          "online marketing faq",
+          "marketing agency questions",
+          "online marketing costs",
+          "digital marketing faq",
+          "how online marketing works",
+        ],
+      },
+      badge: "FAQ",
+      title: "Frequently asked questions about online marketing",
+      description:
+        "A quick overview of the questions businesses ask most often before starting with online marketing or working with an agency.",
+      ctaLabel: "View all FAQs",
+      items: [
+        {
+          question: "What exactly is online marketing?",
+          answer:
+            "Online marketing is the strategic promotion of products or services through the internet. It includes channels such as search engines, social media, websites, email, and paid advertising to increase visibility and reach the right audience.",
+        },
+        {
+          question: "What are the advantages of online marketing?",
+          answer:
+            "It offers broader reach, measurable performance, cost-efficient advertising, precise targeting, and the ability to react to user behaviour and customer interactions in real time.",
+        },
+        {
+          question: "How does online marketing work?",
+          answer:
+            "It works by combining relevant content, search visibility, social media activity, and targeted campaigns across digital channels. The goal is to attract the right audience and turn attention into inquiries or sales.",
+        },
+        {
+          question: "Who needs an online marketing agency?",
+          answer:
+            "Businesses of all sizes can benefit, especially companies that want to improve their online presence, expand their customer base, and generate more consistent sales opportunities.",
+        },
+        {
+          question: "Why does my company need an online marketing agency?",
+          answer:
+            "An agency brings strategy, experience, and execution capacity. That helps you move faster, avoid guesswork, and build a system that increases visibility and reaches potential customers more effectively.",
+        },
+        {
+          question: "How do I get started with online marketing?",
+          answer:
+            "Start by defining clear goals and identifying your target audience. From there, you can build the right mix of content, social media, website improvements, and advertising campaigns.",
+        },
+        {
+          question: "How do I choose the right online marketing agency?",
+          answer:
+            "Look at experience, reviews, service fit, communication quality, and pricing transparency. The right agency should understand your goals, match your budget, and offer the services your business actually needs.",
+        },
+        {
+          question: "How much does it cost to work with an online marketing agency?",
+          answer:
+            "Costs depend on the scope of work, the channels involved, and the level of support you need. It is best to define your budget early and compare offers based on value rather than price alone.",
+        },
+        {
+          question: "How long does it take to see results?",
+          answer:
+            "That depends on your market, competition, and starting point. In many cases, first improvements become visible after a few months, while stronger long-term results come from consistent execution.",
+        },
+        {
+          question: "Can I do online marketing myself?",
+          answer:
+            "You can handle some activities internally, but an agency adds expertise, tested processes, and strategic perspective that usually leads to faster and stronger results.",
+        },
+        {
+          question: "What is the difference between online marketing and digital marketing?",
+          answer:
+            "Online marketing focuses specifically on internet-based channels. Digital marketing is broader and also includes digital touchpoints outside the internet, such as mobile apps or digital displays.",
+        },
+      ],
+    },
     servicePage: {
       metadata: {
         title: "Our Services | Social Media, Content & Web Design | Gloyoo",

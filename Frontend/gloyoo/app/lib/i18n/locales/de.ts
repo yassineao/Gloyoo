@@ -185,6 +185,83 @@ export const deDictionary: LocaleDictionary = {
         ],
       },
     },
+    faq: {
+      metadata: {
+        title: "FAQ | Fragen zu Online-Marketing | Gloyoo",
+        description:
+          "Antworten auf haeufige Fragen zu Online-Marketing, Agenturleistungen, Kosten, Zeitrahmen und dem richtigen Einstieg.",
+        locale: "de_DE",
+        keywords: [
+          "online marketing faq",
+          "fragen marketing agentur",
+          "online marketing kosten",
+          "digital marketing faq",
+          "wie funktioniert online marketing",
+        ],
+      },
+      badge: "FAQ",
+      title: "Haeufige Fragen rund um Online-Marketing",
+      description:
+        "Ein kompakter Ueberblick ueber Fragen, die Unternehmen vor dem Start mit Online-Marketing oder vor der Zusammenarbeit mit einer Agentur besonders oft stellen.",
+      ctaLabel: "Alle FAQs ansehen",
+      items: [
+        {
+          question: "Was genau ist Online-Marketing?",
+          answer:
+            "Online-Marketing ist die strategische Vermarktung von Produkten oder Dienstleistungen ueber das Internet. Dazu gehoeren Kanaele wie Suchmaschinen, Social Media, Websites, E-Mail und bezahlte Werbung, um Sichtbarkeit zu steigern und die passende Zielgruppe zu erreichen.",
+        },
+        {
+          question: "Welche Vorteile hat Online-Marketing?",
+          answer:
+            "Online-Marketing bietet eine groessere Reichweite, messbare Ergebnisse, kosteneffiziente Werbemoeglichkeiten, gezielte Ansprache und die Moeglichkeit, in Echtzeit auf Nutzerverhalten und Kundeninteraktionen zu reagieren.",
+        },
+        {
+          question: "Wie funktioniert Online-Marketing?",
+          answer:
+            "Es verbindet relevante Inhalte, Sichtbarkeit in Suchmaschinen, Social-Media-Aktivitaeten und gezielte Kampagnen ueber digitale Kanaele. Das Ziel ist, die richtige Zielgruppe anzusprechen und Aufmerksamkeit in Anfragen oder Verkaeufe zu verwandeln.",
+        },
+        {
+          question: "Wer braucht eine Online-Marketing-Agentur?",
+          answer:
+            "Unternehmen jeder Groesse koennen profitieren, besonders dann, wenn sie ihre Online-Praesenz verbessern, neue Kunden gewinnen und planbarer Anfragen oder Umsatz aufbauen moechten.",
+        },
+        {
+          question: "Warum braucht mein Unternehmen eine Online-Marketing-Agentur?",
+          answer:
+            "Eine Agentur bringt Strategie, Erfahrung und Umsetzungskapazitaet mit. Dadurch kommen Sie schneller voran, vermeiden teures Ausprobieren und bauen ein System auf, das Sichtbarkeit und qualifizierte Kontakte nachhaltig steigert.",
+        },
+        {
+          question: "Wie starte ich mit Online-Marketing?",
+          answer:
+            "Am Anfang stehen klare Ziele und eine sauber definierte Zielgruppe. Darauf aufbauend entwickeln sich die passenden Massnahmen aus Content, Social Media, Website-Optimierung und Werbekampagnen.",
+        },
+        {
+          question: "Wie finde ich die richtige Online-Marketing-Agentur?",
+          answer:
+            "Achten Sie auf Erfahrung, Bewertungen, passenden Leistungsumfang, gute Kommunikation und transparente Preise. Die richtige Agentur versteht Ihre Ziele, passt zu Ihrem Budget und bietet genau die Leistungen, die Sie wirklich brauchen.",
+        },
+        {
+          question: "Was kostet die Zusammenarbeit mit einer Online-Marketing-Agentur?",
+          answer:
+            "Die Kosten haengen vom Leistungsumfang, den Kanaelen und der gewuenschten Betreuung ab. Am besten definieren Sie Ihr Budget fruehzeitig und vergleichen Angebote nach dem gebotenen Mehrwert, nicht nur nach dem Preis.",
+        },
+        {
+          question: "Wie lange dauert es, bis Ergebnisse sichtbar werden?",
+          answer:
+            "Das haengt von Markt, Wettbewerb und Ausgangslage ab. Erste Verbesserungen sind oft nach einigen Monaten sichtbar, waehrend starke langfristige Ergebnisse durch konsequente Umsetzung entstehen.",
+        },
+        {
+          question: "Kann ich Online-Marketing auch selbst machen?",
+          answer:
+            "Einzelne Massnahmen koennen intern umgesetzt werden, aber eine Agentur bringt Fachwissen, bewaehrte Prozesse und eine strategische Perspektive mit, die meist schneller zu besseren Ergebnissen fuehrt.",
+        },
+        {
+          question: "Was ist der Unterschied zwischen Online-Marketing und Digital-Marketing?",
+          answer:
+            "Online-Marketing bezieht sich speziell auf internetbasierte Kanaele. Digital-Marketing ist breiter und umfasst auch digitale Touchpoints ausserhalb des Internets, zum Beispiel Apps oder digitale Displays.",
+        },
+      ],
+    },
     servicePage: {
       metadata: {
         // ✅ IMPROVED: More specific, keyword-rich
@@ -1262,5 +1339,3 @@ export const deDictionary: LocaleDictionary = {
       },
     },
 };
-
-
