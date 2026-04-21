@@ -9,7 +9,7 @@ export const nlDictionary: LocaleDictionary = {
       { label: "Voordelen", href: "#advantages" },
       {
         label: "Diensten",
-        href: "#services",
+        href: "/services",
         children: [
           {
             label: "Social Media Beheer",

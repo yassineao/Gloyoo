@@ -9,7 +9,7 @@ export const deDictionary: LocaleDictionary = {
         { label: "Vorteile", href: "#advantages" },
         {
           label: "Leistungen",
-          href: "#services",
+          href: "/services",
           children: [
             {
               label: "Social Media Betreuung",

@@ -8,7 +8,7 @@ export default function ServiceOverviewSections({
   content,
 }: ServiceOverviewSectionsProps) {
   return (
-    <section className="bg-[#0B0B0F] py-20">
+    <section className=" py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <span className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-graySoft">

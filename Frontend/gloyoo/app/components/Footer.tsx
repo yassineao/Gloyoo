@@ -18,8 +18,8 @@ export default function Footer({
         "block rounded-xl px-3 py-3 text-sm text-brand-graySoft transition-all duration-200 hover:bg-white/5 hover:text-white active:scale-[0.99] sm:px-0 sm:py-0 sm:hover:bg-transparent";
 
     return (
-        <footer className="bg-brand-navyDark text-white">
-            <div className="container mx-auto px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+        <footer className="bg-black text-white">
+            <div className="container mx-auto py-4  sm:px-6 sm:py-14 ">
                 <div className=" shadow-[0_10px_40px_rgba(0,0,0,0.18)] backdrop-blur-sm sm:p-8">
                     {/* Top section */}
                     <div className="flex flex-col gap-8 lg:grid lg:grid-cols-12 lg:gap-10">

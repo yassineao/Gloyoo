@@ -14,8 +14,7 @@ export default function ServiceOverviewCta({
   formHref,
 }: ServiceOverviewCtaProps) {
   return (
-    <Background animated={false}>
-      <section className="flex min-h-[600px] items-center py-20">
+      <section className="flex min-h-[600px] items-center py-20 bg-[#0B0B0F]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl rounded-[36px] border border-white/10 bg-black/35 p-8 text-center shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-md sm:p-12">
             <span className="inline-flex items-center rounded-full border border-white/12 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-graySoft">
@@ -44,6 +43,5 @@ export default function ServiceOverviewCta({
           </div>
         </div>
       </section>
-    </Background>
   );
 }

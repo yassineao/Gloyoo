@@ -1,9 +1,8 @@
 import type { Locale, LocaleDictionary } from "@/app/lib/i18n";
+import Features from "./Features";
 import ServiceOverviewCards from "./ServiceOverviewCards";
 import ServiceOverviewCta from "./ServiceOverviewCta";
 import ServiceOverviewHero from "./ServiceOverviewHero";
-import ServiceOverviewHighlights from "./ServiceOverviewHighlights";
-import ServiceOverviewSections from "./ServiceOverviewSections";
 import { serviceSlugs } from "./serviceOverviewConfig";
 
 type ServiceOverviewProps = {
@@ -38,8 +37,9 @@ export default function ServiceOverview({
         content={content.overview.cards}
         services={services}
       />
-      <ServiceOverviewHighlights items={content.features.items} />
-      <ServiceOverviewSections content={content.features} />
+      <div className="flex items-center justify-center bg-black">
+        <Features content={content.features} />
+      </div>
       <ServiceOverviewCta
         actionLabel={content.overview.hero.primaryCta}
         content={content.hero2}
