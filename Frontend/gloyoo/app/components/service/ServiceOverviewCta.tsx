@@ -20,14 +20,14 @@ export default function ServiceOverviewCta({
             <span className="inline-flex items-center rounded-full border border-white/12 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-graySoft">
               {content.badge}
             </span>
-            <h2 className="mt-6 text-balance text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
+            <h2 className="mt-6 text-balance text-brand-gray text-3xl font-semibold  sm:text-4xl lg:text-5xl">
               {content.title}
             </h2>
             <p className="mt-6 text-base leading-8 text-brand-graySoft sm:text-lg">
               {content.description}
             </p>
-            <p className="mt-4 text-sm leading-7 text-white/85 sm:text-base">
-              <span className="font-semibold text-white">
+            <p className="mt-4 text-sm leading-7 text-white sm:text-base">
+              <span className="font-semibold text-brand-gray">
                 {content.subtitle}
               </span>{" "}
               {content.subdescription}
