@@ -9,7 +9,7 @@ export default function Advantages({
     return (
         <section
             id="advantages"
-            className="scroll-mt-24 overflow-hidden bg-brand-navyDark py-2 sm:py-20 lg:py-4"
+            className="overflow-hidden bg-black "
             aria-labelledby="advantages-heading"
         >
                 <div className="flex w-full justify-center">

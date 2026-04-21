@@ -12,7 +12,7 @@ const config = {
           navy: "#111827",
           navyDark: "#0B0B0F",
           steel: "#FFFFFF",
-          gray: "#be05f1",
+          gray: "#b696be",
           grayLight: "#D4D4D8",
           graySoft: "#A1A1AA",
           grayMuted: "#71717A",

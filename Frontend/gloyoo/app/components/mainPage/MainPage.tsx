@@ -56,13 +56,13 @@ export default function MainPage({
         </Background>
       </div>
 
-      <div className="defer-section xl:mt-20 xl:mb-20">
+      <div className="defer-section lg:py-16 bg-black">
         <Advantages content={home.advantages} />
       </div>
-
-      <div className="defer-section lg:mt-10 lg:mb-10" id="services">
-        <Background>
-          <div className="lg:mt-20">
+<Background>
+      <div className="defer-section  lg:py-16" id="services">
+        
+          <div className="">
             <ScrollVelocity
               texts={home.scrollTexts}
               velocity={100}
@@ -71,14 +71,14 @@ export default function MainPage({
 
             <Services content={home.services} />
           </div>
-        </Background>
+      
       </div>
-
-      <div className="defer-section">
+  </Background>
+      <div className="defer-section bg-black">
         <AboutUs content={home.about} locale={locale} />
       </div>
 
-      <div className="defer-section py-16 bg-black">
+      <div className="defer-section ">
         <Faq
           content={faq}
           items={faq.items.slice(0, 4)}
