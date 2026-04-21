@@ -101,7 +101,7 @@ export default async function FaqPage({
   };
 
   return (
-    <main className="overflow-x-hidden bg-[#0B0B0F] ">
+    <main className="bg-[#0B0B0F] px-4 pt-24 pb-16 sm:px-6 sm:pb-20 lg:px-8 lg:pt-28 xl:pb-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

@@ -11,7 +11,7 @@ export default function Faq({ content, items, ctaHref }: FaqProps) {
   const faqItems = items ?? content.items;
 
   return (
-    <section className="w-full px-4  sm:px-6 sm:py-20 lg:px-6 ">
+    <section className="w-full ">
       <div className="mx-auto w-full max-w-5xl">
         <div className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-petalPink sm:text-xs sm:tracking-[0.2em]">

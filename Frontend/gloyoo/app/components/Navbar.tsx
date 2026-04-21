@@ -14,110 +14,99 @@ export default function Navbar({
   const localizedHref = (href: string) => `/${locale}${href}`;
 
   return (
-    <header
-      className="fixed top-0 z-20 min-w-full border-b border-white/8 px-4 text-slate-50 backdrop-blur-md sm:border-transparent sm:px-6 lg:px-24"
-      style={{ backgroundColor: "rgba(11, 11, 15, 0.45)" }}
-    >
-      <div className="container flex h-16 items-center justify-between px-0 sm:px-0">
+    <header className="fixed top-0 z-50 w-full border-b border-white/5 bg-brand-navyDark/80 backdrop-blur-lg">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <nav
           aria-label={content.ariaLabel}
-          className="grid w-full grid-cols-2 items-center justify-between py-2  lg:grid-cols-4 lg:gap-4"
+          className="flex h-16 items-center justify-between lg:h-20"
         >
+          {/* Logo */}
           <Link
             href={`/${locale}#home`}
-            className="col-span-1 shrink-0"
+            className="group flex items-center gap-3 transition-opacity hover:opacity-90"
             aria-label={content.homeAriaLabel}
           >
-            <div
-              className="ml-0 inline-flex h-12 max-w-full items-center gap-2.5 overflow-hidden whitespace-nowrap rounded-full border border-white/10 bg-white/8 px-5 text-white ring-1 backdrop-blur-md transition-all duration-300 sm:gap-3 sm:px-5 sm:py-2.5 lg:ml-24"
-              style={{
-                boxShadow: "0 0 40px rgba(168,85,247,0.25)",
-                ["--tw-ring-color" as string]: "rgba(168,85,247,0.3)",
-              }}
-            >
+            <div className="relative flex h-10 items-center gap-2.5 overflow-hidden rounded-full border border-white/10 bg-white/5 px-4 shadow-lg shadow-brand-purple/20 backdrop-blur-sm transition-all duration-300 hover:border-brand-purple/30 hover:shadow-brand-purple/30 sm:h-11 sm:px-5 lg:h-12">
               <Image
                 src="/Logo.png"
                 alt="Gloyoo Logo"
-                width={986}
-                height={948}
-                quality={80}
+                width={40}
+                height={40}
+                quality={90}
                 priority
-                sizes="(max-width: 640px) 36px, (max-width: 1024px) 44px, 52px"
-                className="h-8 w-auto shrink-0 object-contain sm:h-9 lg:h-10"
+                className="h-6 w-auto sm:h-7 lg:h-8"
               />
-              <span className="pr-1 text-xs font-semibold leading-none tracking-widest text-white antialiased sm:pr-2 sm:text-sm lg:text-base">
+              <span className="text-xs font-bold tracking-wider text-white sm:text-sm lg:text-base">
                 GLOYOO
               </span>
             </div>
           </Link>
 
-          <div className="hidden lg:col-span-2 lg:block lg:justify-self-center">
-            <ul className="flex items-center gap-1 xl:gap-2">
-              {content.items.map((item) => (
-                <li key={item.href} className="group relative">
-                  <Link
-                    href={localizedHref(item.href)}
-                    className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-brand-graySoft transition-colors hover:bg-white/8 hover:text-white focus:outline-none"
-                  >
-                    {item.label}
-                    {item.children?.length ? (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                        className="ml-1 size-4 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
-                      >
-                        <path d="m6 9 6 6 6-6" />
-                      </svg>
-                    ) : null}
-                  </Link>
-
-                  {item.children?.length ? (
-                    <div
-                      className="invisible absolute left-0 top-full z-30 mt-2 w-64 translate-y-1 rounded-xl border border-white/10 p-2 opacity-0 shadow-2xl backdrop-blur-md transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 "
-                      style={{ backgroundColor: "rgba(11, 11, 15, 0.95)" }}
+          {/* Desktop Navigation */}
+          <ul className="hidden items-center gap-1 lg:flex">
+            {content.items.map((item) => (
+              <li key={item.href} className="group relative">
+                <Link
+                  href={localizedHref(item.href)}
+                  className="inline-flex h-10 items-center gap-1 rounded-lg px-4 text-sm font-medium text-brand-graySoft transition-colors hover:bg-white/5 hover:text-white"
+                >
+                  {item.label}
+                  {item.children?.length && (
+                    <svg
+                      className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
                     >
-                      <ul className="space-y-1">
-                        {item.children.map((child) => (
-                          <li key={child.href}>
-                            <Link
-                              href={localizedHref(child.href)}
-                              className="block rounded-lg px-3 py-2 text-sm text-brand-graySoft transition-colors hover:bg-white/8 hover:text-white focus:outline-none"
-                            >
-                              {child.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ) : null}
-                </li>
-              ))}
-            </ul>
-          </div>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m19 9-7 7-7-7" />
+                    </svg>
+                  )}
+                </Link>
 
-          <div className="hidden items-center gap-2 text-right lg:col-span-1 lg:flex lg:justify-end xl:gap-4">
+                {/* Dropdown Menu */}
+                {item.children?.length && (
+                  <div className="invisible absolute left-0 top-full z-50 mt-2 w-56 translate-y-2 rounded-xl border border-white/10 bg-brand-navyDark/95 p-1.5 opacity-0 shadow-xl backdrop-blur-lg transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                    <ul className="space-y-0.5">
+                      {item.children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={localizedHref(child.href)}
+                            className="block rounded-lg px-3 py-2.5 text-sm text-brand-graySoft transition-colors hover:bg-white/8 hover:text-white"
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </li>
+            ))}
+          </ul>
+
+          {/* Desktop Actions */}
+          <div className="hidden items-center gap-3 lg:flex">
+            {/* Language Switcher */}
             <LocaleSwitchLink
               currentLocale={locale}
               label={content.switchLabel}
-              className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-brand-graySoft transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-petalPink focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navyDark"
+              className="inline-flex h-10 items-center rounded-lg px-4 text-sm font-medium text-brand-graySoft transition-colors hover:bg-white/5 hover:text-white"
             />
 
+            {/* CTA Button */}
             <Link
               href={`/${locale}/form`}
-              className="group relative inline-flex h-11 items-center justify-center overflow-hidden rounded-xl border border-brand-petalPink px-4 text-center text-sm font-semibold text-brand-petalPink transition duration-300 ease-out hover:border-brand-teal hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-petalPink focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navyDark sm:px-5 sm:text-sm xl:px-6 xl:text-base"
+              className="group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-lg border border-brand-petalPink bg-brand-petalPink/10 px-5 text-sm font-semibold text-brand-petalPink transition-all duration-300 hover:border-brand-purple hover:bg-brand-purple hover:text-white hover:shadow-lg hover:shadow-brand-purple/25"
             >
               <span className="relative z-10">{content.contactLabel}</span>
-              <span className="absolute inset-0 origin-left scale-x-0 bg-gradient-to-r from-brand-purple to-brand-teal transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100"></span>
             </Link>
           </div>
 
-          <MobileNav
-            locale={locale}
-            content={content}
-          />
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden">
+            <MobileNav locale={locale} content={content} />
+          </div>
         </nav>
       </div>
     </header>
