@@ -283,6 +283,29 @@ export const deDictionary: LocaleDictionary = {
           "facebook ads",
         ],
       },
+      overview: {
+        hero: {
+          eyebrow: "Unsere Leistungen",
+          title:
+            "Leistungsübersicht für Marken mit Anspruch auf einen starken digitalen Auftritt",
+          description:
+            "Entdecken Sie die Leistungen, mit denen wir Sichtbarkeit, Struktur und Wachstum für moderne Marken aufbauen.",
+          primaryCta: "Beratung anfragen",
+        },
+        cards: {
+          eyebrow: "Leistungen entdecken",
+          description:
+            "Wählen Sie den Leistungsbereich, der zu Ihrem nächsten Schritt passt, und sehen Sie sich anschließend die Details an.",
+          imageAlts: {
+            "social-media":
+              "Abstrakte Illustration für Social Media Betreuung",
+            "content-creation": "Abstrakte Illustration für Content Creation",
+            "performance-marketing":
+              "Abstrakte Illustration für Performance Marketing",
+            webdesign: "Abstrakte Illustration für Webdesign",
+          },
+        },
+      },
       hero: {
         "social-media": {
           imageUrl: "/bg.jpg",

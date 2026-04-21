@@ -263,6 +263,29 @@ export const enDictionary: LocaleDictionary = {
           "facebook ads",
         ],
       },
+      overview: {
+        hero: {
+          eyebrow: "Our Services",
+          title:
+            "Service overview for brands that want a stronger digital presence",
+          description:
+            "Explore the services we use to build visibility, structure, and growth for modern brands.",
+          primaryCta: "Request Consultation",
+        },
+        cards: {
+          eyebrow: "Explore Services",
+          description:
+            "Choose the service area that fits your next step, then dive into the full details.",
+          imageAlts: {
+            "social-media":
+              "Abstract illustration for social media management",
+            "content-creation": "Abstract illustration for content creation",
+            "performance-marketing":
+              "Abstract illustration for performance marketing",
+            webdesign: "Abstract illustration for web design",
+          },
+        },
+      },
       hero: {
         "social-media": {
           imageUrl: "/bg.jpg",

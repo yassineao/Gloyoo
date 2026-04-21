@@ -3,6 +3,7 @@ import type {
   ServiceFeatures,
   ServiceHero2,
   ServiceHeroCollection,
+  ServiceOverview,
 } from "./Service";
 
 type NavItem = {
@@ -152,6 +153,7 @@ type FaqContent = {
 
 type ServicePageContent = {
   metadata: PageMetadata;
+  overview: ServiceOverview;
   hero: ServiceHeroCollection;
   features: ServiceFeatures;
   seo: PageSeo;

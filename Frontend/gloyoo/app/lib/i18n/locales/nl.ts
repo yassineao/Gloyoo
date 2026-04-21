@@ -263,6 +263,28 @@ export const nlDictionary: LocaleDictionary = {
         "facebook advertenties",
       ],
     },
+    overview: {
+      hero: {
+        eyebrow: "Onze Diensten",
+        title:
+          "Dienstenoverzicht voor merken die een sterke digitale uitstraling willen",
+        description:
+          "Ontdek de diensten waarmee we zichtbaarheid, structuur en groei opbouwen voor moderne merken.",
+        primaryCta: "Advies Aanvragen",
+      },
+      cards: {
+        eyebrow: "Diensten Ontdekken",
+        description:
+          "Kies het dienstgebied dat past bij uw volgende stap en bekijk daarna de volledige details.",
+        imageAlts: {
+          "social-media": "Abstracte illustratie voor social media beheer",
+          "content-creation": "Abstracte illustratie voor contentcreatie",
+          "performance-marketing":
+            "Abstracte illustratie voor performance marketing",
+          webdesign: "Abstracte illustratie voor webdesign",
+        },
+      },
+    },
     hero: {
       "social-media": {
         imageUrl: "/bg.jpg",

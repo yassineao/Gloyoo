@@ -11,8 +11,9 @@ type ServiceHero = {
   primaryCta: string;
   secondaryCta: string;
   imageAlt: string;
-    imageUrl: string;
+  imageUrl: string;
 };
+
 type ServiceHero2 = {
   badge: string;
   title: string;
@@ -20,10 +21,28 @@ type ServiceHero2 = {
   subtitle: string;
   subdescription: string;
   imageAlt: string;
-    imageUrl: string;
+  imageUrl: string;
 };
 
 type ServiceHeroCollection = Record<ServiceSlug, ServiceHero>;
+
+type ServiceOverviewHero = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  primaryCta: string;
+};
+
+type ServiceOverviewCards = {
+  eyebrow: string;
+  description: string;
+  imageAlts: Record<ServiceSlug, string>;
+};
+
+type ServiceOverview = {
+  hero: ServiceOverviewHero;
+  cards: ServiceOverviewCards;
+};
 
 type ServiceFeaturesItem = {
   title: string;
@@ -64,6 +83,9 @@ export type {
   ServiceFeatures,
   ServiceFeaturesItem,
   ServiceHero,
+  ServiceOverview,
+  ServiceOverviewCards,
+  ServiceOverviewHero,
   ServiceHeroCollection,
   ServiceSlug,
   ServiceHero2,
