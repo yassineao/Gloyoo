@@ -26,6 +26,7 @@ export const deDictionary: LocaleDictionary = {
             { label: "Webdesign", href: "/services/webdesign" },
           ],
         },
+        { label: "FAQ", href: "/faq" },
         { label: "Über uns", href: "/about" },
       ],
       contactLabel: "Beratung anfragen",

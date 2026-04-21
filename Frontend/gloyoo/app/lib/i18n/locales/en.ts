@@ -26,6 +26,7 @@ export const enDictionary: LocaleDictionary = {
             { label: "Web Design", href: "/services/webdesign" },
           ],
         },
+        { label: "FAQ", href: "/faq" },
         { label: "About Us", href: "/about" },
       ],
       contactLabel: "Request Consultation",

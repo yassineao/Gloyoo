@@ -26,6 +26,7 @@ export const nlDictionary: LocaleDictionary = {
           { label: "Webdesign", href: "/services/webdesign" },
         ],
       },
+      { label: "FAQ", href: "/faq" },
       { label: "Over Ons", href: "/about" },
     ],
     contactLabel: "Advies Aanvragen",

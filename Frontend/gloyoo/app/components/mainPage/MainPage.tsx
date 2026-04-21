@@ -78,7 +78,7 @@ export default function MainPage({
         <AboutUs content={home.about} locale={locale} />
       </div>
 
-      <div className="defer-section bg-black">
+      <div className="defer-section py-16 bg-black">
         <Faq
           content={faq}
           items={faq.items.slice(0, 4)}
