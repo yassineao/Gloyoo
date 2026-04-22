@@ -6,7 +6,7 @@ export const enDictionary: LocaleDictionary = {
       ariaLabel: "Main navigation",
       homeAriaLabel: "Go to Gloyoo homepage",
       items: [
-        { label: "Benefits", href: "#advantages" },
+        { label: "Benefits", href: "/advantages" },
         {
           label: "Services",
           href: "/services",
@@ -40,7 +40,7 @@ export const enDictionary: LocaleDictionary = {
       contactTitle: "Contact",
       navigationLinks: [
         { label: "Home", href: "/" },
-        { label: "Benefits", href: "#advantages" },
+        { label: "Benefits", href: "/advantages" },
         { label: "Services", href: "#services" },
         { label: "About Us", href: "/about" },
       ],

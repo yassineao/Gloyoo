@@ -6,7 +6,7 @@ export const nlDictionary: LocaleDictionary = {
     ariaLabel: "Hoofdnavigatie",
     homeAriaLabel: "Ga naar Gloyoo homepage",
     items: [
-      { label: "Voordelen", href: "#advantages" },
+      { label: "Voordelen", href: "/advantages" },
       {
         label: "Diensten",
         href: "/services",
@@ -40,7 +40,7 @@ export const nlDictionary: LocaleDictionary = {
     contactTitle: "Contact",
     navigationLinks: [
       { label: "Home", href: "/" },
-      { label: "Voordelen", href: "#advantages" },
+      { label: "Voordelen", href: "/advantages" },
       { label: "Diensten", href: "#services" },
       { label: "Over Ons", href: "/about" },
     ],

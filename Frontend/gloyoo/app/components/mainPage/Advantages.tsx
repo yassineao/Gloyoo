@@ -20,8 +20,8 @@ export default function Advantages({
                         height={948}
                         quality={85}
                         loading="lazy"
-                        sizes="(max-width: 1000px) 120px, 208px"
-                        className="h-20 w-auto shrink-0 sm:h-32 lg:h-60"
+                        sizes="(max-width: 640px) 28px, (max-width: 1024px) 56px, 112px"
+                        className="h-10 w-auto shrink-0 sm:h-16 lg:h-28"
                     />
                 </div>
            
