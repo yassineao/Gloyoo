@@ -20,6 +20,7 @@ export default async function LocaleLayout({
 
   return (
     <>
+    <Analytics />
       <Navbar locale={locale as Locale} content={dictionary.nav} />
       {children}
       <Footer locale={locale as Locale} content={dictionary.footer} />

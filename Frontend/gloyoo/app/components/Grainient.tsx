@@ -131,6 +131,27 @@ void main(){
 }
 `;
 
+const getDeviceProfile = (width: number, height: number) => {
+  const nav = navigator as Navigator & { deviceMemory?: number };
+  const deviceMemory = nav.deviceMemory ?? 8;
+  const hardwareConcurrency = navigator.hardwareConcurrency ?? 8;
+  const pixelArea = width * height;
+  const isLargeSurface = pixelArea > 900_000;
+  const isLowPowerDevice = hardwareConcurrency <= 6 || deviceMemory <= 4;
+
+  if (isLowPowerDevice || isLargeSurface) {
+    return {
+      dpr: Math.min(window.devicePixelRatio || 1, 0.9),
+      frameInterval: 1000 / 24,
+    };
+  }
+
+  return {
+    dpr: Math.min(window.devicePixelRatio || 1, 1.1),
+    frameInterval: 1000 / 30,
+  };
+};
+
 const Grainient: React.FC<GrainientProps> = ({
   timeSpeed = 0.25,
   colorBalance = 0.0,
@@ -165,7 +186,8 @@ const Grainient: React.FC<GrainientProps> = ({
       webgl: 2,
       alpha: true,
       antialias: false,
-      dpr: Math.min(window.devicePixelRatio || 1, 1.5),
+      dpr: 1,
+      powerPreference: "low-power",
     });
 
     const gl = renderer.gl;
@@ -210,10 +232,15 @@ const Grainient: React.FC<GrainientProps> = ({
 
     const mesh = new Mesh(gl, { geometry, program });
 
+    let frameInterval = 1000 / 30;
+
     const setSize = () => {
       const rect = container.getBoundingClientRect();
       const width = Math.max(1, Math.floor(rect.width));
       const height = Math.max(1, Math.floor(rect.height));
+      const profile = getDeviceProfile(width, height);
+      renderer.dpr = profile.dpr;
+      frameInterval = profile.frameInterval;
       renderer.setSize(width, height);
       const res = (program.uniforms.iResolution as { value: Float32Array }).value;
       res[0] = gl.drawingBufferWidth;
@@ -227,49 +254,81 @@ const Grainient: React.FC<GrainientProps> = ({
     let raf = 0;
     const t0 = performance.now();
     let isVisible = true;
+    let isPageVisible = document.visibilityState === "visible";
+    let lastFrameTime = 0;
 
     const renderFrame = (t: number) => {
       (program.uniforms.iTime as { value: number }).value = (t - t0) * 0.001;
       renderer.render({ scene: mesh });
     };
 
+    const shouldAnimate = () => isVisible && isPageVisible;
+
     const loop = (t: number) => {
-      renderFrame(t);
+      if (
+        lastFrameTime === 0 ||
+        t - lastFrameTime >= frameInterval
+      ) {
+        lastFrameTime = t;
+        renderFrame(t);
+      }
+
+      if (!shouldAnimate()) {
+        raf = 0;
+        return;
+      }
+
       raf = requestAnimationFrame(loop);
     };
 
     const startLoop = () => {
-      if (raf) return;
+      if (raf || !shouldAnimate()) return;
+      lastFrameTime = 0;
       raf = requestAnimationFrame(loop);
     };
 
-    const stopLoop = () => {
+    const stopLoop = (renderStillFrame = false) => {
       if (!raf) return;
       cancelAnimationFrame(raf);
       raf = 0;
+
+      if (renderStillFrame) {
+        renderFrame(performance.now());
+      }
+    };
+
+    const handleVisibilityChange = () => {
+      isPageVisible = document.visibilityState === "visible";
+
+      if (shouldAnimate()) {
+        startLoop();
+      } else {
+        stopLoop(true);
+      }
     };
 
     const io = new IntersectionObserver(
       ([entry]) => {
         isVisible = entry?.isIntersecting ?? true;
 
-        if (isVisible) {
+        if (shouldAnimate()) {
           startLoop();
         } else {
-          stopLoop();
-          renderFrame(performance.now());
+          stopLoop(true);
         }
       },
       { threshold: 0.01 }
     );
 
     io.observe(container);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
     startLoop();
 
     return () => {
       stopLoop();
       io.disconnect();
       ro.disconnect();
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
       try {
         container.removeChild(canvas);
       } catch {

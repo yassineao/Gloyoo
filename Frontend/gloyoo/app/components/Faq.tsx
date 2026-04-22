@@ -25,11 +25,11 @@ export default function Faq({ content, items, ctaHref }: FaqProps) {
           </p>
         </div>
 
-        <div className="mt-8 space-y-3 sm:mt-12 sm:space-y-4">
+        <div className="mt-8 space-y-3 sm:mt-12 sm:space-y-4 px-2">
           {faqItems.map((item) => (
             <details
               key={item.question}
-              className="group rounded-2xl border border-white/10 bg-white/[0.03] p-4 shadow-brand-panel transition-colors open:bg-white/[0.05] sm:p-5 lg:p-6"
+              className="group rounded-2xl border border-white/10 bg-white/[0.03] p-4 shadow-brand-panel transition-colors open:bg-white/[0.05] sm:p-5 lg:p-6 "
             >
               <summary className="flex min-h-12 cursor-pointer list-none items-start justify-between gap-3 text-left text-base font-medium leading-6 text-white [&::-webkit-details-marker]:hidden sm:min-h-14 sm:items-center sm:gap-4 sm:text-lg">
                 <span className="flex-1 pr-2">{item.question}</span>

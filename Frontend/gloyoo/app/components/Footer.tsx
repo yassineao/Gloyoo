@@ -19,7 +19,7 @@ export default function Footer({
 
     return (
         <footer className="bg-black text-white">
-            <div className="container mx-auto py-4  sm:px-6 sm:py-14 ">
+            <div className="container mx-auto px-2 py-4 sm:px-2 sm:py-14">
                 <div className=" shadow-[0_10px_40px_rgba(0,0,0,0.18)] backdrop-blur-sm sm:p-8">
                     {/* Top section */}
                     <div className="flex flex-col gap-8 lg:grid lg:grid-cols-12 lg:gap-10">
@@ -86,7 +86,7 @@ export default function Footer({
                     </div>
 
                     {/* Bottom bar */}
-                    <div className="mt-8 border-t border-white/10 pt-5 sm:mt-10 sm:pt-6">
+                    <div className="mt-8 border-t border-white/10 pt-5 sm:mt-10 sm:pt-6 ">
                         <div className="flex flex-col gap-4 sm:gap-5 lg:flex-row lg:items-center lg:justify-between">
                             <p className="text-center text-xs leading-5 text-brand-graySoft sm:text-left sm:text-sm">
                                 &copy; {new Date().getFullYear()} Gloyoo. {content.rights}
