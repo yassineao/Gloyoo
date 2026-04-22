@@ -34,7 +34,7 @@ export default function Navbar({
             className="group flex items-center gap-3 transition-opacity hover:opacity-90"
             aria-label={content.homeAriaLabel}
           >
-            <div className="relative flex h-10 items-center gap-2.5 overflow-hidden rounded-full border border-white/10 bg-white/5 px-4 shadow-lg shadow-brand-purple/20 backdrop-blur-sm transition-all duration-300 hover:border-brand-purple/30 hover:shadow-brand-purple/30 sm:h-11 sm:px-5 lg:h-12">
+            <div className="relative flex h-10 items-center gap-2.5 overflow-hidden    px-4  sm:h-11 sm:px-5 lg:h-12">
               <Image
                 src="/Logo.png"
                 alt="Gloyoo Logo"
