@@ -114,7 +114,7 @@ export default async function ServicesOverviewPage({
   };
 
   return (
-    <main className="overflow-x-hidden bg-[#0B0B0F] pt-16 lg:pt-20 mt-16">
+    <main className="overflow-x-hidden bg-[#0B0B0F] pt-16 lg:pt-0 mt-16">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

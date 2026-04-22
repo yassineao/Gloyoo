@@ -117,7 +117,6 @@ export default function Navbar({
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="lg:hidden">
             <MobileNav locale={locale} content={content} />
           </div>

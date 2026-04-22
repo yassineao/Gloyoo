@@ -94,7 +94,7 @@ function withLocaleCookie(response: NextResponse, locale: Locale) {
   return response;
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (PUBLIC_FILE.test(pathname)) {

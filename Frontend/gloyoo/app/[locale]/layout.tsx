@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { getDictionary, isValidLocale, type Locale } from "../lib/i18n";
 import { notFound } from "next/navigation";
-
+import { Analytics } from "@vercel/analytics/next"
 export default async function LocaleLayout({
   children,
   params,

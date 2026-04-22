@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useId, useRef, useState } from "react";
 import { locales, type Locale } from "../lib/i18n";
 
 type LocaleSwitchLinkProps = {
@@ -10,23 +11,66 @@ type LocaleSwitchLinkProps = {
   className: string;
 };
 
+const localeLabels: Record<Locale, string> = {
+  de: "Deutsch",
+  en: "English",
+  nl: "Nederlands",
+};
+
 export default function LocaleSwitchLink({
   currentLocale,
   label,
   className,
 }: LocaleSwitchLinkProps) {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  const menuId = useId();
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  const basePath = pathname?.replace(/^\/(de|en|nl)(?=\/|$)/, "") || "/";
+  const normalizedPath = basePath === "" ? "/" : basePath;
+
   const localeLinks = locales.map((locale) => ({
     locale,
-    href:
-      pathname?.replace(/^\/(de|en|nl)(?=\/|$)/, `/${locale}`) ?? `/${locale}`,
+    href: `/${locale}${normalizedPath === "/" ? "" : normalizedPath}`,
   }));
 
+  useEffect(() => {
+    if (!open) {
+      return;
+    }
+
+    const handlePointerDown = (event: MouseEvent) => {
+      if (!containerRef.current?.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handlePointerDown);
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open]);
+
   return (
-    <details className="group relative">
-      <summary
+    <div ref={containerRef} className="relative">
+      <button
+        type="button"
         aria-label={label}
-        className={`${className} list-none cursor-pointer select-none [&::-webkit-details-marker]:hidden`}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        aria-controls={menuId}
+        onClick={() => setOpen((current) => !current)}
+        className={`${className} gap-1.5`}
       >
         <span>{currentLocale.toUpperCase()}</span>
         <svg
@@ -35,33 +79,48 @@ export default function LocaleSwitchLink({
           fill="none"
           stroke="currentColor"
           strokeWidth={2}
-          className="ml-1 size-4 transition-transform duration-200 group-open:rotate-180"
+          className={`size-4 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
         >
           <path d="m6 9 6 6 6-6" />
         </svg>
-      </summary>
+      </button>
 
       <div
-        className="invisible absolute right-0 top-full z-40 mt-2 min-w-24 translate-y-1 rounded-xl border border-white/10 bg-[#0B0B0F]/95 p-2 opacity-0 shadow-2xl backdrop-blur-md transition-all duration-200 group-open:visible group-open:translate-y-0 group-open:opacity-100"
+        id={menuId}
+        className={`absolute right-0 top-full z-[60] mt-2 min-w-[11rem] origin-top-right transition-all duration-200 ${
+          open
+            ? "translate-y-0 scale-100 opacity-100"
+            : "pointer-events-none -translate-y-2 scale-95 opacity-0"
+        }`}
       >
-        <ul className="space-y-1">
-          {localeLinks.map(({ locale, href }) => (
-            <li key={locale}>
-              <Link
-                href={href}
-                aria-current={locale === currentLocale ? "page" : undefined}
-                className={`block rounded-lg px-3 text-center py-2 text-sm transition-colors hover:bg-white/8 hover:text-white ${
-                  locale === currentLocale
-                    ? "bg-white/8 text-white"
-                    : "text-brand-graySoft"
-                }`}
-              >
-                {locale.toUpperCase()}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0B0B0F]/95 p-1.5 shadow-2xl ring-1 ring-white/5 backdrop-blur-xl">
+          <ul className="space-y-1">
+            {localeLinks.map(({ locale, href }) => (
+              <li key={locale}>
+                <Link
+                  href={href}
+                  aria-current={locale === currentLocale ? "page" : undefined}
+                  onClick={() => setOpen(false)}
+                  className={`flex items-center justify-between rounded-xl px-3 py-2.5 text-sm transition-colors ${
+                    locale === currentLocale
+                      ? "bg-white/8 text-white"
+                      : "text-brand-graySoft hover:bg-white/8 hover:text-white"
+                  }`}
+                >
+                  <span className="font-semibold tracking-wide">{locale.toUpperCase()}</span>
+                  <span
+                    className={`text-xs ${
+                      locale === currentLocale ? "text-brand-graySoft" : "text-brand-grayMuted"
+                    }`}
+                  >
+                    {localeLabels[locale]}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </details>
+    </div>
   );
 }
