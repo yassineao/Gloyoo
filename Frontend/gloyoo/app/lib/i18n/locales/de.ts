@@ -163,6 +163,7 @@ export const deDictionary: LocaleDictionary = {
         ],
         
         cta: "Projekt mit uns starten",
+        more: "Mehr"
       },
       scrollTexts: ["Social Media", "Moderne Webseiten"],
       seo: {

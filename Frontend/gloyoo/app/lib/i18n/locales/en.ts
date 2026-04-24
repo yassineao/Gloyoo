@@ -149,6 +149,7 @@ export const enDictionary: LocaleDictionary = {
           "As a remote agency, we combine modern web design with effective social media strategies and support brands from positioning to ongoing management—flexible, digital, and available across Europe.",
         ],
         cta: "Start Your Project With Us",
+        more: "More"
       },
       scrollTexts: ["Social Media", "Modern Websites"],
       seo: {

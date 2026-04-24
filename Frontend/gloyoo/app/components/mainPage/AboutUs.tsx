@@ -61,12 +61,34 @@ export default function AboutUs({
                         <p className="mt-4 max-w-xl text-base leading-7 text-brand-graySoft sm:text-lg sm:leading-8 lg:text-xl">
                             {content.paragraphs[1]}
                         </p>
-                        <a
+                        <div >        
+                                    <a
                             href={`/${locale}/form`}
                             className="mt-8 inline-flex items-center justify-center rounded-md bg-gradient-to-r from-brand-purple to-brand-teal px-5 py-3 text-sm font-semibold text-white shadow-brand-cta transition-all hover:brightness-110"
                         >
                             {content.cta}
                         </a>
+                        <a className="ml-2 inline-flex items-center justify-center rounded-md  border-white/10 bg-white/6 border px-5 py-3 text-sm font-semibold text-white shadow-brand-cta transition-all hover:brightness-110"    href={`/${locale}/form`}>
+                            {content.more}
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="ml-2 size-4"
+                            >
+                                <path d="m7 7 10 10"></path>
+                                <path d="M17 7v10H7"></path>
+                            </svg>
+                        </a>
+                        
+                        </div>
+                
                     </div>
                 </div>
             </div>

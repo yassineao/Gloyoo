@@ -128,6 +128,7 @@ type HomeContent = {
     title: string;
     paragraphs: string[];
     cta: string;
+    more :string
   };
   scrollTexts: [string, string];
   seo: PageSeo;

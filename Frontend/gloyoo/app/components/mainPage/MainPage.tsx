@@ -60,7 +60,7 @@ export default function MainPage({
         <Advantages content={home.advantages} />
       </div>
       <Background>
-        <div className="defer-section  lg:py-16" id="services">
+        <div className="defer-section  lg:py-16">
 
           <div className="">
             <ScrollVelocity

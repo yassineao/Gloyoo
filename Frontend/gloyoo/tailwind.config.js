@@ -22,6 +22,7 @@ const config = {
           slateDark: "#71717A",
           cloud: "#A1A1AA",
           petalPink: "#A855F7",
+          bluew:"#184e5f",
         },
       },
       boxShadow: {

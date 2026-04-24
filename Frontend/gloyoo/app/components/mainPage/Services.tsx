@@ -13,14 +13,14 @@ export default function Services({
     ];
 
     return (
-        <div className="flex flex-1 flex-col items-center justify-center overflow-hidden ">
+        <div className="flex flex-1 flex-col items-center justify-center overflow-hidden "  id="services">
             <section id="services-list" className="mx-auto w-full max-w-7xl scroll-mt-24 py-8" aria-labelledby="services-heading">
                 <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
-                    <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center sm:gap-6 ">
+                    <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center sm:gap-6 " >
                         <div className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-brand-graySoft">
                             {content.eyebrow}
                         </div>
-                        <h2 id="services-heading" className="text-balance text-3xl font-medium text-white sm:text-4xl lg:text-5xl">
+                        <h2 id="services-heading" className="text-balance text-3xl font-medium text-white sm:text-4xl lg:text-5xl" >
                             {content.title}
                         </h2>
                         <p className="max-w-2xl text-sm leading-7 text-brand-graySoft sm:text-base sm:leading-8 lg:text-lg">

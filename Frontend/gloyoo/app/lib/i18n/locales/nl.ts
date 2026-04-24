@@ -149,6 +149,7 @@ export const nlDictionary: LocaleDictionary = {
         "Als remote bureau combineren we modern webdesign met effectieve social media strategieën en begeleiden we merken van positionering tot doorlopend beheer—flexibel, digitaal en overal in Nederland beschikbaar.",
       ],
       cta: "Start Uw Project Met Ons",
+      more: "Meer"
     },
     scrollTexts: ["Social Media", "Moderne Websites"],
     seo: {
