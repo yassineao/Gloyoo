@@ -202,19 +202,21 @@ export default function Form({ content }: FormProps) {
                 status === "sent" ? "text-green-300" : "text-red-300"
               }`}
             >
-              {status === "sent" ? "Message sent" : "Message not sent"}
+              {status === "sent"
+                ? content.popup.successTitle
+                : content.popup.errorTitle}
             </h2>
             <p className="mb-6 text-sm leading-6 text-white/80">
               {status === "sent"
-                ? "Thank you. Your message has been sent."
-                : "Something went wrong. Please try again."}
+                ? content.popup.successMessage
+                : content.popup.errorMessage}
             </p>
             <button
               type="button"
               onClick={() => setStatus("idle")}
               className="w-full cursor-pointer rounded-lg bg-linear-to-br from-indigo-500 to-purple-600 py-3 text-sm text-white transition-all hover:-translate-y-0.5"
             >
-              OK
+              {content.popup.closeLabel}
             </button>
           </div>
         </div>

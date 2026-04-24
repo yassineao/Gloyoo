@@ -469,6 +469,13 @@ export const nlDictionary: LocaleDictionary = {
         suffix: ".",
       },
       submitLabel: "Bericht Versturen",
+      popup: {
+        successTitle: "Bericht verzonden",
+        successMessage: "Bedankt. Uw bericht is verzonden. Controleer uw e-mail.",
+        errorTitle: "Bericht niet verzonden",
+        errorMessage: "Er is iets misgegaan. Probeer het opnieuw.",
+        closeLabel: "OK",
+      },
       testimonial: {
         quote:
           "We ontwikkelen geen standaardoplossingen. Samen creëren we een uitstraling die zichtbaar maakt waar uw merk voor staat.",

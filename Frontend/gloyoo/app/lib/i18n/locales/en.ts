@@ -471,6 +471,13 @@ export const enDictionary: LocaleDictionary = {
           suffix: ".",
         },
         submitLabel: "Send Message",
+        popup: {
+          successTitle: "Message sent",
+          successMessage: "Thank you. Your message has been sent. Check your mail.",
+          errorTitle: "Message not sent",
+          errorMessage: "Something went wrong. Please try again.",
+          closeLabel: "OK",
+        },
         testimonial: {
           quote:
             "We don't develop standard solutions. Together we create a presence that makes visible what your brand stands for.",

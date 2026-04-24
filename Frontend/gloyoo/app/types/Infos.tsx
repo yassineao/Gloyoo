@@ -23,6 +23,13 @@ type Infos = {
     suffix: string;
   };
   submitLabel: string;
+  popup: {
+    successTitle: string;
+    successMessage: string;
+    errorTitle: string;
+    errorMessage: string;
+    closeLabel: string;
+  };
   testimonial: {
     quote: string;
     author: string;

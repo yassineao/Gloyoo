@@ -518,6 +518,13 @@ export const deDictionary: LocaleDictionary = {
           suffix: "zu.",
         },
         submitLabel: "Nachricht senden",
+        popup: {
+          successTitle: "Nachricht gesendet",
+          successMessage: "Vielen Dank. Ihre Nachricht wurde gesendet. Pruefen Sie Ihre E-Mail.",
+          errorTitle: "Nachricht nicht gesendet",
+          errorMessage: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+          closeLabel: "OK",
+        },
         testimonial: {
           quote:
             "Wir entwickeln keine Standardlösungen. Gemeinsam schaffen wir einen Auftritt, der sichtbar macht, wofür Ihre Marke steht.",

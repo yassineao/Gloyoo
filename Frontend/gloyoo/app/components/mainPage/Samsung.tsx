@@ -118,7 +118,7 @@ export default function Samsung({
         <div
           className="absolute left-1/2 top-3 z-20 -translate-x-1/2 rounded-full border border-white/10 bg-black shadow-brand-camera"
           style={{ width: cameraSize, height: cameraSize }}
-          aria-label="Front camera"
+          aria-hidden="true"
         >
           <div className="absolute rounded-full bg-zinc-900" style={{ inset: "22%" }} />
           <div
