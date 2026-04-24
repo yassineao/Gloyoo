@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import type { Infos } from "@/app/types/Infos";
 
 type FormProps = {
@@ -7,6 +10,40 @@ type FormProps = {
 };
 
 export default function Form({ content }: FormProps) {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle",
+  );
+  const showPopup = status === "sent" || status === "error";
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+
+    const form = new FormData(e.currentTarget);
+    const response = await fetch("/api/form", {
+      method: "POST",
+      body: JSON.stringify({
+        companyName: form.get("companyName"),
+        lastName: form.get("lastName"),
+        email: form.get("email"),
+        phoneNumber: form.get("phoneNumber"),
+        message: form.get("message"),
+        website: form.get("website"),
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      setStatus("error");
+      return;
+    }
+
+    e.currentTarget.reset();
+    setStatus("sent");
+  }
+
   return (
     <section className="flex items-center justify-center px-4 py-12">
       <div className="grid w-full max-w-7xl items-center md:grid-cols-2 md:gap-10 lg:gap-20">
@@ -18,15 +55,29 @@ export default function Form({ content }: FormProps) {
             {content.description}
           </p>
 
-          <form>
+          <form onSubmit={handleSubmit}>
+            <div className="hidden" aria-hidden="true">
+              <label>
+                Website
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </label>
+            </div>
+
             <div className="mb-5 grid grid-cols-2 gap-4">
               <div>
                 <label className="mb-2 block text-sm text-white">
                   {content.fields.companyName}
                 </label>
                 <input
+                  name="companyName"
                   type="text"
                   placeholder={content.placeholders.companyName}
+                  required
                   className="w-full rounded-lg border border-gray-300 px-3 py-3 text-sm outline-none transition-colors focus:border-indigo-500"
                 />
               </div>
@@ -36,7 +87,9 @@ export default function Form({ content }: FormProps) {
                 </label>
                 <input
                   type="text"
+                  name="lastName"
                   placeholder={content.placeholders.lastName}
+                  required
                   className="w-full rounded-lg border border-gray-300 px-3 py-3 text-sm outline-none transition-colors focus:border-indigo-500"
                 />
               </div>
@@ -48,7 +101,9 @@ export default function Form({ content }: FormProps) {
               </label>
               <input
                 type="email"
+                name="email"
                 placeholder={content.placeholders.email}
+                required
                 className="w-full rounded-lg border border-gray-300 px-3 py-3 text-sm outline-none transition-colors focus:border-indigo-500"
               />
             </div>
@@ -60,6 +115,7 @@ export default function Form({ content }: FormProps) {
               <div className="flex overflow-hidden rounded-lg border border-gray-300 transition-colors focus-within:border-indigo-500">
                 <input
                   type="tel"
+                  name="phoneNumber"
                   placeholder={content.placeholders.phoneNumber}
                   className="flex-1 px-3 py-3 text-sm outline-none"
                 />
@@ -71,8 +127,10 @@ export default function Form({ content }: FormProps) {
                 {content.fields.message}
               </label>
               <textarea
+                name="message"
                 rows={4}
                 placeholder={content.placeholders.message}
+                required
                 className="w-full resize-y rounded-lg border border-gray-300 px-3 py-3 text-sm outline-none transition-colors focus:border-indigo-500"
               ></textarea>
             </div>
@@ -80,6 +138,7 @@ export default function Form({ content }: FormProps) {
             <div className="mb-6 flex items-center gap-2">
               <input
                 type="checkbox"
+                required
                 className="h-5 w-5 cursor-pointer rounded text-white accent-indigo-500"
               />
               <label className="cursor-pointer text-sm text-white">
@@ -97,9 +156,10 @@ export default function Form({ content }: FormProps) {
 
             <button
               type="submit"
+              disabled={status === "sending"}
               className="w-full cursor-pointer rounded-lg bg-linear-to-br from-indigo-500 to-purple-600 py-3.5 text-sm text-white transition-all hover:-translate-y-0.5"
             >
-              {content.submitLabel}
+              {status === "sending" ? "Sending..." : content.submitLabel}
             </button>
           </form>
         </div>
@@ -129,6 +189,36 @@ export default function Form({ content }: FormProps) {
           </div>
         </div>
       </div>
+
+      {showPopup && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+        >
+          <div className="w-full max-w-sm rounded-lg border border-white/15 bg-[#111827] p-6 text-center shadow-2xl">
+            <h2
+              className={`mb-3 text-xl font-semibold ${
+                status === "sent" ? "text-green-300" : "text-red-300"
+              }`}
+            >
+              {status === "sent" ? "Message sent" : "Message not sent"}
+            </h2>
+            <p className="mb-6 text-sm leading-6 text-white/80">
+              {status === "sent"
+                ? "Thank you. Your message has been sent."
+                : "Something went wrong. Please try again."}
+            </p>
+            <button
+              type="button"
+              onClick={() => setStatus("idle")}
+              className="w-full cursor-pointer rounded-lg bg-linear-to-br from-indigo-500 to-purple-600 py-3 text-sm text-white transition-all hover:-translate-y-0.5"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
