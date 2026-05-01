@@ -27,6 +27,7 @@ export const deDictionary: LocaleDictionary = {
           ],
         },
         { label: "FAQ", href: "/faq" },
+        { label: "Blog", href: "/blog" },
         { label: "Über uns", href: "/about" },
       ],
       contactLabel: "Beratung anfragen",
@@ -186,6 +187,59 @@ export const deDictionary: LocaleDictionary = {
           "Webdesign",
         ],
       },
+    },
+    blog: {
+      metadata: {
+        title: "Blog | Social Media, Content und Webdesign Wissen | Gloyoo",
+        description:
+          "Praxisnahe Artikel zu Social Media, Content Creation, Performance Marketing und modernem Webdesign fuer wachsende Unternehmen.",
+        locale: "de_DE",
+        keywords: [
+          "social media blog",
+          "content marketing tipps",
+          "performance marketing wissen",
+          "webdesign strategie",
+          "online marketing blog",
+        ],
+      },
+      eyebrow: "Insights",
+      title: "Ideen fuer staerkeres digitales Wachstum",
+      description:
+        "Klare, praxisnahe Impulse dazu, wie Marken Aufmerksamkeit in Vertrauen, Anfragen und bessere Kundenerlebnisse verwandeln.",
+      featuredLabel: "Empfohlen",
+      readMoreLabel: "Artikel lesen",
+      posts: [
+        {
+          id: 1,
+          category: "Social Media",
+          title: "Wie konsistenter Content Vertrauen vor dem ersten Gespraech schafft",
+          excerpt:
+            "Ein einfaches System fuer Posts, die Ihre Marke wiedererkennbar, hilfreich und leichter waehlen lassen.",
+          date: "12. Mai 2026",
+          readTime: "5 Min. Lesezeit",
+          imageAlt: "Illustration fuer Social-Media-Contentplanung",
+        },
+        {
+          id: 2,
+          category: "Webdesign",
+          title: "Website-Bereiche, die Besucher zu qualifizierten Leads machen",
+          excerpt:
+            "Was Ihre Leistungsseiten vermitteln sollten, wenn Menschen Anbieter vergleichen und Kontakt aufnehmen wollen.",
+          date: "5. Mai 2026",
+          readTime: "6 Min. Lesezeit",
+          imageAlt: "Illustration fuer modernes Webdesign",
+        },
+        {
+          id: 3,
+          category: "Performance",
+          title: "Welche Kennzahlen vor mehr Werbebudget wirklich zaehlen",
+          excerpt:
+            "Ein kompakter Blick auf Kampagnensignale, die zeigen, ob mehr Budget Wachstum oder nur mehr Streuverlust bringt.",
+          date: "28. April 2026",
+          readTime: "4 Min. Lesezeit",
+          imageAlt: "Illustration fuer ein Marketing-Dashboard",
+        },
+      ],
     },
     faq: {
       metadata: {

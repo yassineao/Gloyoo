@@ -27,6 +27,7 @@ export const nlDictionary: LocaleDictionary = {
         ],
       },
       { label: "FAQ", href: "/faq" },
+      { label: "Blog", href: "/blog" },
       { label: "Over Ons", href: "/about" },
     ],
     contactLabel: "Advies Aanvragen",
@@ -171,6 +172,59 @@ export const nlDictionary: LocaleDictionary = {
         "Webdesign",
       ],
     },
+  },
+  blog: {
+    metadata: {
+      title: "Blog | Social media, content en webdesign inzichten | Gloyoo",
+      description:
+        "Praktische artikelen over social media, contentcreatie, performance marketing en modern webdesign voor groeiende bedrijven.",
+      locale: "nl_NL",
+      keywords: [
+        "social media blog",
+        "content marketing tips",
+        "performance marketing inzichten",
+        "webdesign strategie",
+        "online marketing blog",
+      ],
+    },
+    eyebrow: "Inzichten",
+    title: "Ideeen voor sterkere digitale groei",
+    description:
+      "Heldere, praktische inzichten over hoe merken aandacht omzetten in vertrouwen, aanvragen en betere klantreizen.",
+    featuredLabel: "Uitgelicht",
+    readMoreLabel: "Artikel lezen",
+    posts: [
+      {
+        id: 1,
+        category: "Social Media",
+        title: "Hoe consistente content vertrouwen opbouwt voor het eerste gesprek",
+        excerpt:
+          "Een eenvoudig systeem voor posts die uw merk herkenbaar, nuttig en makkelijker te kiezen maken.",
+        date: "12 mei 2026",
+        readTime: "5 min lezen",
+        imageAlt: "Illustratie voor socialmedia-contentplanning",
+      },
+      {
+        id: 2,
+        category: "Webdesign",
+        title: "Website-onderdelen die bezoekers omzetten in kwalitatieve leads",
+        excerpt:
+          "Wat uw dienstenpagina's moeten communiceren wanneer mensen aanbieders vergelijken en contact willen opnemen.",
+        date: "5 mei 2026",
+        readTime: "6 min lezen",
+        imageAlt: "Illustratie voor modern webdesign",
+      },
+      {
+        id: 3,
+        category: "Performance",
+        title: "De statistieken die tellen voordat u advertentiebudget verhoogt",
+        excerpt:
+          "Een compacte blik op campagnesignalen die laten zien of meer budget groei of vooral meer ruis oplevert.",
+        date: "28 april 2026",
+        readTime: "4 min lezen",
+        imageAlt: "Illustratie voor een marketingdashboard",
+      },
+    ],
   },
   faq: {
     metadata: {

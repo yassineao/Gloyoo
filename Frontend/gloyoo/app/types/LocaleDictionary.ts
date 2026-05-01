@@ -152,6 +152,24 @@ type FaqContent = {
   }[];
 };
 
+type BlogContent = {
+  metadata: PageMetadata;
+  eyebrow: string;
+  title: string;
+  description: string;
+  featuredLabel: string;
+  readMoreLabel: string;
+  posts: {
+    id: number;
+    category: string;
+    title: string;
+    excerpt: string;
+    date: string;
+    readTime: string;
+    imageAlt: string;
+  }[];
+};
+
 type ServicePageContent = {
   metadata: PageMetadata;
   overview: ServiceOverview;
@@ -183,6 +201,7 @@ type LocaleDictionary = {
     legalLinks: FooterLink[];
   };
   home: HomeContent;
+  blog: BlogContent;
   faq: FaqContent;
   servicePage: ServicePageContent;
   form: FormContent;
@@ -197,6 +216,7 @@ type LocaleDictionary = {
 
 export type {
   AdvantageItem,
+  BlogContent,
   ContentPage,
   ContentSection,
   FooterLink,

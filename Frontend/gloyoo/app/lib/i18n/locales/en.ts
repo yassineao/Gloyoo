@@ -27,6 +27,7 @@ export const enDictionary: LocaleDictionary = {
           ],
         },
         { label: "FAQ", href: "/faq" },
+        { label: "Blog", href: "/blog" },
         { label: "About Us", href: "/about" },
       ],
       contactLabel: "Request Consultation",
@@ -171,6 +172,59 @@ export const enDictionary: LocaleDictionary = {
           "Web Design",
         ],
       },
+    },
+    blog: {
+      metadata: {
+        title: "Blog | Social Media, Content and Web Design Insights | Gloyoo",
+        description:
+          "Practical articles about social media, content creation, performance marketing, and modern web design for growing businesses.",
+        locale: "en_US",
+        keywords: [
+          "social media blog",
+          "content marketing tips",
+          "performance marketing insights",
+          "web design strategy",
+          "online marketing blog",
+        ],
+      },
+      eyebrow: "Insights",
+      title: "Ideas for sharper digital growth",
+      description:
+        "Clear, practical notes on how brands can turn attention into trust, inquiries, and better customer journeys.",
+      featuredLabel: "Featured",
+      readMoreLabel: "Read article",
+      posts: [
+        {
+          id: 1,
+          category: "Social Media",
+          title: "How consistent content builds trust before the first call",
+          excerpt:
+            "A simple framework for planning posts that make your brand recognizable, useful, and easier to choose.",
+          date: "May 12, 2026",
+          readTime: "5 min read",
+          imageAlt: "Social media content planning illustration",
+        },
+        {
+          id: 2,
+          category: "Web Design",
+          title: "Website sections that turn visitors into qualified leads",
+          excerpt:
+            "What your service pages should communicate when people are comparing providers and deciding who to contact.",
+          date: "May 5, 2026",
+          readTime: "6 min read",
+          imageAlt: "Modern website design illustration",
+        },
+        {
+          id: 3,
+          category: "Performance",
+          title: "The metrics worth checking before increasing ad spend",
+          excerpt:
+            "A compact look at campaign signals that show whether more budget will create momentum or just more noise.",
+          date: "April 28, 2026",
+          readTime: "4 min read",
+          imageAlt: "Marketing performance dashboard illustration",
+        },
+      ],
     },
     faq: {
       metadata: {
