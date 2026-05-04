@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import LegalPage from "@/app/components/legal/LegalPage";
+import About from "@/app/components/about/about";
 import { getDictionary, isValidLocale, locales } from "@/app/lib/i18n";
 
 export async function generateStaticParams() {
@@ -48,14 +48,5 @@ export default async function AboutPage({
 
   const page = getDictionary(locale).pages.about;
 
-  return (
-    <LegalPage
-      eyebrow={page.eyebrow}
-      title={page.title}
-      intro={page.intro}
-      sections={page.sections}
-      ctaHref={`/${locale}/form`}
-      ctaLabel={page.ctaLabel}
-    />
-  );
+  return <About content={page} locale={locale} />;
 }

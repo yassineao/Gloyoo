@@ -6,6 +6,29 @@ import type {
   ServiceOverview,
 } from "./Service";
 
+export type TeamMember = {
+  name: string;
+  role: string;
+  description: string;
+  image?: string;
+  socials?: {
+    label: string;
+    href: string;
+  }[];
+};
+
+type AboutInfoItem = {
+  value: string;
+  label: string;
+};
+
+type AboutTeamContent = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  members: TeamMember[];
+};
+
 type NavItem = {
   label: string;
   href: string;
@@ -91,9 +114,11 @@ type ContentPage = {
   eyebrow: string;
   title: string;
   intro: string;
+  infos?: AboutInfoItem[];
   heroMeta?: string[];
   contents?: string[];
   sections: ContentSection[];
+  team?: AboutTeamContent;
   note?: string;
   ctaLabel?: string;
 };
@@ -216,6 +241,8 @@ type LocaleDictionary = {
 
 export type {
   AdvantageItem,
+  AboutInfoItem,
+  AboutTeamContent,
   BlogContent,
   ContentPage,
   ContentSection,

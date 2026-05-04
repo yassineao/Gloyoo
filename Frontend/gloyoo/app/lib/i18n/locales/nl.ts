@@ -573,6 +573,20 @@ export const nlDictionary: LocaleDictionary = {
       title: "Uw Bureau voor Social Media en Moderne Websites",
       intro:
         "Bij Gloyoo helpen we bedrijven hun digitale aanwezigheid professioneel op te bouwen en gericht te optimaliseren. Onze focus ligt op meetbare resultaten: meer bereik, meer aanvragen en meer omzet.",
+      infos: [
+        {
+          value: "Remote",
+          label: "Flexibele samenwerking zonder locatiegrenzen.",
+        },
+        {
+          value: "360°",
+          label: "Strategie, content, webdesign en performance op een plek.",
+        },
+        {
+          value: "Focus",
+          label: "Digitale presences die vertrouwen en aanvragen opbouwen.",
+        },
+      ],
       sections: [
         {
           title: "Onze aanpak",
@@ -598,6 +612,32 @@ export const nlDictionary: LocaleDictionary = {
           ],
         },
       ],
+      team: {
+        eyebrow: "Ons Team",
+        title: "De mensen achter strategie, design en groei",
+        description:
+          "We werken in duidelijke rollen, zodat elk project helder wordt geleid, zorgvuldig wordt ontworpen en meetbaar wordt geoptimaliseerd.",
+        members: [
+          {
+            name: "Yassine Ouazzani Amri",
+            role: "Fullstack Developer & Design Lead",
+            description:
+              "Verantwoordelijk voor technische ontwikkeling, designsystemen en schaalbare weboplossingen.",
+          },
+          {
+            name: "Alae Tajjiou",
+            role: "Content & Marketing Lead | Sales Support",
+            description:
+              "Ontwikkelt doelgerichte content en campagnes en ondersteunt sales met sterke communicatie.",
+          },
+          {
+            name: "Abdellah Herraq",
+            role: "Social Media Content Manager",
+            description:
+              "Optimaliseert bereik, engagement en campagneprestaties op basis van data-analyse.",
+          },
+        ],
+      },
       ctaLabel: "Start Uw Project Met Ons",
     },
     privacy: {
